@@ -1,0 +1,7 @@
+{
+  "name": "projCimeira",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}
