@@ -75,3 +75,25 @@ http://ionicframework.com/docs/theming/ */
   --ion-color-light-shade: #d7d8da;
   --ion-color-light-tint: #f5f6f9;
 }
+
+.label {
+  text-align: center;
+}
+
+.categoriasLogo {
+  height: 6em;
+}
+
+.subcategoriasLogo {
+  height: 3em;
+}
+
+.categoriasEspaco {
+}
+
+.subcategoriasLinha {
+  vertical-align: bottom;
+}
+
+.grid {
+}

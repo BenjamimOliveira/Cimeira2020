@@ -8,50 +8,74 @@ import { stringify } from 'querystring';
 // http://app.cimeira.ipvc.pt/api/main/1
 
 const URL = 'http://app.cimeira.ipvc.pt/api/main/1';
-const fetchCategorias = (txt: string) => {
+/*
+const fetchAPI = () => {
   return axios({
     url: URL,
-    method: 'get'
-  }).then(response => {
-    console.log(response); 
+    method: 'get' 
+  }).then(response =>{
+    //console.log(response);
     return response.data;
   })
-}
+}*/
 
-type catego = {
+type categoria = {
   id: string;
   path: string;
   title: string;
   type: string;
 }
 
-interface Cate {
-  info: catego[];
-}
-
-interface teste {
+class Categoria {
   id: string;
   path: string;
   title: string;
   type: string;
-}
 
-function delay(ms: number) {
-  return new Promise( resolve => setTimeout(resolve, ms) );
+  constructor(id: string, path: string, title: string, type: string){
+    this.id = id;
+    this.path = path;
+    this.title = title;
+    this.type = type;
+  }
 }
 
 
 
 const Home: React.FC<RouteComponentProps> = (props) => {
-  const [categoria, setCategoria] = useState();
-  var txt: string = "tete";
+  /*const [result, setResult] = useState();
+  const items: any[] = [];
+  var a: any;
   useEffect(() => {
-    fetchCategorias(txt).then(data => txt = data);
+    console.log(fetchAPI());
+  }, []);*/
+  const [result, setResult] = useState<categoria>();
+  var cat = new Categoria("","","t","");
+  var a: string = "";
+  var b;
+  const request = async () => {
+    const response = await fetch('http://app.cimeira.ipvc.pt/api/main/1');
+    const json = await response.json();
+    cat = new Categoria(json.id, json.path, json.title, json.type);
+    a = cat.title;
+    b = undefined;
+    console.log(cat);
+
     
-  }, []);
-  
+    return cat;
+  }
+  request();
+
+  do{}while(a == "" || a == b);
+  console.log(a);
+
   return (
     <IonPage>
+      <IonHeader>
+        <IonToolbar>
+          <IonTitle>Página Inicial</IonTitle>
+        </IonToolbar>
+      </IonHeader>
       <IonContent className="ion-padding">
         <IonGrid class="grid">     
           <IonRow>
