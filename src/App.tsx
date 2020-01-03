@@ -3,6 +3,11 @@ import { Redirect, Route } from 'react-router-dom';
 import { IonApp, IonRouterOutlet } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
 import Home from './pages/Home';
+import Login from './pages/Login';
+import Registo from './pages/Registo';
+import ValidarRegisto from "./pages/ValidarRegisto";
+import Programa from "./pages/Programa";
+import DescricaoAtividade from "./pages/DescricaoAtividade";
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -23,12 +28,20 @@ import '@ionic/react/css/display.css';
 /* Theme variables */
 import './theme/variables.css';
 
+import './theme/teste.css';
+
 const App: React.FC = () => (
+  
   <IonApp>
     <IonReactRouter>
       <IonRouterOutlet>
         <Route path="/home" component={Home} exact={true} />
         <Route exact path="/" render={() => <Redirect to="/home" />} />
+        <Route path="/login" component={Login} exact={true} />
+        <Route path="/registo" component={Registo} exact={true} />
+        <Route path="/validarregisto" component={ValidarRegisto} exact={true} />
+        <Route path="/programa" component={Programa} />
+        <Route path="/atividade/:id" component={DescricaoAtividade} />
       </IonRouterOutlet>
     </IonReactRouter>
   </IonApp>
