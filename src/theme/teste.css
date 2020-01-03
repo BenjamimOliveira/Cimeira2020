@@ -143,6 +143,14 @@
         font-weight: bold;
     }
     
+    .btnAmarelo ion-button {
+        --border-radius: 0;
+        --background: #FFEC00;
+        margin: 0;
+        color: #A61526;
+        font-weight: bold;
+    }
+    
     .pagLogin .loginForm .ion-margin {
         margin: 8px 16px;
     }
