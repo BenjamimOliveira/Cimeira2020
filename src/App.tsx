@@ -29,7 +29,6 @@ import '@ionic/react/css/display.css';
 import './theme/variables.scss';
 
 import Workshops from './pages/Workshops';
-import Programa from './pages/Programa';
 import Oradores from './pages/Oradores';
 import FeiraEmprego from './pages/FeiraEmprego';
 import MyAgenda from './pages/MyAgenda';
