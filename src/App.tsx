@@ -26,22 +26,35 @@ import '@ionic/react/css/flex-utils.css';
 import '@ionic/react/css/display.css';
 
 /* Theme variables */
-import './theme/variables.css';
+import './theme/variables.scss';
 
+import Workshops from './pages/Workshops';
+import Programa from './pages/Programa';
+import Oradores from './pages/Oradores';
+import FeiraEmprego from './pages/FeiraEmprego';
+import MyAgenda from './pages/MyAgenda';
+import PhotoFeed from './pages/PhotoFeed';
+import Localizacao from './pages/Localizacao';
 import './theme/teste.css';
-
 const App: React.FC = () => (
   
   <IonApp>
     <IonReactRouter>
       <IonRouterOutlet>
         <Route path="/home" component={Home} exact={true} />
-        <Route exact path="/" render={() => <Redirect to="/home" />} />
-        <Route path="/login" component={Login} exact={true} />
-        <Route path="/registo" component={Registo} exact={true} />
-        <Route path="/validarregisto" component={ValidarRegisto} exact={true} />
-        <Route path="/programa" component={Programa} />
+        <Route path="/workshop" component={Workshops}/>        
+        <Route path="/programa" component={Programa}/>     
+        <Route path="/oradores" component={Oradores}/>              
+        <Route path="/myagenda" component={MyAgenda}/>                       
+        <Route path="/photofeed" component={PhotoFeed}/>           
+        <Route path="/feiraemprego" component={FeiraEmprego}/>               
+        <Route path="/localizacao" component={Localizacao}/>
+        <Route exact path="/" render={(_txt) => <Redirect to="/home" />} />
         <Route path="/atividade/:id" component={DescricaoAtividade} />
+        <Route path="/validarregisto" component={ValidarRegisto} exact={true} />
+        <Route path="/registo" component={Registo} exact={true} />
+        <Route path="/login" component={Login} exact={true} />
+        <Route exact path="/" render={() => <Redirect to="/home" />} />
       </IonRouterOutlet>
     </IonReactRouter>
   </IonApp>

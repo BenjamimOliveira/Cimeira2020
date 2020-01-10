@@ -2,33 +2,46 @@ import { IonContent, IonPage, IonRow, IonCol, IonGrid, IonItem, IonImg, IonText,
 import React, { useState } from 'react';
 import { RouteComponentProps } from 'react-router';
 import axios from 'axios';
+import "./Home.scss";
 //{"id":"1","path":"http:\/\/app.cimeira.ipvc.pt\/files\/icon_programa.png","title":"PROGRAMA","type":"p"}
 // http://app.cimeira.ipvc.pt/api/main/1
 
-const URL = 'http://app.cimeira.ipvc.pt/api/main/1';
+const URL = 'http://app.cimeira.ipvc.pt/api/main/';
 
 const Home: React.FC<RouteComponentProps> = (props) => {
-    var [opcoes, setOpcoes] = useState({id:null, path: "", title:""});
+    // -- Menus principais
+    var [menu1, setmenu1] = useState({id:null, path: "", title:"", type:""});
+    var [menu2, setmenu2] = useState({id:null, path: "", title:"", type:""});
+    var [menu3, setmenu3] = useState({id:null, path: "", title:"", type:""});
+    var [menu4, setmenu4] = useState({id:null, path: "", title:"", type:""});
+    // -- Menu secundario (Footer)    
+    var [menu5, setmenu5] = useState({id:null, path: "", title:"", type:""});
+    var [menu6, setmenu6] = useState({id:null, path: "", title:"", type:""});
+    var [menu7, setmenu7] = useState({id:null, path: "", title:"", type:""});
 
     var [possuiResultados_programa, setPossuiResultados_programa] = useState(false);
 
-    // eslint-disable-next-line
     var [tituloPrograma, setTituloPrograma] = useState("");
 
-    //opcoes = {"id":"12","path":"http:\/\/app.cimeira.ipvc.pt\/files\/icon_programa.png","title":"PROGRAMA","type":"p"};
+    //menu1 = {"id":"12","path":"http:\/\/app.cimeira.ipvc.pt\/files\/icon_programa.png","title":"PROGRAMA","type":"p"};
+
+    function callAxios(){
+        Promise.all([axios.get(URL+"1"), axios.get(URL+"2"), axios.get(URL+"3"), axios.get(URL+"4"), axios.get(URL+"5"), axios.get(URL+"6"), axios.get(URL+"7")])
+        .then(([result1, result2, result3, result4, result5, result6, result7]) => {
+            setmenu1(result1.data);
+            setmenu2(result2.data);
+            setmenu3(result3.data);
+            setmenu4(result4.data);
+            setmenu5(result5.data);
+            setmenu6(result6.data);
+            setmenu7(result7.data);
+                            
+            setPossuiResultados_programa(true);
+        })
+    }
 
     useIonViewWillEnter(() => {
-        axios({
-            method: "get",
-            url: URL
-        }).then(resultado => {
-            console.log(resultado);
-            setOpcoes(resultado.data);
-            setTituloPrograma(resultado.data.title);
-            setPossuiResultados_programa(true);
-        }).catch(erro => {
-            console.log("ERRO => ", erro);
-        })
+        callAxios();
     });
 
     return (
@@ -45,61 +58,68 @@ const Home: React.FC<RouteComponentProps> = (props) => {
                     </IonCol>
                 </IonGrid>
 
-                <IonGrid class="grid">
+                <IonGrid no-padding no-margin class="grid">
                     <IonRow>
                         { possuiResultados_programa && 
                             <IonCol size="6" class="col">
-                                <IonItem onClick={() => props.history.push('/programa')} color="#FFFFFF" class="ion-text-center menus">
-                                    <div>
-                                        <IonImg src='http:\/\/app.cimeira.ipvc.pt\/files\/icon_programa.png' class="categoriasLogo menus" />
-                                        <IonText color="tertiary">{opcoes.title}</IonText>
-                                        {/* <IonText color="tertiary">{tituloPrograma}</IonText> */}
-                                    </div>
+                                <IonItem onClick={() => props.history.push('/programa')} color="#FFFFFF" class="ion-text-center">
+                                <IonGrid>
+                                    <IonCol>
+                                        <div><IonImg src={menu3.path} class="categoriasLogo menus" /></div>
+                                        <div><IonText color="tertiary" >{menu3.title}</IonText></div>
+                                    </IonCol>
+                                </IonGrid> 
                                 </IonItem>
                             </IonCol>
                         }
 
                         <IonCol size="6" >
                             <IonItem onClick={() => props.history.push('/oradores')} color="#FFFFFF" class="ion-text-center">
-                                <div>
-                                    <IonImg src='http:\/\/app.cimeira.ipvc.pt\/files\/icon_oradores.png' class="categoriasLogo" />
-                                    <IonText color="tertiary">ORADORES</IonText>
-                                </div>
+                                <IonGrid>
+                                    <IonCol>
+                                        <div><IonImg src={menu2.path} class="categoriasLogo menus" /></div>
+                                        <div><IonText color="tertiary" >{menu2.title}</IonText></div>
+                                    </IonCol>
+                                </IonGrid> 
                             </IonItem>
                         </IonCol>
                     </IonRow>
 
                     <IonRow>
                         <IonCol size="6">
-                            <IonItem onClick={() => props.history.push('/feiraemprego')} color="#FFFFFF" class="ion-text-center menus">
-                                <div>
-                                    <IonImg src='http:\/\/app.cimeira.ipvc.pt\/files\/icon_workshops.png' class="categoriasLogo" />
-                                    <IonText color="tertiary">FEIRA EMPREGO</IonText>
-                                </div>
+                            <IonItem onClick={() => props.history.push('/feiraemprego')} color="#FFFFFF" class="ion-text-center">
+                                <IonGrid>
+                                    <IonCol>
+                                        <div><IonImg src={menu3.path} class="categoriasLogo menus" /></div>
+                                        <div><IonText color="tertiary" >{menu3.title}</IonText></div>
+                                    </IonCol>
+                                </IonGrid>                            
                             </IonItem>
                         </IonCol>
 
                         <IonCol size="6" >
                             <IonItem onClick={() => props.history.push('/workshop')} color="#FFFFFF" class="ion-text-center">
-                                <div>
-                                    <IonImg src='http:\/\/app.cimeira.ipvc.pt\/files\/logo_Cimeira.png' class="categoriasLogo" />
-                                    <IonText color="tertiary">WORKSHOPS</IonText>
-                                </div>
+                                <IonGrid>
+                                    <IonCol>
+                                        <div><IonImg src={menu4.path} class="categoriasLogo menus" /></div>
+                                        <div><IonText color="tertiary" >{menu4.title}</IonText></div>
+                                    </IonCol>
+                                </IonGrid>
                             </IonItem>
                         </IonCol>
                     </IonRow>
 
                 </IonGrid>
 
-                <IonFooter class="footer">
-                    <IonGrid>
-                        <IonRow>
-                            <IonCol size="4" class="col">
-                                <IonItem onClick={() => props.history.push('/myagenda')} color="#f" class="ion-text-center footerItems">
+                <IonFooter no-margin no-padding class="footer">
+                    <IonGrid no-margin no-padding class="grid">
+                        <IonRow no-margin no-padding>
+                            <IonCol no-margin no-padding size="4" class="col">
+                                <IonItem no-margin no-padding onClick={() => props.history.push('/myagenda')} color="#f" class="ion-text-center footerItems">
                                     <IonGrid>
                                         <IonCol>
-                                            <IonImg src='https://image.flaticon.com/icons/png/512/2312/2312137.png' class="subcategoriasLogo" />
-                                            <IonText color="medium">MyAgea</IonText>
+                                            <IonImg src={menu5.path} class="subcategoriasLogo" />
+                                            <IonText color="medium" class="textFooter">{menu5.title}</IonText>
                                         </IonCol>
                                     </IonGrid>
                                 </IonItem>
@@ -108,8 +128,8 @@ const Home: React.FC<RouteComponentProps> = (props) => {
                                 <IonItem onClick={() => props.history.push('/myagenda')} color="#f" class="ion-text-center footerItems">
                                     <IonGrid>
                                         <IonCol>
-                                            <IonImg src='https://image.flaticon.com/icons/png/512/2312/2312137.png' class="subcategoriasLogo" />
-                                            <IonText color="medium">MyAgea</IonText>
+                                            <IonImg src={menu6.path} class="subcategoriasLogo" />
+                                            <IonText color="medium" class="textFooter">{menu6.title}</IonText>
                                         </IonCol>
                                     </IonGrid>
                                 </IonItem>
@@ -118,8 +138,8 @@ const Home: React.FC<RouteComponentProps> = (props) => {
                                 <IonItem onClick={() => props.history.push('/myagenda')} color="#f" class="ion-text-center footerItems">
                                     <IonGrid>
                                         <IonCol>
-                                            <IonImg src='https://image.flaticon.com/icons/png/512/2312/2312137.png' class="subcategoriasLogo" />
-                                            <IonText color="medium">MyAgea</IonText>
+                                            <IonImg src={menu7.path} class="subcategoriasLogo" />
+                                            <IonText color="medium" class="textFooter">{menu7.title}</IonText>
                                         </IonCol>
                                     </IonGrid>
                                 </IonItem>
