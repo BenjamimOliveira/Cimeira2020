@@ -12,6 +12,7 @@ const Home: React.FC<RouteComponentProps> = (props) => {
 
     var [possuiResultados_programa, setPossuiResultados_programa] = useState(false);
 
+    // eslint-disable-next-line
     var [tituloPrograma, setTituloPrograma] = useState("");
 
     //opcoes = {"id":"12","path":"http:\/\/app.cimeira.ipvc.pt\/files\/icon_programa.png","title":"PROGRAMA","type":"p"};
