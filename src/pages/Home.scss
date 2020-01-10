@@ -1,3 +1,98 @@
-ion-content.background{
+ion-content{
     --background: url("https://trello-attachments.s3.amazonaws.com/5deae10d1adb7263adb50834/360x721/59d0ad57b742ca6ae29df143740cb2e9/background.png") 0 0/100% 100% no-repeat;
+    padding-left: 0px;;
+}
+
+ion-item{
+    background-color: transparent;
+}
+
+.yellow{
+    color: "#555555";
+}
+
+.footer{
+    height: 4em;
+    margin: 0px;
+    padding: 0px;
+    display: inline-block;
+    position: fixed;
+    bottom:0;
+    background-color: rgb(255, 255, 255);
+}
+
+.textFooter {
+    font-size: 0.7em;
+}
+
+.footerItems{
+    vertical-align: text-top;
+    padding: 0px;
+    height: 100%;
+    background-color: transparent;
+    display: flex!important;
+    align-content: center!important;
+    align-items: center!important;
+}
+
+.divFooter{
+    background-color: #f80ba9;
+    padding-left: 0px;
+}
+
+.content{
+    background-color: #f80ba9;
+}
+
+.grid-bottom{
+    width:100% !important; 
+    margin-left: 0 !important; 
+    margin-right: 0 !important;
+}
+
+.grid {
+    width:100%;
+    margin-left:0 !important;
+     margin-right:0 !important;
+}
+
+.col{
+    flex: auto;
+    padding-bottom: 3em;
+    padding-inline-start: unset;
+}
+
+.subcategoriasLogo {
+    display: flexbox;
+    background-color: transparent;
+    height: 1.5em;
+}
+
+.categoriasLogo {
+    clear: both;
+}
+
+.boasvindas{
+    font-size: 3em;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 0.8em;
+}
+
+.pessoa{
+    font-size: 2em;    
+    margin: 0 auto;
+    text-align: center;
+}
+
+.menus{  
+    display: inline-flex;  
+}
+
+ion-grid{
+    ion-row{
+        ion-col{
+            padding: 0;
+        }
+    }    
 }

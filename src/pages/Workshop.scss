@@ -1,0 +1,40 @@
+.ion-content-workshop{
+    --background: #ffffff;
+}
+
+.page {
+    margin: 0px;
+}
+
+.linha {
+    height: 1px;
+    color: #000000;
+}
+
+.linha-topo{
+    --width: 100%;
+    color: #A61526;
+    background: #FFEC00;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 0;
+    padding: 2px 0;
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    display: block;
+}
+
+.navbar{    
+    --background: #A61526;
+    --ion-color-base: #A61526 !important;
+    color: white;
+}
+
+.navbarSearch{    
+    --background: #A61526cc;
+    --ion-color-base: #A61526cc !important;
+    color: white;
+}
