@@ -2,7 +2,7 @@
 
 # dependencies
 /node_modules
-!/node_modules/@capacitor
+!/node_modules/@capacitor/*
 /.pnp
 .pnp.js
 
