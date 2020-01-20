@@ -1,50 +1,65 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButtons, IonBackButton } from '@ionic/react';
-import React, { useEffect, useState } from 'react';
-import Axios from 'axios';
-
-class Categoria {
-  id: string;
-  path: string;
-  title: string;
-  type: string;
-
-  constructor(id: string, path: string, title: string, type: string){
-    this.id = id;
-    this.path = path;
-    this.title = title;
-    this.type = type;
-  }
-}
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButtons, IonButton, IonIcon, IonBackButton, IonSearchbar, IonText, useIonViewWillEnter } from '@ionic/react';
+import React, { useState } from 'react';
+import axios from 'axios';
+import ItemProgramaHorario from "../components/itemProgramaHorario"
 
 const Programa: React.FC = () => {
-    const [data, setData] = useState({});
-    var cat = new Categoria("a","a","a","a");
-  	useEffect(() => {
-      async function callAxios(){
-        const result = await Axios(
-          "http://app.cimeira.ipvc.pt/api/main/1"
-        );
-        cat = new Categoria(result.data.id, result.data.path, result.data.title, result.data.type);
-        console.log(cat.title + "data");
-        setData(result.data);  
-      }
-      callAxios();
-    });
-    
+
+  const [ possuiResultados, setPossuiResultados ] = useState(false);
+  const [ categorias, setCategorias ] = useState([]);
+  const [ categoriasMostrar, setCategoriasMostrar ] = useState([]);
+  const [ mostraBarraPesquisa, setMostraBarraPesquisa ] = useState(false);
+
+  function procura(valor: string) {
+    setCategoriasMostrar(categorias.filter(function(categoria){
+      return (categoria['categoria'] as string).toLowerCase().includes(valor.toLowerCase());
+    }));
+  }
+
+  useIonViewWillEnter(() => {
+    // -- obter lista de categorias
+    axios({
+      method: "get",
+      url: "http://app.cimeira.ipvc.pt/api/programa"
+    }).then(resultado => {        
+        setPossuiResultados(true);
+        setCategorias(resultado.data);
+        setCategoriasMostrar(resultado.data);
+    }).catch(erro => {
+        console.log("ERRO", erro);
+    })
+  });
+
   return (
     <IonPage>
       <IonHeader>
-        <IonToolbar>
+      { !mostraBarraPesquisa  && 
+        <IonToolbar className="toolbarSemTransparencia">
+          <IonButtons slot="start" >
+            <IonBackButton defaultHref="/home" className="txtBranco"/>
+          </IonButtons>
           <IonTitle>Programa</IonTitle>
-            <IonButtons slot="start">
-              <IonBackButton defaultHref='/home'/>
-            </IonButtons>      
+          <IonButtons slot="end">
+            <IonButton expand="block" onClick={() => {possuiResultados ? setMostraBarraPesquisa(true) : setMostraBarraPesquisa(false)}}>
+              <IonIcon slot="icon-only" name="search" className="txtBranco"/>
+            </IonButton>
+          </IonButtons>
         </IonToolbar>
+      }
+      { mostraBarraPesquisa && possuiResultados &&
+        <IonToolbar className="toolbarSemTransparencia">
+          <IonSearchbar showCancelButton="always" cancelButtonText="Cancelar" className="barraPesquisaTransparente" placeholder="Pesquisar Categoria" onIonBlur={() => setMostraBarraPesquisa(false)} onIonCancel={() => setMostraBarraPesquisa(false)} onIonChange={(e) => {procura((e.target as HTMLInputElement).value)}}></IonSearchbar>
+        </IonToolbar>
+      }
       </IonHeader>
-      <IonContent className="ion-padding">
-        
-          <h1>{cat.title}</h1>
-        
+
+      <IonContent fullscreen className="backgroundBranco">
+        <IonText className="txtCentroCultural">CENTRO CULTURAL</IonText>
+        {/*-- List of Text Items --*/}
+        { possuiResultados === true && categoriasMostrar.map(function(categoria) {
+            return <ItemProgramaHorario texto={categoria['categoria']} urlImagem={categoria['path']} idCategoria={categoria['id']} key={categoria['id']}></ItemProgramaHorario>
+        })
+        }
       </IonContent>
     </IonPage>
   );
