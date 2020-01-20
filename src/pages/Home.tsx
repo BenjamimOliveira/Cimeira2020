@@ -50,10 +50,10 @@ const Home: React.FC<RouteComponentProps> = (props) => {
                 <IonGrid class="ion-align-items-center">
                     <IonCol size="12">
                         <IonRow>
-                            <IonText color="light" class=" boasvindas">BEM-VINDA</IonText>
+                            <IonText color="light" class=" boasvindas">BEM-VINDO</IonText>
                         </IonRow>
                         <IonRow>
-                            <IonText color="light" class="pessoa">PESSOA</IonText>
+                            <IonText color="light" class="pessoa">Á CIMEIRA</IonText>
                         </IonRow>
                     </IonCol>
                 </IonGrid>
@@ -65,8 +65,8 @@ const Home: React.FC<RouteComponentProps> = (props) => {
                                 <IonItem onClick={() => props.history.push('/programa')} color="#FFFFFF" class="ion-text-center">
                                 <IonGrid>
                                     <IonCol>
-                                        <div><IonImg src={menu3.path} class="categoriasLogo menus" /></div>
-                                        <div><IonText color="tertiary" >{menu3.title}</IonText></div>
+                                        <div><IonImg src={menu1.path} class="categoriasLogo menus" /></div>
+                                        <div><IonText color="tertiary" >{menu1.title}</IonText></div>
                                     </IonCol>
                                 </IonGrid> 
                                 </IonItem>
