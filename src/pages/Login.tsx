@@ -31,8 +31,8 @@ const Login: React.FC = () => {
         }
 
         // -- validar password (tamanho minimo)
-        if(!(password.length >= 5)) {
-            setToast({state: true, message: "Erro a realizar o login: A palavra-passe dada é muito curta! São necessários no mínimo 5 catacteres!"});
+        if(!(password.length >= 6)) {
+            setToast({state: true, message: "Erro a realizar o login: A palavra-passe dada é muito curta! São necessários no mínimo 6 catacteres!"});
             return;
         }
 
