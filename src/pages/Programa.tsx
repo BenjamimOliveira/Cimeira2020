@@ -60,6 +60,7 @@ const Programa: React.FC = () => {
             return <ItemProgramaHorario texto={categoria['categoria']} urlImagem={categoria['path']} idCategoria={categoria['id']} key={categoria['id']}></ItemProgramaHorario>
         })
         }
+        
       </IonContent>
     </IonPage>
   );
