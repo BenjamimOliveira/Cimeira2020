@@ -58,6 +58,8 @@ const Atividade: React.FC<UserDetailPageProps> = ({match}) => {
       url: "http://app.cimeira.ipvc.pt/api/atividade_detalhes/" + match.params.id
     }).then(resultado => {        
         setPossuiResultados(true);
+        if(resultado.data.moderador == null)
+          resultado.data.moderador = "";
         setAtividade(resultado.data);
         setTxtTitulo((resultado.data.categoria.categoria).toLowerCase().charAt(0).toUpperCase() + (resultado.data.categoria.categoria).toLowerCase().slice(1));
         console.log(resultado)
@@ -74,11 +76,6 @@ const Atividade: React.FC<UserDetailPageProps> = ({match}) => {
             <IonBackButton defaultHref="/programa" className="txtBranco"/>
           </IonButtons>
           <IonTitle>{txtTitulo}</IonTitle>
-          <IonButtons slot="end">
-            <IonButton expand="block">
-              <IonIcon slot="icon-only"className="txtBranco shareIcon"/>
-            </IonButton>
-          </IonButtons>
         </IonToolbar>
       </IonHeader>
 
@@ -94,8 +91,8 @@ const Atividade: React.FC<UserDetailPageProps> = ({match}) => {
         { possuiResultados === true &&
           <div className="areaInformacao" style={{padding: "8px 16px", marginTop: "10px"}}>
             <div>
-              <IonText style={{fontSize: "26px", color: "#4a4a4a", fontWeight: "bold", marginBottom: 0, paddingBottom: 0, lineHeight: "0px"}}><p>{atividade.atividade}</p></IonText>
-              <IonText style={{fontSize: "12px", color: "#757575", marginTop: 0, paddingTop: 0}}><p>Moderador: {atividade.atividade}</p></IonText>
+              <IonText style={{fontSize: "26px", color: "#4a4a4a", fontWeight: "bold", marginBottom: 0, paddingBottom: 0, lineHeight: "28px"}}><p>{atividade.atividade}</p></IonText>
+              <IonText style={{fontSize: "12px", color: "#757575", marginTop: "-100px", paddingTop: 0}}><p>Moderador: {atividade.moderador}</p></IonText>
               <div style={styl_infoHorario}>
                 <div style={styl_infoHorario_dentro}>
                   <p style={{marginRight: "5px"}}>Início: </p>
