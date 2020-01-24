@@ -83,7 +83,7 @@ const Palestra: React.FC<PropsInfoPalestra> = ({match}) => {
         }
         { !possuiResultados &&
           <div style={{height: "95%", display: "flex", padding: "10px", alignItems: "center", justifyContent: "center", color: "#9b9b9b"}}>
-            <IonText>A carregar informações da atividade</IonText>
+            <IonText>A carregar informações da palestra</IonText>
           </div>
         }
         { possuiResultados === true &&
