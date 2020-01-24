@@ -53,7 +53,7 @@ ion-item{
 .grid {
     width:100%;
     margin-left:0 !important;
-     margin-right:0 !important;
+    margin-right:0 !important;
 }
 
 .col{
@@ -87,6 +87,15 @@ ion-item{
 
 .menus{  
     display: inline-flex;  
+}
+
+.butCentro {
+    position: absolute;
+    top: 35%;
+    left: 35%; 
+    height: 30%;
+    width: 30%;
+    color: #E2000F;
 }
 
 ion-grid{
