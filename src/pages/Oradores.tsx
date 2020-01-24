@@ -57,7 +57,7 @@ const Oradores: React.FC = () => {
 
 
       <IonContent fullscreen className="backgroundBranco">
-        <IonText className="txtCentroCultural">GIL EANES</IonText>
+        <IonText className="local_atividade">GIL EANES</IonText>
         { possuiResultados === true && oradoresAMostrar.map(function(orador) {
             return <ItemListagemOradores key={orador['id']} nome={orador['nome']} cargo={orador['cargo']} urlImagem={orador['foto']} hora={(orador['hora'] as string).substr(0, (orador['hora'] as string).length - 3)} idOrador={orador['id']}></ItemListagemOradores>
         })

@@ -30,6 +30,7 @@ import './theme/variables.scss';
 
 import Workshops from './pages/Workshops';
 import Oradores from './pages/Oradores';
+import Palestra from './pages/Palestra';
 import FeiraEmprego from './pages/FeiraEmprego';
 import MyAgenda from './pages/MyAgenda';
 import PhotoFeed from './pages/PhotoFeed';
@@ -43,7 +44,8 @@ const App: React.FC = () => (
         <Route path="/home" component={Home} exact={true} />
         <Route path="/workshop" component={Workshops}/>        
         <Route path="/programa" component={Programa}/>     
-        <Route path="/oradores" component={Oradores}/>              
+        <Route path="/oradores" component={Oradores}/> 
+        <Route path="/palestra/:id" component={Palestra} />             
         <Route path="/myagenda" component={MyAgenda}/>                       
         <Route path="/photofeed" component={PhotoFeed}/>           
         <Route path="/feiraemprego" component={FeiraEmprego}/>               
@@ -57,5 +59,14 @@ const App: React.FC = () => (
     </IonReactRouter>
   </IonApp>
 );
+
+
+{/* <Route exact path="/" render={() => (
+  loggedIn ? (
+    <Redirect to="/dashboard"/>
+  ) : (
+    <PublicHomePage/>
+  )
+)}/> */}
 
 export default App;

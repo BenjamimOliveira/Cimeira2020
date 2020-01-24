@@ -57,7 +57,8 @@
         color: white;
     }
     
-    .txtCentroCultural {
+    .txtCentroCultural,
+    .local_atividade {
         --width: 100%;
         color: #A61526;
         background: #FFEC00;
