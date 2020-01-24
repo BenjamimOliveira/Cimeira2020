@@ -16,7 +16,6 @@ const Workshops: React.FC = () => {
   function truncarHora(hora: string){
     var horaTemp = hora;
     horaTemp = horaTemp.slice(0, -3);
-    horaTemp = horaTemp+"h";
     return horaTemp;
   }
   
@@ -67,7 +66,7 @@ const Workshops: React.FC = () => {
       <IonLabel><IonText class="linha-topo">CENTRO CULTURAL</IonText></IonLabel>
       
       { possuiResultados === true && workshopsMostrar.map(function(work) {
-            return <WorkshopList hora={truncarHora(work['hora'])} desc={work['titulo']}/>
+            return <WorkshopList id={work['id']} hora={truncarHora(work['hora'])} desc={work['titulo']} key={work["id"]}/>
             
         })
         }
