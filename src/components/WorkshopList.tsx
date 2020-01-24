@@ -1,8 +1,10 @@
 import React, {Component} from "react"
-import { IonItem, IonText, IonGrid, IonCol, IonRow, IonImg } from "@ionic/react";
+import { IonItem, IonText, IonGrid, IonCol, IonRow, IonImg, IonIcon } from "@ionic/react";
 import "./WorkshopList.scss";
+import { Link } from "react-router-dom";
 
 interface Data {
+    id: string;
     hora: string;
     desc: string;
   }
@@ -15,13 +17,15 @@ const WorkshopList: React.FC<Data> = (props) => {
                     <IonText class="ion-text-center"><div>{props.hora}</div></IonText>             
                 </IonCol>
 
-                <IonCol size="7" class="desc">                   
+                <IonCol size="8" class="desc">                   
                     <IonText>{props.desc}</IonText>                
                 </IonCol>
 
-                <IonCol size="3">
+                <IonCol size="2">
                     <IonItem>
-                        <IonImg slot="end" src="https://cdn2.iconfinder.com/data/icons/arrows-vol-1-1/32/right-512.png" class="img"/>
+                        <Link to={"/descrWorkshop/" + props.id}>
+                            <IonIcon name="arrow-forward" style={{ color: "#4b4b4b", fontSize: "24px", minWidth: "24px" }} ></IonIcon>
+                        </Link>
                     </IonItem>
                 </IonCol>
             </IonRow>                      

@@ -35,7 +35,12 @@ import FeiraEmprego from './pages/FeiraEmprego';
 import MyAgenda from './pages/MyAgenda';
 import PhotoFeed from './pages/PhotoFeed';
 import Localizacao from './pages/Localizacao';
+import DescricaoWorkshop from "./pages/DescriçãoWorkshop";
 import './theme/teste.css';
+import Recrutamento from "./pages/pagesFeiraEmprego/Recrutamento";
+import Empresas from './pages/pagesFeiraEmprego/Empresas';
+import FeiraVirtual from './pages/pagesFeiraEmprego/FeiraVirtual';
+import Pitch from './pages/pagesFeiraEmprego/Pitchs';
 const App: React.FC = () => (
   
   <IonApp>
@@ -50,9 +55,16 @@ const App: React.FC = () => (
         <Route path="/photofeed" component={PhotoFeed}/>           
         <Route path="/feiraemprego" component={FeiraEmprego}/>               
         <Route path="/localizacao" component={Localizacao}/>
-        <Route path="/atividade/:id" component={DescricaoAtividade} />
+        <Route path="/atividade/:id" component={DescricaoAtividade} />        
+        <Route path="/descrWorkshop/:id" component={DescricaoWorkshop} />
         <Route path="/validarregisto" component={ValidarRegisto} exact={true} />
         <Route path="/registo" component={Registo} exact={true} />
+
+        <Route path="/recrutamento" component={Recrutamento} exact={true} />
+        <Route path="/empresas" component={Empresas} exact={true} />        
+        <Route path="/feiraVirtual" component={FeiraVirtual} exact={true} />
+        <Route path="/pitchs" component={Pitch} exact={true} />
+
         <Route path="/login" component={Login} exact={true} />
         <Route exact path="/" render={() => <Redirect to="/login" />} />
       </IonRouterOutlet>
