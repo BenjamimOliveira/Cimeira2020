@@ -110,7 +110,7 @@ const Registo: React.FC = () => {
                             <form method="POST" action="#">
                                 <div className="loginForm">
                                     <IonItem className="ion-margin">
-                                        <IonInput autocomplete="off" required type="text" value={nome} onInput={(e) => setNome((e.target as HTMLInputElement).value)} placeholder="Nome" inputmode="text"></IonInput>
+                                        <IonInput autocomplete="off" required type="text" value={nome} onInput={(e) => setNome((e.target as HTMLInputElement).value)} placeholder="Nome Completo" inputmode="text"></IonInput>
                                     </IonItem>
 
                                     <IonItem className="ion-margin">
