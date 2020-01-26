@@ -7,6 +7,7 @@ import "./Home.scss";
 // http://app.cimeira.ipvc.pt/api/main/1
 
 const URL = 'http://app.cimeira.ipvc.pt/api/main/';
+const URLButMeio = "http://app.cimeira.ipvc.pt/api/programa/pdf";
 
 const Home: React.FC<RouteComponentProps> = (props) => {
     // -- Menus principais
@@ -18,13 +19,17 @@ const Home: React.FC<RouteComponentProps> = (props) => {
     var [menu5, setmenu5] = useState({id:null, path: "", title:"", type:""});
     var [menu6, setmenu6] = useState({id:null, path: "", title:"", type:""});
     var [menu7, setmenu7] = useState({id:null, path: "", title:"", type:""});
+    // -- Botao meio
+    var [butCentro, setButCentro] = useState("");
 
     var [possuiResultados_programa, setPossuiResultados_programa] = useState(false);
 
     var [tituloPrograma, setTituloPrograma] = useState("");
 
     //menu1 = {"id":"12","path":"http:\/\/app.cimeira.ipvc.pt\/files\/icon_programa.png","title":"PROGRAMA","type":"p"};
+  
 
+    
   
 
     function callAxios(){
@@ -44,12 +49,24 @@ const Home: React.FC<RouteComponentProps> = (props) => {
 
     useIonViewWillEnter(() => {
         callAxios();
+
+        axios({
+            method: "get",
+            url: URLButMeio
+          }).then(resultado => {        
+              setButCentro(resultado.data);
+              console.log(resultado);
+          }).catch(erro => {
+              console.log("ERRO", erro);
+          })
     });
 
     return (
         <IonPage>
-            <IonContent no-padding no-margin margin-left class="grid-bottom">
-                <IonGrid class="ion-align-items-center">
+            
+            <IonContent no-padding no-margin margin-left class="grid-bottom" overflow-scroll="false">
+                <div className="ecraGeral" style={{height:"20%"}}>
+                <IonGrid class="ion-align-items-center dataTopo">
                     <IonCol size="12">
                         <IonRow>
                             <IonText color="light" class=" boasvindas">BEM-VINDO</IonText>
@@ -59,10 +76,11 @@ const Home: React.FC<RouteComponentProps> = (props) => {
                         </IonRow>
                     </IonCol>
                 </IonGrid>
-
+              
                 <div style={{position: "relative", width: "100%"}}>
                 <IonGrid no-padding no-margin class="grid">
                     <IonRow>
+
                         { possuiResultados_programa && 
                             <IonCol size="6" class="col">
                                 <IonItem lines="none" onClick={() => props.history.push('/programa')} color="#FFFFFF" class="ion-text-center">
@@ -77,6 +95,7 @@ const Home: React.FC<RouteComponentProps> = (props) => {
                             </IonCol>
                         }
 
+                        { possuiResultados_programa && 
                         <IonCol size="6" >
                             <IonItem lines="none" onClick={() => props.history.push('/oradores')} color="#FFFFFF" class="ion-text-center">
                                 <IonGrid>
@@ -87,10 +106,14 @@ const Home: React.FC<RouteComponentProps> = (props) => {
                                 </IonGrid> 
                             </IonItem>
                         </IonCol>
+                        }
+
                     </IonRow>
 
                     <IonRow>
-                        <IonCol size="6">
+
+                        { possuiResultados_programa && 
+                        <IonCol size="6" style={{marginBottom:"4em"}}>
                             <IonItem lines="none" onClick={() => props.history.push('/feiraemprego')} color="#FFFFFF" class="ion-text-center">
                                 <IonGrid>
                                     <IonCol>
@@ -100,8 +123,10 @@ const Home: React.FC<RouteComponentProps> = (props) => {
                                 </IonGrid>                            
                             </IonItem>
                         </IonCol>
+                        }
 
-                        <IonCol size="6" >
+                        { possuiResultados_programa && 
+                        <IonCol size="6">
                             <IonItem lines="none" onClick={() => props.history.push('/workshop')} color="#FFFFFF" class="ion-text-center">
                                 <IonGrid>
                                     <IonCol>
@@ -111,12 +136,17 @@ const Home: React.FC<RouteComponentProps> = (props) => {
                                 </IonGrid>
                             </IonItem>
                         </IonCol>
+                            }
                     </IonRow>
-
+                
                 </IonGrid>
-                <IonButton class="butCentro" color="tertiary" shape="round"><IonLabel color="primary">PROGRAMA<br/>CIMEIRA</IonLabel></IonButton>
+                { possuiResultados_programa && 
+                <div style={{ position: "absolute", top: "30%", left: "35%", height: "25%", width: "30%", color: "#E2000F", }}>
+                <IonButton strong href="http://app.cimeira.ipvc.pt/files/pdf_programa_cimeira/er_ei1.pdf"  class="buttonCentro" color="tertiary" shape="round"><IonLabel color="primary">PROGRAMA<br/>CIMEIRA</IonLabel></IonButton>
                 </div>
-
+                }
+                </div>
+                </div>
                 <IonFooter no-margin no-padding class="footer">
                     <IonGrid no-margin no-padding class="grid">
                         <IonRow no-lines no-margin no-padding>
