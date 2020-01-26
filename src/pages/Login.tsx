@@ -51,7 +51,7 @@ const Login: React.FC = () => {
             console.log(resultado);
             if(resultado.data.cod === 6){
                 setToast({state: true, message: "Login realizado com sucesso!"});
-                localStorage.setItem("UtilizadorLogin", email);
+                localStorage.setItem("UtilizadorLogin", resultado.data.message);
                 history.replace("/home");
             } else if(resultado.data.cod === 4){
                 setToast({state: true, message: "Ainda é necessário validar esta conta! Obtenha a chave de validação no seu email."});

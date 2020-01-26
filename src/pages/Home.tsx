@@ -10,6 +10,11 @@ const URL = 'http://app.cimeira.ipvc.pt/api/main/';
 const URLButMeio = "http://app.cimeira.ipvc.pt/api/programa/pdf";
 
 const Home: React.FC<RouteComponentProps> = (props) => {
+    
+    var nomeUser = localStorage.getItem("UtilizadorLogin");
+    if(nomeUser == null){
+        nomeUser="À CIMEIRA";
+    }
     // -- Menus principais
     var [menu1, setmenu1] = useState({id:null, path: "", title:"", type:""});
     var [menu2, setmenu2] = useState({id:null, path: "", title:"", type:""});
@@ -72,7 +77,7 @@ const Home: React.FC<RouteComponentProps> = (props) => {
                             <IonText color="light" class=" boasvindas">BEM-VINDO</IonText>
                         </IonRow>
                         <IonRow>
-                            <IonText color="light" class="pessoa">À CIMEIRA</IonText>
+                            <IonText color="light" class="pessoa">{nomeUser.toUpperCase()}</IonText>
                         </IonRow>
                     </IonCol>
                 </IonGrid>
@@ -149,6 +154,7 @@ const Home: React.FC<RouteComponentProps> = (props) => {
                 </div>
                 <IonFooter no-margin no-padding class="footer">
                     <IonGrid no-margin no-padding class="grid">
+                    { possuiResultados_programa && 
                         <IonRow no-lines no-margin no-padding>
                             <IonCol no-lines no-margin no-padding size="4" class="col">
                                 <IonItem lines="none" no-margin no-padding onClick={() => props.history.push('/myagenda')} color="#f" class="ion-text-center footerItems">
@@ -181,6 +187,7 @@ const Home: React.FC<RouteComponentProps> = (props) => {
                                 </IonItem>
                             </IonCol>
                         </IonRow>
+                        }
                     </IonGrid>
                 </IonFooter>
 
