@@ -74,7 +74,7 @@ const Home: React.FC<RouteComponentProps> = (props) => {
                 <IonGrid class="ion-align-items-center dataTopo">
                     <IonCol size="12">
                         <IonRow>
-                            <IonText color="light" class=" boasvindas">BEM-VINDO</IonText>
+                            <IonText color="light" class="boasvindas">BEM-VINDO</IonText>
                         </IonRow>
                         <IonRow>
                             <IonText color="light" class="pessoa">{nomeUser.toUpperCase()}</IonText>
@@ -102,7 +102,7 @@ const Home: React.FC<RouteComponentProps> = (props) => {
 
                         { possuiResultados_programa && 
                         <IonCol size="6" >
-                            <IonItem lines="none" onClick={() => props.history.push('/oradores')} color="#FFFFFF" class="ion-text-center">
+                            <IonItem lines="none" onClick={() => props.history.push('/empresas1')} color="#FFFFFF" class="ion-text-center">
                                 <IonGrid>
                                     <IonCol>
                                         <div><IonImg src={menu2.path} class="categoriasLogo menus" /></div>
@@ -156,7 +156,7 @@ const Home: React.FC<RouteComponentProps> = (props) => {
                     <IonGrid no-margin no-padding class="grid">
                     { possuiResultados_programa && 
                         <IonRow no-lines no-margin no-padding>
-                            <IonCol no-lines no-margin no-padding size="4" class="col">
+                            <IonCol no-lines no-margin no-padding size="6" class="col">
                                 <IonItem lines="none" no-margin no-padding onClick={() => props.history.push('/myagenda')} color="#f" class="ion-text-center footerItems">
                                     <IonGrid> 
                                         <IonCol>
@@ -166,7 +166,7 @@ const Home: React.FC<RouteComponentProps> = (props) => {
                                     </IonGrid>
                                 </IonItem>
                             </IonCol>
-                            <IonCol size="4" class="col">
+                            {/*<IonCol size="4" class="col">
                                 <IonItem lines="none" onClick={() => props.history.push('/myagenda')} color="#f" class="ion-text-center footerItems">
                                     <IonGrid>
                                         <IonCol>
@@ -175,8 +175,8 @@ const Home: React.FC<RouteComponentProps> = (props) => {
                                         </IonCol>
                                     </IonGrid>
                                 </IonItem>
-                            </IonCol>
-                            <IonCol size="4" class="col">
+                            </IonCol>*/}
+                            <IonCol size="6" class="col">
                                 <IonItem lines="none" onClick={() => props.history.push('/myagenda')} color="#f" class="ion-text-center footerItems">
                                     <IonGrid>
                                         <IonCol>

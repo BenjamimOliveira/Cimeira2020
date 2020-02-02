@@ -5,6 +5,10 @@
     .backgroundBranco {
         --background: #fff;
     }
+
+    .backgroundVermelho {
+        --background: #A61526;
+    }
     
     .md .shareIcon {
         background-color: white;

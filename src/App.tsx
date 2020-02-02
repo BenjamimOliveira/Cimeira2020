@@ -41,6 +41,8 @@ import Recrutamento from "./pages/pagesFeiraEmprego/Recrutamento";
 import Empresas from './pages/pagesFeiraEmprego/Empresas';
 import FeiraVirtual from './pages/pagesFeiraEmprego/FeiraVirtual';
 import Pitch from './pages/pagesFeiraEmprego/Pitchs';
+import VianaLinkMoments from './pages/pagesFeiraEmprego/VianaLinkMoments';
+import Empresas1 from './pages/Empresas1';
 const App: React.FC = () => (
   
   <IonApp>
@@ -59,11 +61,13 @@ const App: React.FC = () => (
         <Route path="/descrWorkshop/:id" component={DescricaoWorkshop} />
         <Route path="/validarregisto" component={ValidarRegisto} exact={true} />
         <Route path="/registo" component={Registo} exact={true} />
+        <Route path="/empresas1" component={Empresas1}/>
 
         <Route path="/recrutamento" component={Recrutamento} exact={true} />
         <Route path="/empresas" component={Empresas} exact={true} />        
         <Route path="/feiraVirtual" component={FeiraVirtual} exact={true} />
         <Route path="/pitchs" component={Pitch} exact={true} />
+        <Route path="/vianalinkmoments" component={VianaLinkMoments} />
 
         <Route path="/login" component={Login} exact={true} />
         <Route exact path="/" render={() => <Redirect to="/login" />} />

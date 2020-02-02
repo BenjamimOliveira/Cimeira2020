@@ -12,7 +12,7 @@ const MyAgenda: React.FC = () => {
             </IonButtons>      
         </IonToolbar>
       </IonHeader>
-      <IonContent className="ion-padding">
+      <IonContent fullscreen className="backgroundVermelho">
         
       </IonContent>
     </IonPage>
