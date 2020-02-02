@@ -11,8 +11,7 @@ const FeiraEmprego: React.FC = () => {
   var [menu1, setmenu1] = useState({id:"", nome: "", foto:""});
   var [menu2, setmenu2] = useState({id:"", nome: "", foto:""});
   var [menu3, setmenu3] = useState({id:"", nome: "", foto:""});
-  var [menu4, setmenu4] = useState({id:"", nome: "", foto:""});
-  var [menu5, setmenu5] = useState({id:"", nome: "", foto:""});  
+  var [menu4, setmenu4] = useState({id:"", nome: "", foto:""}); 
   var [feiraVirtual, setFeiraVirtual] = useState({link:""});
   var [possuiResultados, setPossuiResultados ] = useState(false);
 
@@ -41,7 +40,6 @@ const FeiraEmprego: React.FC = () => {
         setmenu2(resultado.data[1]);
         setmenu3(resultado.data[2]);
         setmenu4(resultado.data[3]);
-        setmenu5(resultado.data[4]);
     }).catch(erro => {
         console.log("ERRO feira emprego", erro);
     });
@@ -88,10 +86,10 @@ const FeiraEmprego: React.FC = () => {
             <div tabIndex={0}>
                 <div style={{ display: "flex", padding: "10px", alignItems: "center", justifyContent: "space-between" }}>
                     <div style={rect}>
-                        <IonImg src={menu3.foto} />
+                        <IonImg src={menu2.foto} />
                     </div>
                     <div style={{ marginLeft: "10px", width: "100%", display: "flex", alignItems: "center", justifyContent: "space-between", borderBottom: "1px solid #dfdfdf" }}>
-                        <p style={{ marginRight: "auto", color: "#4b4b4b", fontWeight: "bold" }}>{menu3.nome}</p>
+                        <p style={{ marginRight: "auto", color: "#4b4b4b", fontWeight: "bold" }}>{menu2.nome}</p>
                         <IonButton href={feiraVirtual.link} fill="clear" slot="end" style={{width:"24px"}} >
                           <IonIcon name="arrow-forward" style={{ color: "#4b4b4b", fontSize: "24px", minWidth: "24px" }}></IonIcon>
                         </IonButton>
@@ -101,8 +99,8 @@ const FeiraEmprego: React.FC = () => {
                 
             </div>
         </div>
-        <ItemFeiraEmprego texto={menu4.nome} idCategoria={menu4.id} urlImagem={menu4.foto} pathTo="/pitchs"/> 
-        <ItemFeiraEmprego texto={menu5.nome} idCategoria={menu5.id} urlImagem={menu5.foto} pathTo="/vianalinkmoments"/> 
+        <ItemFeiraEmprego texto={menu3.nome} idCategoria={menu3.id} urlImagem={menu3.foto} pathTo="/pitchs"/> 
+        <ItemFeiraEmprego texto={menu4.nome} idCategoria={menu4.id} urlImagem={menu4.foto} pathTo="/vianalinkmoments"/> 
         
         { console.log(menu1.nome + menu2.nome + menu3.nome) }
       </IonContent>

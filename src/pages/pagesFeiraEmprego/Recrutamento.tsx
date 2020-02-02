@@ -1,6 +1,7 @@
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButtons, IonBackButton, IonItem, IonImg, useIonViewWillEnter, IonText, IonLabel, IonButton, IonIcon, IonSearchbar } from '@ionic/react';
 import React, { useState } from 'react';
 import Axios from 'axios';
+import RecrutamentoList from '../../components/RecrutamentoList';
 
 const Recrutamento: React.FC = () => {
     
@@ -23,17 +24,47 @@ const Recrutamento: React.FC = () => {
     })
   });
 
+  function procura(valor: string) {
+    setRecrutamentoMostrar(recrutamento.filter(function(recruta){
+      return (recruta['nome'] as string).toLowerCase().includes(valor.toLowerCase());
+    }));
+  }
+
   return (
     <IonPage>
       <IonHeader>   
+        { !mostraBarraPesquisa  &&
         <IonToolbar className="navbar">
           <IonButtons slot="start" >
-            <IonBackButton defaultHref="/feiraemprego" className="txtBranco"/>
+            <IonBackButton defaultHref="/feiraEmprego" className="txtBranco"/>
           </IonButtons>
           <IonTitle>Recrutamento</IonTitle>
-        </IonToolbar>      
+          <IonButtons slot="end">
+            <IonButton expand="block" onClick={() => {possuiResultados ? setMostraBarraPesquisa(true) : setMostraBarraPesquisa(false)}}>
+              <IonIcon slot="icon-only" name="search" className="txtBranco"/>
+            </IonButton>
+          </IonButtons>
+        </IonToolbar>
+      }
+      { mostraBarraPesquisa && possuiResultados &&
+        <IonToolbar class="navBarSearch">
+          <IonSearchbar showCancelButton="always" cancelButtonText="Cancelar" className="navBarSearch " placeholder="Pesquisar Recrutamento" onIonBlur={() => setMostraBarraPesquisa(false)} onIonCancel={() => setMostraBarraPesquisa(false)} onIonChange={(e) => {procura((e.target as HTMLInputElement).value)}}></IonSearchbar>
+        </IonToolbar>
+      } 
       </IonHeader>
+      <IonText className="txtCentroCultural">TENDA MULTIUSOS</IonText>
+      <IonContent className="backgroundBranco">
+        { possuiResultados === true && recrutamentoMostrar.map(function(recruta) {
+            return <RecrutamentoList id={recruta['id']} nome={recruta['nome']} representante={recruta['representante']} local={recruta['local']} stand={recruta['stand']} vagas={recruta['vagas']} foto={recruta['foto']}/>
+        
+            
+        })
+        }
+      </IonContent>  
+
     </IonPage>
+
+    
   );
 };
 
