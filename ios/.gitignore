@@ -4,7 +4,6 @@
 
 App/build
 App/Pods
-App/public
 App/Podfile.lock
 xcuserdata
 
