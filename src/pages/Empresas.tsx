@@ -16,6 +16,6 @@ const Empresas: React.FC = () => {
       </IonHeader>
     </IonPage>
   );
-};
+}; 
 
 export default Empresas;

@@ -38,10 +38,10 @@ const Empresas1: React.FC = () => {
         </IonToolbar>      
       </IonHeader>
       <IonContent className="backgroundBranco">
-        <IonLabel><IonText class="linha-topo">TENDA MULTIUSOS</IonText></IonLabel>
+        <IonText className="local_atividade">TENDA MULTIUSOS</IonText>
         
-        <ItemEmpresas texto={menu1.descr} urlImagem={menu1.link} pathTo="/home"/>
-        <ItemEmpresas texto={menu2.descr} urlImagem={menu2.link} pathTo="/home"/>
+        <ItemEmpresas texto={menu1.descr} urlImagem={menu1.link} pathTo="/empresas_palco"/>
+        <ItemEmpresas texto={menu2.descr} urlImagem={menu2.link} pathTo="/stands"/>
         
         
       </IonContent>

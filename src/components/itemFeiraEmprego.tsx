@@ -15,7 +15,7 @@ interface ITeste {
 const ItemFeiraEmprego: React.FC<ITeste> = (props) => {
 
     const rect = {
-        minWidth: "50px",
+        minWidth: "40px",
         minHeight: "40px"
     };
     
@@ -30,7 +30,7 @@ const ItemFeiraEmprego: React.FC<ITeste> = (props) => {
                         <p style={{ marginRight: "auto", color: "#4b4b4b", fontWeight: "bold" }}>{props.texto}</p>
                         
                         <Link to={props.pathTo}>
-                            <IonIcon name="arrow-forward" style={{ color: "#4b4b4b", fontSize: "24px", minWidth: "24px" }}></IonIcon>
+                        <IonIcon className="arrowFoward" style={{ backgroundColor: "#4b4b4b", fontSize: "24px", minWidth: "24px" }}></IonIcon>
                         </Link>
                     </div>
                 </div>
