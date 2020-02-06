@@ -38,7 +38,7 @@ import Localizacao from './pages/Localizacao';
 import DescricaoWorkshop from "./pages/DescriçãoWorkshop";
 import './theme/teste.css';
 import Recrutamento from "./pages/pagesFeiraEmprego/Recrutamento";
-import Empresas from './pages/pagesFeiraEmprego/Empresas';
+import Empresas from './pages/Empresas';
 import FeiraVirtual from './pages/pagesFeiraEmprego/FeiraVirtual';
 import Pitch from './pages/pagesFeiraEmprego/Pitchs';
 import VianaLinkMoments from './pages/pagesFeiraEmprego/VianaLinkMoments';

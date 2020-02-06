@@ -177,7 +177,7 @@ const Home: React.FC<RouteComponentProps> = (props) => {
                                 </IonItem>
                             </IonCol>*/}
                             <IonCol size="6" class="col">
-                                <IonItem lines="none" onClick={() => props.history.push('/myagenda')} color="#f" class="ion-text-center footerItems">
+                                <IonItem lines="none" onClick={() => props.history.push('/localizacao')} color="#f" class="ion-text-center footerItems">
                                     <IonGrid>
                                         <IonCol>
                                             <IonImg src={menu7.path} class="subcategoriasLogo" />
