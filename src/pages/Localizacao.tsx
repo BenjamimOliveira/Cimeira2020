@@ -1,6 +1,7 @@
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButtons, IonBackButton } from '@ionic/react';
 import React, { useEffect, useState } from 'react';
 import Axios from 'axios';
+import {Map as Mapas, GoogleApiWrapper } from 'google-maps-react';
 
 class Categoria {
   id: string;
@@ -16,7 +17,7 @@ class Categoria {
   }
 }
 
-const Localizacao: React.FC = () => {
+const Localizacao: React.FC = (props) => {
     const [data, setData] = useState({});
     var cat = new Categoria("a","a","a","a");
   	useEffect(() => {
@@ -25,11 +26,26 @@ const Localizacao: React.FC = () => {
           "http://app.cimeira.ipvc.pt/api/main/1"
         );
         cat = new Categoria(result.data.id, result.data.path, result.data.title, result.data.type);
-        console.log(cat.title + "data ou o crlh");
+        console.log(cat.title);
         setData(result.data);  
       }
       callAxios();
     });
+
+  const mapStyles = {
+    width: '100%',
+    height: '100%',
+  };
+    
+  const defaultProps = {
+    center: {lat: 40.73, lng: -73.93}, 
+    zoom: 12
+ }
+ 
+ const google = {
+   children: null,
+   zoom: 12
+ }
     
   return (
     <IonPage>
@@ -44,10 +60,13 @@ const Localizacao: React.FC = () => {
       <IonContent className="ion-padding">
         
           <h1>{cat.title}</h1>
+          
         
       </IonContent>
     </IonPage>
   );
 };
 
-export default Localizacao;
+export default GoogleApiWrapper({
+  apiKey: "AIzaSyD_G7aKdLPZEsU-JXWA-kpCM51CyqgEEyc"
+})(Localizacao)

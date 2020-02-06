@@ -12,7 +12,7 @@ ion-item{
 }
 
 .footer{
-    height: 4em;
+    height: 9%;
     margin: 0px;
     padding: 0px;
     display: inline-block;
@@ -58,6 +58,7 @@ ion-item{
 
 .col{
     flex: auto;
+    height: 100%;
     padding-bottom: 3em;
     padding-inline-start: unset;
 }
@@ -76,7 +77,6 @@ ion-item{
     font-size: 3em;
     margin: 0 auto;
     text-align: center;
-    padding-top: 0.8em;
 }
 
 .pessoa{
@@ -89,13 +89,23 @@ ion-item{
     display: inline-flex;  
 }
 
-.butCentro {
-    position: absolute;
-    top: 35%;
-    left: 35%; 
-    height: 30%;
-    width: 30%;
+.buttonCentro {
+    height: 100%;
+    width: 100%;
     color: #E2000F;
+    --background-focused: #E2000F;
+}
+.buttonCentro:focus {
+    color: #E2000F;
+}
+
+.dataTopo{
+    margin-top: 0;
+}
+
+.scroll-bar-indicator
+{
+	display: none;
 }
 
 ion-grid{

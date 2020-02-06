@@ -16,7 +16,6 @@ const Workshops: React.FC<UserDetailPageProps> = ({match}) => {
         display: "flex",  
         alignItems: "center", 
         justifyContent: "space-between",
-        padding: "8px 10px",
         color: "#4a4a4a"
       }
     
@@ -37,9 +36,9 @@ const Workshops: React.FC<UserDetailPageProps> = ({match}) => {
         fontSize: "14px"
       }
     
+      // padding: "2px 15px",
       const styl_areaDescricao = {
-        textAlign: "justify" as "justify",
-        padding: "2px 15px",
+        textAlign: "justify" as "justify",        
         color: "#4a4a4a"
       }
     
@@ -71,12 +70,7 @@ const Workshops: React.FC<UserDetailPageProps> = ({match}) => {
           <IonButtons slot="start" >
             <IonBackButton defaultHref="/workshop" className="txtBranco"/>
           </IonButtons>
-          <IonTitle>Workshops</IonTitle>
-          <IonButtons slot="end">
-            <IonButton expand="block">
-              <IonIcon slot="icon-only"className="txtBranco shareIcon"/>
-            </IonButton>
-          </IonButtons>
+          <IonTitle>Workshops</IonTitle>          
         </IonToolbar>
       </IonHeader>
 
@@ -92,7 +86,7 @@ const Workshops: React.FC<UserDetailPageProps> = ({match}) => {
         { possuiResultados === true &&
           <div className="areaInformacao" style={{padding: "8px 16px", marginTop: "0px"}}>
             <div>
-              <IonText style={{fontSize: "26px", color: "#4a4a4a", fontWeight: "bold", marginBottom: 0, paddingBottom: 0}}><p>{workshop.titulo}</p></IonText>
+              <IonText style={{fontSize: "26px", color: "#4a4a4a", fontWeight: "bold", marginBottom: 0, paddingBottom: 0, lineHeight: "28px"}}><p>{workshop.titulo.toUpperCase()}</p></IonText>
               <IonText style={{fontSize: "12px", color: "#757575", marginTop: 0, paddingTop: 0}}><p>Moderador: {workshop.moderador}</p></IonText>
               <div style={styl_infoHorario}>
                 <div style={styl_infoHorario_dentro}>

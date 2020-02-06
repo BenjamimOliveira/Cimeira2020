@@ -8,6 +8,7 @@ import { useHistory } from "react-router-dom";
 const Login: React.FC = () => {
     const [ email, setEmail ] = useState("");
     const [ password, setPassword ] = useState("");
+    const [ id, setID] = useState("");
     const [toast, setToast] = useState({state: false, message: "Erro no login"});
     let history = useHistory();
 
@@ -51,8 +52,9 @@ const Login: React.FC = () => {
             console.log(resultado);
             if(resultado.data.cod === 6){
                 setToast({state: true, message: "Login realizado com sucesso!"});
-                localStorage.setItem("UtilizadorLogin", email);
-                history.push("/home");
+                localStorage.setItem("UtilizadorLogin", resultado.data.message.nome);
+                localStorage.setItem("UtilizadorID", resultado.data.message.id_user);
+                history.replace("/home");
             } else if(resultado.data.cod === 4){
                 setToast({state: true, message: "Ainda é necessário validar esta conta! Obtenha a chave de validação no seu email."});
                 localStorage.setItem("email_validar_conta", email);

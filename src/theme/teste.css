@@ -6,6 +6,10 @@
         --background: #fff;
     }
     
+    .backgroundVermelho {
+        --background: #A61526;
+    }
+    
     .md .shareIcon {
         background-color: white;
         -webkit-mask-image: url("android-share.svg");
@@ -16,6 +20,66 @@
         background-color: white;
         -webkit-mask-image: url("ios-share.svg");
         mask-image: url("ios-share.svg");
+    }
+    
+    .md .pinIcon {
+        background-color: white;
+        -webkit-mask-image: url("icons/pin-md.svg");
+        mask-image: url("icons/pin-md.svg");
+    }
+    
+    .ios .pinIcon {
+        background-color: white;
+        -webkit-mask-image: url("icons/pin-ios.svg");
+        mask-image: url("icons/pin-ios.svg");
+    }
+    
+    .md .callIcon {
+        background-color: white;
+        -webkit-mask-image: url("icons/call-md.svg");
+        mask-image: url("icons/call-md.svg");
+    }
+    
+    .ios .callIcon {
+        background-color: white;
+        -webkit-mask-image: url("icons/call-ios.svg");
+        mask-image: url("icons/call-ios.svg");
+    }
+    
+    .md .mailIcon {
+        background-color: white;
+        -webkit-mask-image: url("icons/mail-md.svg");
+        mask-image: url("icons/mail-md.svg");
+    }
+    
+    .ios .mailIcon {
+        background-color: white;
+        -webkit-mask-image: url("icons/mail-ios.svg");
+        mask-image: url("icons/mail-ios.svg");
+    }
+    
+    .md .arrowFoward {
+        background-color: white;
+        -webkit-mask-image: url("icons/arrow-foward.svg");
+        mask-image: url("icons/arrow-foward.svg");
+    }
+    
+    .ios .arrowFoward {
+        background-color: white;
+        -webkit-mask-image: url("icons/arrow-foward.svg");
+        mask-image: url("icons/arrow-foward.svg");
+    }
+    
+    .md .arrowDown {
+        background-color: white;
+        -webkit-mask-image: url("icons/arrow-down.svg");
+        mask-image: url("icons/arrow-down.svg");
+    }
+    
+    .ios .arrowDown {
+        background-color: white;
+        -webkit-mask-image: url("icons/arrow-down.svg");
+        mask-image: url("icons/arrow-down.svg");
     }
     
     .txtBranco {
@@ -63,7 +127,6 @@
         color: #A61526;
         background: #FFEC00;
         text-align: center;
-        font-weight: bold;
         margin-top: 0;
         padding: 2px 0;
         position: sticky;
