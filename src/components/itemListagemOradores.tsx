@@ -55,7 +55,7 @@ const ItemListagemOradores: React.FC<ITeste> = (props) => {
                             </div>
                         </div>
                         <Link to={"/palestra/" + props.idOrador}>
-                            <IonIcon name="arrow-forward" style={{ color: "#4b4b4b", fontSize: "24px", minWidth: "24px" }}></IonIcon>
+                            <IonIcon className="arrowFoward" style={{ backgroundColor: "#4b4b4b", fontSize: "24px", minWidth: "24px" }}></IonIcon>
                         </Link>
                     </div>
                 </div>

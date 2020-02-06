@@ -13,7 +13,7 @@ interface ITeste {
 
 const ItemProgramaHorario: React.FC<ITeste> = (props) => {
     
-    const [, setPossuiResultados] = useState(false);
+    const [possuiResultados, setPossuiResultados] = useState(false);
     const [mostraSub, setMostraSub] = useState(false);
     const [subCategorias, setSubCategorias] = useState([]);
     const [cor, setCor] = useState("trasparent");
@@ -23,10 +23,16 @@ const ItemProgramaHorario: React.FC<ITeste> = (props) => {
             method: "get",
             url: "http://app.cimeira.ipvc.pt/api/programa/" + idCategoria + "/atividades"
         }).then(resultado => {
-            setPossuiResultados(true);
-            setSubCategorias(resultado.data);
-            setMostraSub(true); 
-            setCor("#d8d8d8");
+            console.log(resultado);
+            
+            if(resultado.data != "Sem ATIVIDADES associadas ao PROGRAMA."){
+                setPossuiResultados(true);
+                setSubCategorias(resultado.data);
+                setMostraSub(true); 
+                setCor("#d8d8d8");
+            } else {
+                setSubCategorias([]);
+            }
         }).catch(erro => {
             console.log("ERRO", erro);
         })
@@ -45,7 +51,7 @@ const ItemProgramaHorario: React.FC<ITeste> = (props) => {
     }
 
     const rect = {
-        minWidth: "50px",
+        minWidth: "40px",
         minHeight: "40px"
     };
     return (
@@ -57,11 +63,11 @@ const ItemProgramaHorario: React.FC<ITeste> = (props) => {
                     </div>
                     <div style={{ marginLeft: "10px", width: "100%", display: "flex", alignItems: "center", justifyContent: "space-between", borderBottom: "1px solid #dfdfdf" }}>
                         <p style={{ marginRight: "auto", color: "#4b4b4b", fontWeight: "bold" }}>{props.texto}</p>
-                        <IonIcon name="arrow-down" style={{ color: "#4b4b4b", fontSize: "24px", minWidth: "24px" }}></IonIcon>
+                        <IonIcon className="arrowDown" style={{ backgroundColor: "#4b4b4b", fontSize: "24px", minWidth: "24px" }}></IonIcon>
                     </div>
                 </div>
                 <div>
-                { mostraSub === true && subCategorias.map(function(subcategoria) {
+                { possuiResultados && mostraSub === true && subCategorias.map(function(subcategoria) {
                     return <SubItemProgramaHorario texto={subcategoria['atividade']} hora={(subcategoria['hora'] as string).slice(0, -3)} idAtividade={subcategoria['id']} key={subcategoria['id']}></SubItemProgramaHorario>
                 })
                 }

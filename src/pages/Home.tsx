@@ -102,7 +102,7 @@ const Home: React.FC<RouteComponentProps> = (props) => {
 
                         { possuiResultados_programa && 
                         <IonCol size="6" >
-                            <IonItem lines="none" onClick={() => props.history.push('/empresas1')} color="#FFFFFF" class="ion-text-center">
+                            <IonItem lines="none" onClick={() => props.history.push('/empresas')} color="#FFFFFF" class="ion-text-center">
                                 <IonGrid>
                                     <IonCol>
                                         <div><IonImg src={menu2.path} class="categoriasLogo menus" /></div>
