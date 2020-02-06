@@ -37,7 +37,7 @@ const WorkshopList: React.FC<Data> = (props) => {
         <div style={{ marginLeft: "15px", width: "100%", display: "flex", alignItems: "center", justifyContent: "space-between" }} >
             <p style={{ marginRight: "auto", color: "#4b4b4b" }}>{props.desc.toUpperCase()}</p>
             <Link to={"/descrWorkshop/" + props.id}>
-                <IonIcon name="arrow-forward" style={{ color: "#4b4b4b", fontSize: "24px", minWidth: "24px" }} ></IonIcon>
+                <IonIcon className="arrowFoward" style={{ backgroundColor: "#4b4b4b", fontSize: "24px", minWidth: "24px", marginLeft: "10px"}} ></IonIcon>
             </Link>
         </div>
     </div>

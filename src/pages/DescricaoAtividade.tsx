@@ -17,7 +17,7 @@ const Atividade: React.FC<UserDetailPageProps> = ({match}) => {
     display: "flex",  
     alignItems: "center", 
     justifyContent: "space-between",
-    padding: "8px 10px",
+    padding: "8px 0",
     color: "#4a4a4a"
   }
 
@@ -40,7 +40,7 @@ const Atividade: React.FC<UserDetailPageProps> = ({match}) => {
 
   const styl_areaDescricao = {
     textAlign: "justify" as "justify",
-    padding: "2px 15px",
+    padding: "2px 0",
     color: "#4a4a4a"
   }
 
@@ -62,7 +62,7 @@ const Atividade: React.FC<UserDetailPageProps> = ({match}) => {
           resultado.data.moderador = "";
         setAtividade(resultado.data);
         setTxtTitulo((resultado.data.categoria.categoria).toLowerCase().charAt(0).toUpperCase() + (resultado.data.categoria.categoria).toLowerCase().slice(1));
-        console.log(resultado)
+        //console.log(resultado)
     }).catch(erro => {
         console.log("ERRO", erro);
     })
