@@ -57,7 +57,7 @@ const FeiraEmprego: React.FC = () => {
   });
 
     const rect = {
-      minWidth: "50px",
+      minWidth: "40px",
       minHeight: "40px"
   };
 /*
@@ -91,7 +91,7 @@ const FeiraEmprego: React.FC = () => {
                     <div style={{ marginLeft: "10px", width: "100%", display: "flex", alignItems: "center", justifyContent: "space-between", borderBottom: "1px solid #dfdfdf" }}>
                         <p style={{ marginRight: "auto", color: "#4b4b4b", fontWeight: "bold" }}>{menu2.nome}</p>
                         <IonButton href={feiraVirtual.link} fill="clear" slot="end" style={{width:"24px"}} >
-                          <IonIcon name="arrow-forward" style={{ color: "#4b4b4b", fontSize: "24px", minWidth: "24px" }}></IonIcon>
+                        <IonIcon className="arrowFoward" style={{ backgroundColor: "#4b4b4b", fontSize: "24px", minWidth: "24px" }}></IonIcon>
                         </IonButton>
                 
                     </div>
