@@ -40,7 +40,7 @@ const Stands: React.FC = () => {
               <IonIcon slot="icon-only" className="arrowBack"></IonIcon>
             </IonButton>
           </IonButtons>
-          <IonTitle>Empresas</IonTitle>
+          <IonTitle>Stands</IonTitle>
           <IonButtons slot="end">
             <IonButton expand="block" onClick={() => {possuiResultados ? setMostraBarraPesquisa(true) : setMostraBarraPesquisa(false)}}>
               <IonIcon slot="icon-only" name="search" className="txtBranco"/>
