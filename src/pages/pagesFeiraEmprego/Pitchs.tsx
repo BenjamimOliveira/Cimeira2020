@@ -1,6 +1,5 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButtons, IonBackButton, IonItem, IonImg, useIonViewWillEnter, IonText, IonLabel, IonButton, IonIcon, IonSearchbar } from '@ionic/react';
-import React, { useState } from 'react';
-import Axios from 'axios';
+import { IonHeader, IonPage, IonTitle, IonToolbar, IonButtons, IonButton, IonIcon } from '@ionic/react';
+import React from 'react';
 
 const Pitch: React.FC = () => {
     
@@ -9,7 +8,9 @@ const Pitch: React.FC = () => {
       <IonHeader>   
         <IonToolbar className="navbar">
           <IonButtons slot="start" >
-            <IonBackButton defaultHref="/home" className="txtBranco"/>
+            <IonButton onClick={() => {window.history.back()}}>
+              <IonIcon slot="icon-only" className="arrowBack"></IonIcon>
+            </IonButton>
           </IonButtons>
           <IonTitle>Pitchs</IonTitle>
         </IonToolbar>      

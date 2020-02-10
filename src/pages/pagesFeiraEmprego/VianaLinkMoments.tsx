@@ -1,7 +1,6 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButtons, IonBackButton, IonItem, IonImg, useIonViewWillEnter, IonText, IonLabel, IonButton, IonIcon, IonSearchbar } from '@ionic/react';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButtons, useIonViewWillEnter, IonText, IonButton, IonIcon } from '@ionic/react';
 import React, { useState } from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
 
 const VianaLinkMoments: React.FC = () => {
 
@@ -64,7 +63,9 @@ const VianaLinkMoments: React.FC = () => {
       <IonHeader>   
         <IonToolbar className="navbar">
           <IonButtons slot="start" >
-            <IonBackButton defaultHref="/home" className="txtBranco"/>
+            <IonButton onClick={() => {window.history.back()}}>
+              <IonIcon slot="icon-only" className="arrowBack"></IonIcon>
+            </IonButton>
           </IonButtons>
           <IonTitle>Viana Link Moments</IonTitle>
         </IonToolbar>      

@@ -1,6 +1,5 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButtons, IonBackButton, IonItem, IonImg, useIonViewWillEnter, IonText, IonLabel, IonButton, IonIcon, IonSearchbar } from '@ionic/react';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButtons, useIonViewWillEnter, IonText, IonButton, IonIcon } from '@ionic/react';
 import React, { useState } from 'react';
-import Axios from 'axios';
 import ItemEmpresas from '../components/itemEmpresas';
 import axios from 'axios';
 
@@ -9,7 +8,7 @@ const Empresas1: React.FC = () => {
   
   var [menu1, setmenu1] = useState({descr:"", link: ""});
   var [menu2, setmenu2] = useState({descr:"", link: ""});
-  var [possuiResultados, setPossuiResultados ] = useState(false);
+  var [, setPossuiResultados ] = useState(false);
 
   useIonViewWillEnter(() => {
     // -- obter lista de categorias
@@ -32,7 +31,9 @@ const Empresas1: React.FC = () => {
       <IonHeader>   
         <IonToolbar className="navbar">
           <IonButtons slot="start" >
-            <IonBackButton defaultHref="/home" className="txtBranco"/>
+            <IonButton onClick={() => {window.history.back()}}>
+              <IonIcon slot="icon-only" className="arrowBack"></IonIcon>
+            </IonButton>
           </IonButtons>
           <IonTitle>Empresas</IonTitle>
         </IonToolbar>      

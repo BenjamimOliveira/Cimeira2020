@@ -45,7 +45,9 @@ const Workshops: React.FC = () => {
       { !mostraBarraPesquisa  && 
         <IonToolbar className="navbar">
           <IonButtons slot="start" >
-            <IonBackButton defaultHref="/home" className="txtBranco"/>
+            <IonButton onClick={() => {window.history.back()}}>
+              <IonIcon slot="icon-only" className="arrowBack"></IonIcon>
+            </IonButton>
           </IonButtons>
           <IonTitle>Workshops</IonTitle>
           <IonButtons slot="end">

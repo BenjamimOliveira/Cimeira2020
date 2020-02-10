@@ -82,6 +82,12 @@
         mask-image: url("icons/arrow-down.svg");
     }
     
+    .arrowBack {
+        background-color: white;
+        -webkit-mask-image: url("icons/arrow-back.svg");
+        mask-image: url("icons/arrow-back.svg");
+    }
+    
     .txtBranco {
         color: white;
         --color: white;

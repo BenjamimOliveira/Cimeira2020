@@ -1,4 +1,4 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButtons, IonBackButton } from '@ionic/react';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButtons, IonButton, IonIcon } from '@ionic/react';
 import React from 'react';
 
 const PhotoFeed: React.FC = () => {
@@ -8,7 +8,9 @@ const PhotoFeed: React.FC = () => {
         <IonToolbar>
           <IonTitle>Photo Feed</IonTitle>
             <IonButtons slot="start">
-              <IonBackButton defaultHref='/home'/>
+              <IonButton onClick={() => {window.history.back()}}>
+                <IonIcon slot="icon-only" className="arrowBack"></IonIcon>
+              </IonButton>
             </IonButtons>      
         </IonToolbar>
       </IonHeader>

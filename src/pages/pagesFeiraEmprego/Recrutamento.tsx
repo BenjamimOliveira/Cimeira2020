@@ -1,4 +1,4 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButtons, IonBackButton, IonItem, IonImg, useIonViewWillEnter, IonText, IonLabel, IonButton, IonIcon, IonSearchbar } from '@ionic/react';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButtons, useIonViewWillEnter, IonText, IonButton, IonIcon, IonSearchbar } from '@ionic/react';
 import React, { useState } from 'react';
 import Axios from 'axios';
 import RecrutamentoList from '../../components/RecrutamentoList';
@@ -36,7 +36,9 @@ const Recrutamento: React.FC = () => {
         { !mostraBarraPesquisa  &&
         <IonToolbar className="navbar">
           <IonButtons slot="start" >
-            <IonBackButton defaultHref="/feiraEmprego" className="txtBranco"/>
+            <IonButton onClick={() => {window.history.back()}}>
+              <IonIcon slot="icon-only" className="arrowBack"></IonIcon>
+            </IonButton>
           </IonButtons>
           <IonTitle>Recrutamento</IonTitle>
           <IonButtons slot="end">

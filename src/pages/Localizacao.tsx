@@ -1,4 +1,4 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButtons, IonBackButton } from '@ionic/react';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButtons, IonButton, IonIcon } from '@ionic/react';
 import React, { useEffect, useState } from 'react';
 import Axios from 'axios';
 import {Map as Mapas, GoogleApiWrapper } from 'google-maps-react';
@@ -53,7 +53,9 @@ const Localizacao: React.FC = (props) => {
         <IonToolbar>
           <IonTitle>Localizacao</IonTitle>
             <IonButtons slot="start">
-              <IonBackButton defaultHref='/home'/>
+              <IonButton onClick={() => {window.history.back()}}>
+                <IonIcon slot="icon-only" className="arrowBack"></IonIcon>
+              </IonButton>
             </IonButtons>      
         </IonToolbar>
       </IonHeader>

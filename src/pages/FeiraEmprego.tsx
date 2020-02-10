@@ -1,10 +1,8 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButtons, IonBackButton, useIonViewWillEnter, IonButton, IonIcon, IonSearchbar, IonText, IonLabel, IonImg, IonItem } from '@ionic/react';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButtons, useIonViewWillEnter, IonButton, IonIcon, IonText, IonLabel, IonImg } from '@ionic/react';
 import React, { useState } from 'react';
 import axios from 'axios';
 import ItemFeiraEmprego from '../components/itemFeiraEmprego';
-import { Link } from 'react-router-dom';
 
-const URL = 'app.cimeira.ipvc.pt/api/feira_emprego/';
 
 const FeiraEmprego: React.FC = () => {
   
@@ -13,7 +11,7 @@ const FeiraEmprego: React.FC = () => {
   var [menu3, setmenu3] = useState({id:"", nome: "", foto:""});
   var [menu4, setmenu4] = useState({id:"", nome: "", foto:""}); 
   var [feiraVirtual, setFeiraVirtual] = useState({link:""});
-  var [possuiResultados, setPossuiResultados ] = useState(false);
+  var [ ] = useState(false);
 
  /* function callAxios(){
     Promise.all([axios.get(URL+"1"), axios.get(URL+"2"), axios.get(URL+"3"), axios.get(URL+"4"), axios.get(URL+"5")])
@@ -72,7 +70,9 @@ const FeiraEmprego: React.FC = () => {
       <IonHeader>   
         <IonToolbar className="navbar">
           <IonButtons slot="start" >
-            <IonBackButton defaultHref="/home" className="txtBranco"/>
+            <IonButton onClick={() => {window.history.back()}}>
+              <IonIcon slot="icon-only" className="arrowBack"></IonIcon>
+            </IonButton>
           </IonButtons>
           <IonTitle>Feira Emprego</IonTitle>
         </IonToolbar>      

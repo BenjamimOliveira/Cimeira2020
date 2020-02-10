@@ -1,4 +1,4 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButtons, IonButton, IonBackButton, IonText, useIonViewWillEnter, IonAvatar, IonImg, IonIcon } from '@ionic/react';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButtons, IonButton, IonText, useIonViewWillEnter, IonAvatar, IonImg, IonIcon } from '@ionic/react';
 import React, { useState } from 'react';
 import axios from 'axios';
 import { RouteComponentProps } from 'react-router';
@@ -72,11 +72,6 @@ const DescricaoEmpresa: React.FC<PageProps> = ({match}) => {
     flexDirection: "column" as "column"
   }
 
-  const linha_info_representante = {
-    margin: "20px 50px",
-    display: "flex",
-    flexDirection: "column" as "column"
-  }
 
   const linha_contacto = {
     margin: "20px 10px 0 10px",
@@ -112,7 +107,9 @@ const DescricaoEmpresa: React.FC<PageProps> = ({match}) => {
       <IonHeader>
         <IonToolbar className="toolbarSemTransparencia">
           <IonButtons slot="start" >
-            <IonBackButton defaultHref="/stands" className="txtBranco"/>
+            <IonButton onClick={() => {window.history.back()}}>
+              <IonIcon slot="icon-only" className="arrowBack"></IonIcon>
+            </IonButton>
           </IonButtons>
           <IonTitle>{txtTitulo}</IonTitle>
         </IonToolbar>

@@ -1,4 +1,4 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButtons, IonButton, IonIcon, IonBackButton, IonSearchbar, IonText, useIonViewWillEnter } from '@ionic/react';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButtons, IonButton, IonIcon, IonBackButton, IonSearchbar, IonText, useIonViewWillEnter, useIonViewDidLeave } from '@ionic/react';
 import React, { useState } from 'react';
 import axios from 'axios';
 import ItemProgramaHorario from "../components/itemProgramaHorario"
@@ -28,7 +28,7 @@ const Programa: React.FC = () => {
     }).catch(erro => {
         console.log("ERRO", erro);
     })
-  });
+  })
 
   return (
     <IonPage>
@@ -36,7 +36,9 @@ const Programa: React.FC = () => {
       { !mostraBarraPesquisa  && 
         <IonToolbar className="toolbarSemTransparencia">
           <IonButtons slot="start" >
-            <IonBackButton defaultHref="/home" className="txtBranco"/>
+            <IonButton onClick={() => {window.history.back()}}>
+              <IonIcon slot="icon-only" className="arrowBack"></IonIcon>
+            </IonButton>
           </IonButtons>
           <IonTitle>Programa</IonTitle>
           <IonButtons slot="end">

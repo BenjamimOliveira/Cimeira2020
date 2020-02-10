@@ -1,4 +1,4 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButtons, IonBackButton, useIonViewWillEnter, IonText, IonButton, IonIcon, IonSearchbar } from '@ionic/react';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButtons, useIonViewWillEnter, IonText, IonButton, IonIcon, IonSearchbar } from '@ionic/react';
 import React, { useState } from 'react';
 import Axios from 'axios';
 import ItemListagemEmpresas from "../../components/itemListagemEmpresas";
@@ -36,7 +36,9 @@ const Stands: React.FC = () => {
       { !mostraBarraPesquisa  && 
         <IonToolbar className="toolbarSemTransparencia">
           <IonButtons slot="start" >
-            <IonBackButton defaultHref="/home" className="txtBranco"/>
+            <IonButton onClick={() => {window.history.back()}}>
+              <IonIcon slot="icon-only" className="arrowBack"></IonIcon>
+            </IonButton>
           </IonButtons>
           <IonTitle>Empresas</IonTitle>
           <IonButtons slot="end">

@@ -1,4 +1,4 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButtons, IonBackButton, IonButton, IonIcon, IonSearchbar, useIonViewWillEnter, IonText, IonImg, IonAvatar } from '@ionic/react';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButtons, IonButton, IonIcon, IonSearchbar, useIonViewWillEnter, IonText } from '@ionic/react';
 import React, { useState } from 'react';
 import axios from "axios";
 import ItemListagemOradores from "../components/itemListagemOradores";
@@ -38,7 +38,9 @@ const Oradores: React.FC = () => {
       { !mostraBarraPesquisa  && 
         <IonToolbar className="toolbarSemTransparencia">
           <IonButtons slot="start" >
-            <IonBackButton defaultHref="/home" className="txtBranco"/>
+            <IonButton onClick={() => {window.history.back()}}>
+              <IonIcon slot="icon-only" className="arrowBack"></IonIcon>
+            </IonButton>
           </IonButtons>
           <IonTitle>Oradores</IonTitle>
           <IonButtons slot="end">
