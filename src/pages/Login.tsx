@@ -9,7 +9,7 @@ const Login: React.FC = () => {
     const [ email, setEmail ] = useState("");
     const [ password, setPassword ] = useState("");
     const [ id, setID] = useState("");
-    const [toast, setToast] = useState({state: false, message: "Erro no login"});
+    const [toast, setToast] = useState({state: false, message: "Erro no login!"});
     let history = useHistory();
 
     useIonViewWillEnter(() => {
