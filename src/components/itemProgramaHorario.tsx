@@ -23,8 +23,6 @@ const ItemProgramaHorario: React.FC<ITeste> = (props) => {
             method: "get",
             url: "http://app.cimeira.ipvc.pt/api/programa/" + idCategoria + "/atividades"
         }).then(resultado => {
-            console.log(resultado);
-            
             if(resultado.data != "Sem ATIVIDADES associadas ao PROGRAMA."){
                 setPossuiResultados(true);
                 setSubCategorias(resultado.data);
