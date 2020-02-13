@@ -80,7 +80,7 @@ const Login: React.FC = () => {
 
     return (
         <IonPage>
-            <IonContent fullscreen className="pagLogin">
+            <IonContent fullscreen className="pagLogin background">
                 <IonToast isOpen={toast.state} onDidDismiss={() => setToast({state: false, message: toast.message})} message={toast.message} duration={3000}></IonToast>
                 <IonGrid>
                     <IonRow className="ion-justify-content-center ion-align-items-center">
