@@ -1,7 +1,5 @@
 ATENCAO (instalação ios)
     -> Rename node_module para node_modules
     -> Correr "pod install" na pasta onde o podfile estiver
-
-    // Alterações windows
-        -> Alterar o gitignore para permitir dar push da pasta public relativa a ios
-        -> run "ionic cap copy"
+    -> Alterar o gitignore para permitir dar push da pasta public relativa a ios
+    -> run "ionic cap copy"
