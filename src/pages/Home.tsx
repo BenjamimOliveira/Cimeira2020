@@ -69,7 +69,7 @@ const Home: React.FC<RouteComponentProps> = (props) => {
     return (
         <IonPage>
             
-            <IonContent className="background" no-padding no-margin margin-left class="grid-bottom" overflow-scroll="false">
+            <IonContent no-padding no-margin margin-left class="grid-bottom" overflow-scroll="false">
                 <div className="ecraGeral" style={{height:"20%"}}>
                 <IonGrid class="ion-align-items-center dataTopo">
                     <IonCol size="12">

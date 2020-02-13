@@ -92,7 +92,7 @@ const Registo: React.FC = () => {
                     <IonTitle className="txtBranco">Criar Conta</IonTitle>
                 </IonToolbar>
             </IonHeader>
-            <IonContent fullscreen className="pagLogin background">
+            <IonContent fullscreen className="pagLogin">
                 <IonToast isOpen={toast.state} onDidDismiss={() => setToast({ state: false, message: toast.message })} message={toast.message} duration={5000}></IonToast>
                 <IonGrid>
                     <IonRow className="ion-justify-content-center ion-align-items-center">
