@@ -11,6 +11,7 @@ const Workshops: React.FC<UserDetailPageProps> = ({match}) => {
 
     const [possuiResultados, setPossuiResultados ] = useState(false);
     const [workshop, setWorkshop] = useState({id: "", titulo: "", hora: "", moderador: "", duracao: "", local: "", descricao: ""});
+    const [toast, setToast] = useState({state: false, message: "Erro na inscrição"});
  
     const styl_infoHorario = {
         display: "flex",  
@@ -63,6 +64,27 @@ const Workshops: React.FC<UserDetailPageProps> = ({match}) => {
         })
       });
 
+      function inscricaoWorkshop(e: any) {
+       
+
+        axios({
+            method: "post",
+            url: "http://app.cimeira.ipvc.pt/api/workshop/"+match.params.id,
+            data: {
+                id_utilizador: localStorage.getItem("UtilizadorID")
+            }
+        }).then(resultado => {
+            console.log(resultado);
+            if(resultado.data.status == false){              
+                setToast({state: true, message: "Ocorreu um erro!"});
+            } 
+        }).catch(erro => {
+            console.log("ERRO", erro);
+            setToast({state: true, message: "Ocorreu um erro a realizar a inscrição!"});
+        }); 
+    }
+
+
     return (
       <IonPage>
       <IonHeader>
@@ -107,7 +129,7 @@ const Workshops: React.FC<UserDetailPageProps> = ({match}) => {
             </div>
 
             <div className="ion-margin btnAmarelo">
-                <IonButton type="button" style={styl_btnAdicionar}  onClick={() => {}} size="large" expand="block">PARTICIPAR</IonButton>
+                <IonButton type="button" style={styl_btnAdicionar}  onClick={(e) => {inscricaoWorkshop(e)}} size="large" expand="block">PARTICIPAR</IonButton>
             </div>
           </div>
         }

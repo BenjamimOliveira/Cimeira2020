@@ -61,15 +61,14 @@ const RecrutamentoList: React.FC<Data> = (props) => {
         <div > 
             <div  tabIndex={0} style={{ borderBottom: "1px solid #dfdfdf"}}>
                 <div style={{ display: "flex", padding: "10px", alignItems: "center", justifyContent: "space-between" }}>
-                    <IonAvatar style={styl_avatar}>
+                    <div style={styl_avatar}>
                         <IonImg src={props.foto} />
-                    </IonAvatar>
+                    </div>
                     <div style={{ marginLeft: "10px", width: "100%", display: "flex", alignItems: "center", justifyContent: "space-between"}}>
                         <div>
                             <h6 style={{ marginRight: "auto", color: "#4b4b4b", fontWeight: "bold", marginBottom: "0px", paddingBottom: "8px" }}>{props.nome}</h6>
                             <p style={{ marginRight: "auto", color: "#9B9B9B", fontSize: "14px", marginTop: "0px", marginBottom: "4px" }}>{props.representante}</p>
                             <p style={{ marginRight: "auto", color: "#9B9B9B", fontSize: "14px", marginTop: "0px", marginBottom: "8px" }}>{props.stand}</p>
-                              
                         </div>
                     </div> 
                     <div style={area_hora}>

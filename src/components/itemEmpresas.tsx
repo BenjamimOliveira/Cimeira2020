@@ -25,13 +25,13 @@ const ItemEmpresas: React.FC<ITeste> = (props) => {
                     <div style={rect}>
                         <IonImg src={props.urlImagem} />
                     </div>
-                    <div style={{ marginLeft: "10px", width: "100%", display: "flex", alignItems: "center", justifyContent: "space-between", borderBottom: "1px solid #dfdfdf" }}>
+                    <a href={props.pathTo}  style={{ marginLeft: "10px", width: "100%", display: "flex", alignItems: "center", justifyContent: "space-between", borderBottom: "1px solid #dfdfdf", textDecoration: "none" }}>
                         <p style={{ marginRight: "auto", color: "#4b4b4b", fontWeight: "bold" }}>{props.texto}</p>
                         
-                        <Link to={props.pathTo}>
+                        <div>
                         <IonIcon className="arrowFoward" style={{ backgroundColor: "#4b4b4b", fontSize: "24px", minWidth: "24px" }}></IonIcon>
-                        </Link>
-                    </div>
+                        </div>
+                    </a>
                 </div>
                 
             </div>

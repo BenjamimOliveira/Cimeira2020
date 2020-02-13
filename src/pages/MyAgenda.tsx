@@ -66,15 +66,15 @@ const MyAgenda: React.FC = () => {
       
       <IonContent fullscreen className="backgroundVermelho">
             <div style={x_close}>
-              <Link to={"/home"}>
-                <IonImg src="assets/resources/close.png"/>
-              </Link>
+              <div>
+                <IonImg onClick={() => {window.history.back()}} src="assets/resources/close.png"/>
+              </div>
             </div>
               
             <div style={{width:"100%", marginTop:"24px"}}>
               <div style={foto_perfil}>
                 <Link to={"/home"}>
-                  <IonImg src="assets/resources/user.png"/>
+                  <IonImg src="assets/resources/picture_IPVC.png"/>
                 </Link>
               </div>
             </div> 
