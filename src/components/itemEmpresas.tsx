@@ -14,7 +14,7 @@ interface ITeste {
 const ItemEmpresas: React.FC<ITeste> = (props) => {
 
     const rect = {
-        minWidth: "50px",
+        minWidth: "40px",
         minHeight: "40px"
     };
     
@@ -29,7 +29,7 @@ const ItemEmpresas: React.FC<ITeste> = (props) => {
                         <p style={{ marginRight: "auto", color: "#4b4b4b", fontWeight: "bold" }}>{props.texto}</p>
                         
                         <div>
-                        <IonIcon className="arrowFoward" style={{ backgroundColor: "#4b4b4b", fontSize: "24px", minWidth: "24px" }}></IonIcon>
+                        <IonIcon className="arrowFoward" style={{ backgroundColor: "#4b4b4b", fontSize: "24px", width: "24px" }}></IonIcon>
                         </div>
                     </a>
                 </div>
