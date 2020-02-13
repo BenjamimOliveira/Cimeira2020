@@ -1,7 +1,7 @@
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButtons, useIonViewWillEnter, IonText, IonButton, IonIcon, IonSearchbar } from '@ionic/react';
 import React, { useState } from 'react';
 import Axios from 'axios';
-import ItemListagemEmpresas from "../../components/itemListagemEmpresas";
+import ItemListagemEmpresasPalco from "../../components/itemListagemEmpresasPalco";
 
 const Empresas: React.FC = () => {
 
@@ -59,7 +59,7 @@ const Empresas: React.FC = () => {
         <IonText className="txtCentroCultural">TENDA MULTIUSOS</IonText>
         {/*-- List of Text Items --*/}
         { possuiResultados === true && empresasMostrar.map(function(empresa) {
-            return <ItemListagemEmpresas texto={empresa['nome']} urlImagem={empresa['logo']} idEmpresa={empresa['id']} key={empresa['id']}></ItemListagemEmpresas>
+            return <ItemListagemEmpresasPalco texto={empresa['nome']} urlImagem={empresa['logo']} idEmpresa={empresa['id']} key={empresa['id']}></ItemListagemEmpresasPalco>
         })
         }
         

@@ -4,7 +4,9 @@ import { IonApp, IonRouterOutlet } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
 import Home from './pages/Home';
 import Login from './pages/Login';
+import SelecaoTipoPerfil from './pages/SelecaoTipoPerfil';
 import Registo from './pages/Registo';
+import RegistoRGPD from './pages/Registo_RGPD';
 import ValidarRegisto from "./pages/ValidarRegisto";
 import Programa from "./pages/Programa";
 import DescricaoAtividade from "./pages/DescricaoAtividade";
@@ -45,6 +47,7 @@ import Pitch from './pages/pagesFeiraEmprego/Pitchs';
 import VianaLinkMoments from './pages/pagesFeiraEmprego/VianaLinkMoments';
 import EmpresasPalco from './pages/pagesFeiraEmprego/EmpresasPalco';
 import DescricaoEmpresa from './pages/pagesFeiraEmprego/DescricaoEmpresa';
+import DescricaoEmpresaPalco from './pages/pagesFeiraEmprego/DescricaoPalcoCentral';
 const App: React.FC = () => (
   
   <IonApp>
@@ -63,8 +66,10 @@ const App: React.FC = () => (
         <Route path="/descrWorkshop/:id" component={DescricaoWorkshop} />
         <Route path="/validarregisto" component={ValidarRegisto} exact={true} />
         <Route path="/registo" component={Registo} exact={true} />
+        <Route path="/registo_aceitar_rgpd" component={RegistoRGPD} exact={true} />
         <Route path="/stands" component={Stands}/>
         <Route path="/descricao_empresa/:id" component={DescricaoEmpresa}/>
+        <Route path="/descricao_empresa_palco/:id" component={DescricaoEmpresaPalco}/>
         <Route path="/empresas1" component={Empresas1}/>
 
         <Route path="/recrutamento" component={Recrutamento} exact={true} />
@@ -74,6 +79,7 @@ const App: React.FC = () => (
         <Route path="/vianalinkmoments" component={VianaLinkMoments} />
 
         <Route path="/login" component={Login} exact={true} />
+        <Route path="/selecionar_perfis_conta" component={SelecaoTipoPerfil} exact={true} />
         <Route exact path="/" render={() => <Redirect to="/login" />} />
       </IonRouterOutlet>
     </IonReactRouter>

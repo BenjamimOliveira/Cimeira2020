@@ -1,5 +1,7 @@
     ion-content {
         --background: #fff url("background.png") no-repeat center center / cover;
+        background-size: cover;
+        --background-size: cover;
     }
     
     .backgroundBranco {
@@ -146,6 +148,32 @@
     .semBackground {
         border-color: rgba(0, 0, 0, 0);
         background-color: rgba(0, 0, 0, 0);
+    }
+    
+    .semBackgroundforce {
+        --background: "transparent";
+        color: white;
+        --border-style: none;
+    }
+    
+    .checkAmarelo {
+        --background-checked: yellow;
+        --background: transparent;
+        --border-color: yellow;
+        --border-color-checked: yellow;
+        --border-radius: 50px;
+        --checkmark-color: yellow;
+    }
+    
+    .checkSub {
+        --background-checked: transparent;
+        --background: transparent;
+        --border-color: #dddddd;
+        --border-width: 1px;
+        --border-color-checked: transparent;
+        --border-radius: 50px;
+        --checkmark-color: white;
+        margin-left: 30px;
     }
     
     .semBackground ion-item {

@@ -1,23 +1,25 @@
-ion-content{
-    --background: url("https://trello-attachments.s3.amazonaws.com/5deae10d1adb7263adb50834/360x721/59d0ad57b742ca6ae29df143740cb2e9/background.png") 0 0/100% 100% no-repeat;
-    padding-left: 0px;;
+ion-content {
+    --background: url("../theme/background.png") 0 0/100% 100% no-repeat;
+    padding-left: 0px;
+    background-size: cover;
+    --background-size: cover;
 }
 
-ion-item{
+ion-item {
     background-color: transparent;
 }
 
-.yellow{
+.yellow {
     color: "#555555";
 }
 
-.footer{
+.footer {
     height: 9%;
     margin: 0px;
     padding: 0px;
     display: inline-block;
     position: fixed;
-    bottom:0;
+    bottom: 0;
     background-color: rgb(255, 255, 255);
 }
 
@@ -25,7 +27,7 @@ ion-item{
     font-size: 0.7em;
 }
 
-.footerItems{
+.footerItems {
     vertical-align: text-top;
     padding: 0px;
     height: 100%;
@@ -35,28 +37,28 @@ ion-item{
     align-items: center!important;
 }
 
-.divFooter{
+.divFooter {
     background-color: #f80ba9;
     padding-left: 0px;
 }
 
-.content{
+.content {
     background-color: #f80ba9;
 }
 
-.grid-bottom{
-    width:100% !important; 
-    margin-left: 0 !important; 
+.grid-bottom {
+    width: 100% !important;
+    margin-left: 0 !important;
     margin-right: 0 !important;
 }
 
 .grid {
-    width:100%;
-    margin-left:0 !important;
-    margin-right:0 !important;
+    width: 100%;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
 }
 
-.col{
+.col {
     flex: auto;
     height: 100%;
     padding-bottom: 3em;
@@ -73,20 +75,20 @@ ion-item{
     clear: both;
 }
 
-.boasvindas{
+.boasvindas {
     font-size: 3em;
     margin: 0 auto;
     text-align: center;
 }
 
-.pessoa{
-    font-size: 2em;    
+.pessoa {
+    font-size: 2em;
     margin: 0 auto;
     text-align: center;
 }
 
-.menus{  
-    display: inline-flex;  
+.menus {
+    display: inline-flex;
 }
 
 .buttonCentro {
@@ -95,23 +97,23 @@ ion-item{
     color: #E2000F;
     --background-focused: #E2000F;
 }
+
 .buttonCentro:focus {
     color: #E2000F;
 }
 
-.dataTopo{
+.dataTopo {
     margin-top: 0;
 }
 
-.scroll-bar-indicator
-{
-	display: none;
+.scroll-bar-indicator {
+    display: none;
 }
 
-ion-grid{
-    ion-row{
-        ion-col{
+ion-grid {
+    ion-row {
+        ion-col {
             padding: 0;
         }
-    }    
+    }
 }
