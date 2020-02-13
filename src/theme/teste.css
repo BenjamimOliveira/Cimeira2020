@@ -1,8 +1,10 @@
+
     /*ion-content {
         --background: #fff url("background.png") no-repeat center center / cover;
         background-size: cover;
         --background-size: cover;
     }*/
+
     
     .backgroundBranco {
         --background: #fff;
@@ -18,7 +20,7 @@
         mask-image: url("android-share.svg");
     }
     
-    .ios .shareIcon {
+    .ios .shareIcon { 
         background-color: white;
         -webkit-mask-image: url("ios-share.svg");
         mask-image: url("ios-share.svg");
