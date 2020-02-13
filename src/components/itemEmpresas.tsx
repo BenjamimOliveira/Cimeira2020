@@ -14,7 +14,7 @@ interface ITeste {
 const ItemEmpresas: React.FC<ITeste> = (props) => {
 
     const rect = {
-        minWidth: "50px",
+        minWidth: "40px",
         minHeight: "40px"
     };
     
