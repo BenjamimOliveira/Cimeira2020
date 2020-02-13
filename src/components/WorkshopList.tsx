@@ -34,12 +34,12 @@ const WorkshopList: React.FC<Data> = (props) => {
                 {props.hora}
             </div>
         </div>
-        <div style={{ marginLeft: "15px", width: "100%", display: "flex", alignItems: "center", justifyContent: "space-between" }} >
+        <a href={"/descrWorkshop/" + props.id} style={{ marginLeft: "15px", width: "100%", display: "flex", alignItems: "center", justifyContent: "space-between", textDecoration: "none" }} >
             <p style={{ marginRight: "auto", color: "#4b4b4b" }}>{props.desc.toUpperCase()}</p>
-            <Link to={"/descrWorkshop/" + props.id}>
+            <div>
                 <IonIcon className="arrowFoward" style={{ backgroundColor: "#4b4b4b", fontSize: "24px", minWidth: "24px", marginLeft: "10px"}} ></IonIcon>
-            </Link>
-        </div>
+            </div>
+        </a>
     </div>
         
     );

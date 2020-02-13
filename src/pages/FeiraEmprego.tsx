@@ -88,13 +88,12 @@ const FeiraEmprego: React.FC = () => {
                     <div style={rect}>
                         <IonImg src={menu2.foto} />
                     </div>
-                    <div style={{ marginLeft: "10px", width: "100%", display: "flex", alignItems: "center", justifyContent: "space-between", borderBottom: "1px solid #dfdfdf" }}>
+                    <a href={feiraVirtual.link} style={{ marginLeft: "10px", width: "100%", display: "flex", alignItems: "center", justifyContent: "space-between", borderBottom: "1px solid #dfdfdf", textDecoration: "none"}}>
                         <p style={{ marginRight: "auto", color: "#4b4b4b", fontWeight: "bold" }}>{menu2.nome}</p>
-                        <IonButton href={feiraVirtual.link} fill="clear" slot="end" style={{width:"24px"}} >
-                        <IonIcon className="arrowFoward" style={{ backgroundColor: "#4b4b4b", fontSize: "24px", minWidth: "24px" }}></IonIcon>
-                        </IonButton>
-                
-                    </div>
+                        <div slot="end" style={{width:"24px"}} >
+                          <IonIcon className="arrowFoward" style={{ backgroundColor: "#4b4b4b", fontSize: "24px", minWidth: "24px"}}></IonIcon>
+                        </div>                
+                    </a>
                 </div>
                 
             </div>
