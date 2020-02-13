@@ -13,8 +13,15 @@ const Login: React.FC = () => {
     let history = useHistory();
 
     useIonViewWillEnter(() => {
-        if(localStorage.getItem("email_validar_conta") != null)
+        if(localStorage.getItem("email_validar_conta") != null){
             setEmail(localStorage.getItem("email_validar_conta") as string);
+            localStorage.removeItem("email_validar_conta")
+        }
+
+        if(localStorage.getItem("UtilizadorID") && localStorage.getItem("UtilizadorLogin")){
+            // login feito -- redirecionar para home
+            history.replace("/home");
+        }
     });
 
     function submeterFormulario(e: any) {
@@ -54,6 +61,9 @@ const Login: React.FC = () => {
                 setToast({state: true, message: "Login realizado com sucesso!"});
                 localStorage.setItem("UtilizadorLogin", resultado.data.message.nome);
                 localStorage.setItem("UtilizadorID", resultado.data.message.id_user);
+
+                // -- VERIFICAR PERFIS
+
                 history.replace("/home");
             } else if(resultado.data.cod === 4){
                 setToast({state: true, message: "Ainda é necessário validar esta conta! Obtenha a chave de validação no seu email."});

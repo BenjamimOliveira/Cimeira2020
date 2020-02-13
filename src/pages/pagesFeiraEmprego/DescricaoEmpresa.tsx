@@ -28,8 +28,8 @@ const DescricaoEmpresa: React.FC<PageProps> = ({match}) => {
     })
   });
 
-  function Call() {
-    CallNumber.callNumber(empresa.contacto_representante, true);
+  function EnviaMail() {
+    window.location.href = "mailto:" + empresa.contacto_representante;
   }
 
   const stl_area_info = {
@@ -143,7 +143,7 @@ const DescricaoEmpresa: React.FC<PageProps> = ({match}) => {
           </div>
 
           <div style={linha_contacto}>
-            <div style={{display: "flex", justifyContent: "space-beteen"}} onClick={() => Call()}>
+            <div style={{display: "flex", justifyContent: "space-beteen"}}>
               <p style={placeholder_icon}/>
               <div style={{marginLeft: "20px"}}>
                 <p style={txt_nome_representante}>{empresa.representante_empresa}</p>
@@ -153,15 +153,14 @@ const DescricaoEmpresa: React.FC<PageProps> = ({match}) => {
           </div>
           <hr />
           <div style={linha_contacto}>
-            <div style={{display: "flex", justifyContent: "space-between"}} onClick={() => Call()}>
+            <div style={{display: "flex", justifyContent: "space-between"}} onClick={() => EnviaMail()}>
               <div style={{display: "flex"}}>
-                <IonIcon className="callIcon" style={icon}/>
+                <IonIcon className="mailIcon" style={icon}/>
                 <div style={{marginLeft: "20px"}}>
                   <p style={txt_nome_representante}>{empresa.contacto_representante}</p>
-                  <div style={subLinha}>Contacto</div>
+                  <div style={subLinha}>E-mail</div>
                 </div>
               </div>
-              <IonIcon className="mailIcon" style={icon}/>
             </div>
           </div>
         </div>

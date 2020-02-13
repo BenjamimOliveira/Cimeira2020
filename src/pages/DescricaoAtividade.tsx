@@ -1,4 +1,4 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButtons, IonButton, IonIcon, IonText, useIonViewWillEnter } from '@ionic/react';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButtons, IonButton, IonIcon, IonText, useIonViewWillEnter, IonToast } from '@ionic/react';
 import React, { useState } from 'react';
 import axios from 'axios';
 import { RouteComponentProps } from 'react-router';
@@ -12,6 +12,8 @@ const Atividade: React.FC<UserDetailPageProps> = ({match}) => {
   const [ possuiResultados, setPossuiResultados ] = useState(false);
   const [atividade, setAtividade ] = useState({atividade: "", categoria: {}, categoria_id: null, descricao: "", duracao: "", hora: "", id: null, local: "", moderador: null});
   const [ txtTitulo, setTxtTitulo ] = useState("A carregar atividade...");
+  
+  const [ toast, setToast ] = useState({state: false, message: ""});
 
   const styl_infoHorario = {
     display: "flex",  
@@ -51,8 +53,35 @@ const Atividade: React.FC<UserDetailPageProps> = ({match}) => {
     marginTop: "50px"
   }
 
+  function inscreverAtividade() {
+    if(!localStorage.getItem("UtilizadorID")){
+      console.log("Utilizador ID não existe!")
+      setToast({state: true, message: "Ocorreu um erro ao realizar a inscrição na atividade!"});
+      return;
+    }
+    if(possuiResultados){
+      axios({
+        method: "post",
+        url: "http://app.cimeira.ipvc.pt/api/atividade_detalhes/" + atividade.id,
+        data: {
+          id_utilizador: localStorage.getItem("UtilizadorID")
+        }
+      }).then(resultado => {       
+          if(resultado.data.status){
+            setToast({state: true, message: "Foi inscrito com sucesso nesta atividade!"});
+          } else {
+            setToast({state: true, message: "Já se encontra inscrito nesta atividade!"});
+          }
+      }).catch(erro => {
+          console.log("ERRO", erro);
+          setToast({state: true, message: "Ocorreu um erro ao realizar a inscrição na atividade!"});
+      });
+    } else {
+
+    }
+  }
+
   useIonViewWillEnter(() => {
-    // -- obter lista de categorias
     axios({
       method: "get",
       url: "http://app.cimeira.ipvc.pt/api/atividade_detalhes/" + match.params.id
@@ -62,7 +91,6 @@ const Atividade: React.FC<UserDetailPageProps> = ({match}) => {
           resultado.data.moderador = "";
         setAtividade(resultado.data);
         setTxtTitulo((resultado.data.categoria.categoria).toLowerCase().charAt(0).toUpperCase() + (resultado.data.categoria.categoria).toLowerCase().slice(1));
-        //console.log(resultado)
     }).catch(erro => {
         console.log("ERRO", erro);
     })
@@ -80,7 +108,7 @@ const Atividade: React.FC<UserDetailPageProps> = ({match}) => {
           <IonTitle>{txtTitulo}</IonTitle>
         </IonToolbar>
       </IonHeader>
-
+      <IonToast isOpen={toast.state} onDidDismiss={() => setToast({state: false, message: toast.message})} message={toast.message} duration={3000}></IonToast>
       <IonContent fullscreen className="backgroundBranco">
         { possuiResultados &&
           <IonText className="txtCentroCultural">{atividade.local.toUpperCase()}</IonText>
@@ -112,7 +140,7 @@ const Atividade: React.FC<UserDetailPageProps> = ({match}) => {
             </div>
 
             <div className="ion-margin btnAmarelo">
-                <IonButton type="button" style={styl_btnAdicionar}  onClick={() => {}} size="large" expand="block">PARTICIPAR</IonButton>
+                <IonButton type="button" style={styl_btnAdicionar}  onClick={() => { inscreverAtividade() }} size="large" expand="block">PARTICIPAR</IonButton>
             </div>
           </div>
         }

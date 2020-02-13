@@ -41,7 +41,7 @@ const ValidarRegisto: React.FC = () => {
         }).then(resultado => {
             if(resultado.data.status === true){
                 // chave validada
-                setToast({state: true, message: "A sua chave foi validada com sucesso! Realize agora login"});
+                setToast({state: true, message: "A sua chave foi validada com sucesso! Realize agora o login"});
                 
                 history.push("/login");
             } else {

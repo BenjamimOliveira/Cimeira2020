@@ -8,6 +8,7 @@ const Registo: React.FC = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [passwordConfirm, setPasswordConfirm] = useState("");
+    const [localidade, setLocalidade] = useState("");
     const [nome, setNome] = useState("");
 
     const [toast, setToast] = useState({ state: false, message: "Erro no login" });
@@ -54,34 +55,23 @@ const Registo: React.FC = () => {
                 email: email
             }
         }).then(resultado => {
-
             if (resultado.data.status === true) {
                 setToast({ state: true, message: "Já existe uma conta com esse email registado. Faça login ou recupere a palavra-passe" });
                 history.push("/login");
                 return;
             } else {
-                axios({
-                    method: "post",
-                    url: "http://app.cimeira.ipvc.pt/api/registo", // link validar key na db
-                    data: {
-                        email: email,
-                        password: hash.digest("hex"),
-                        nome: nome
-                    }
-                }).then(resultado => {
-                    console.log(resultado);
-                    if(resultado.data.status === true){
-                        setToast({state: true, message: "É agora necessário validar a sua conta!"});
-                        localStorage.setItem("email_validar_conta", email);
-                        history.push("/validarregisto");
-                    }
-                }).catch(erro => {
-                    console.log("ERRO", erro);
-                    setToast({state: true, message: "Ocorreu um erro a confirmar o registo!"});
-                });
-                
-            }
+                // -- passar para página aceitar rgpd
+                setToast({state: true, message: "É agora necessário aceitar o RGPD! A sua conta apenas será registada após confirmar"});
+                let dados_registo = {
+                    email: email,
+                    password: hash.digest("hex"),
+                    nome: nome,
+                    localidade: localidade
+                }
+                localStorage.setItem("dados_registo", JSON.stringify(dados_registo));
 
+                history.push("/registo_aceitar_rgpd");
+            }
         }).catch(erro => {
             console.log("ERRO", erro);
             setToast({ state: true, message: "Ocorreu um erro a verificar se já existe alguma conta com esse email. Por favor, tente registar-se mais tarde" });
@@ -115,6 +105,10 @@ const Registo: React.FC = () => {
 
                                     <IonItem className="ion-margin">
                                         <IonInput autocomplete="off" required type="email" value={email} onInput={(e) => setEmail((e.target as HTMLInputElement).value)} placeholder="Endereço de email" pattern="email" inputmode="email"></IonInput>
+                                    </IonItem>
+
+                                    <IonItem className="ion-margin">
+                                        <IonInput autocomplete="off" required type="text" value={localidade} onInput={(e) => setLocalidade((e.target as HTMLInputElement).value)} placeholder="Localidade" inputmode="text"></IonInput>
                                     </IonItem>
 
                                     <IonItem className="ion-margin">

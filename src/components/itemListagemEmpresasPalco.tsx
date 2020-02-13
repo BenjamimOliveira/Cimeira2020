@@ -32,7 +32,7 @@ const ItemListagemEmpresas: React.FC<ITeste> = (props) => {
                         </IonAvatar>
                     </div>
                     <div style={{ marginLeft: "10px", width: "100%", display: "flex", alignItems: "center", justifyContent: "space-between", borderBottom: "1px solid #dfdfdf" }}>
-                        <Link to={"/descricao_empresa/" + props.idEmpresa} style={{width: "100%", display: "flex", alignItems: "center", justifyContent: "space-between", textDecoration: "none" }}>
+                        <Link to={"/descricao_empresa_palco/" + props.idEmpresa} style={{width: "100%", display: "flex", alignItems: "center", justifyContent: "space-between", textDecoration: "none" }}>
                             <p style={{ marginRight: "auto", color: "#4b4b4b", fontWeight: "bold" }}>{props.texto}</p>
                             <IonIcon className="arrowFoward" style={{ backgroundColor: "#4b4b4b", fontSize: "24px", minWidth: "24px" }} ></IonIcon>
                         </Link>

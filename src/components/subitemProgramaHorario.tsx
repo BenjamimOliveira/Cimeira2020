@@ -32,8 +32,8 @@ const SubItemProgramaHorario: React.FC<IProps> = (props) => {
                 </div>
             </div>
             <div style={{ marginLeft: "15px", width: "100%", display: "flex", alignItems: "center", justifyContent: "space-between" }} >
-                <p style={{ marginRight: "auto", color: "#4b4b4b" }}>{props.texto}</p>
-                <Link to={"/atividade/" + props.idAtividade}>
+                <Link to={"/atividade/" + props.idAtividade} style={{ marginLeft: "15px", width: "100%", display: "flex", alignItems: "center", justifyContent: "space-between", textDecoration: "none"}}>
+                    <p style={{ marginRight: "auto", color: "#4b4b4b" }}>{props.texto}</p>
                     <IonIcon className="arrowFoward" style={{ backgroundColor: "#4b4b4b", fontSize: "24px", minWidth: "24px" }} ></IonIcon>
                 </Link>
             </div>
