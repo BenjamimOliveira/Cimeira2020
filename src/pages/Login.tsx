@@ -1,4 +1,4 @@
-import { IonContent, IonPage, IonButton, IonGrid, IonRow, IonCol, IonInput, IonItem, IonToast, IonRouterLink, useIonViewWillEnter } from '@ionic/react';
+import { IonContent, IonPage, IonButton, IonGrid, IonRow, IonCol, IonInput, IonItem, IonToast, IonRouterLink, useIonViewDidEnter } from '@ionic/react';
 import React, { useState } from 'react';
 import crypto from 'crypto';
 import axios from "axios";
@@ -12,7 +12,7 @@ const Login: React.FC = () => {
     const [toast, setToast] = useState({state: false, message: "Erro no login"});
     let history = useHistory();
 
-    useIonViewWillEnter(() => {
+    useIonViewDidEnter(() => {
         if(localStorage.getItem("email_validar_conta") != null){
             setEmail(localStorage.getItem("email_validar_conta") as string);
             localStorage.removeItem("email_validar_conta")

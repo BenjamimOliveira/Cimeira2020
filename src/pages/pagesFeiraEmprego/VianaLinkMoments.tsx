@@ -1,4 +1,4 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButtons, useIonViewWillEnter, IonText, IonButton, IonIcon } from '@ionic/react';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButtons, IonText, IonButton, IonIcon, useIonViewDidEnter } from '@ionic/react';
 import React, { useState } from 'react';
 import axios from 'axios';
 
@@ -45,7 +45,7 @@ const VianaLinkMoments: React.FC = () => {
         marginTop: "50px"
       }
 
-  useIonViewWillEnter(() => {
+  useIonViewDidEnter(() => {
     // -- obter lista de categorias
     axios({
       method: "get",

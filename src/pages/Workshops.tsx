@@ -1,12 +1,10 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButtons, IonBackButton, IonItem, IonImg, useIonViewWillEnter, IonText, IonLabel, IonButton, IonIcon, IonSearchbar } from '@ionic/react';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButtons, IonText, IonLabel, IonButton, IonIcon, IonSearchbar, useIonViewDidEnter } from '@ionic/react';
 import React, { useState } from 'react';
 import WorkshopList from "../components/WorkshopList";
 import "./Workshop.scss";
 import Axios from 'axios';
 
 const Workshops: React.FC = () => {
-  const hora = "10:00";
-  const desc = "Ter sucesso numa entrevista de emprego";
 
   const [ possuiResultados, setPossuiResultados ] = useState(false);
   const [ workshops, setWorkshops ] = useState([]);
@@ -19,7 +17,7 @@ const Workshops: React.FC = () => {
     return horaTemp;
   }
   
-  useIonViewWillEnter(() => {
+  useIonViewDidEnter(() => {
     // -- obter lista de categorias
     Axios({
       method: "get",

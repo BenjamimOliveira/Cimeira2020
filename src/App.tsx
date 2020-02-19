@@ -49,6 +49,7 @@ import EmpresasPalco from './pages/pagesFeiraEmprego/EmpresasPalco';
 import DescricaoEmpresa from './pages/pagesFeiraEmprego/DescricaoEmpresa';
 import DescricaoEmpresaPalco from './pages/pagesFeiraEmprego/DescricaoPalcoCentral';
 import PitchsInscricao from './pages/pagesFeiraEmprego/PitchsInscricao';
+import Agenda from './pages/Agenda';
 const App: React.FC = () => (
   
   <IonApp>
@@ -83,6 +84,9 @@ const App: React.FC = () => (
         <Route path="/login" component={Login} exact={true} />
         <Route path="/selecionar_perfis_conta" component={SelecaoTipoPerfil} exact={true} />
         <Route exact path="/" render={() => <Redirect to="/login" />} />
+
+        
+        <Route path="/agenda" component={Agenda} exact={true} />
       </IonRouterOutlet>
     </IonReactRouter>
   </IonApp>
