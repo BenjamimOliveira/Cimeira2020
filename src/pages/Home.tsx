@@ -63,13 +63,15 @@ const Home: React.FC<RouteComponentProps> = (props) => {
               console.log(resultado);
           }).catch(erro => {
               console.log("ERRO", erro);
-          })
+          });
+
+          //document.getElementById("conteudo")!.style.backgroundImage = "url('http://app.cimeira.ipvc.pt/files/background.png')";
     });
 
     return (
         <IonPage>
             
-            <IonContent no-padding no-margin margin-left class="grid-bottom" overflow-scroll="false" className="bckImg">
+            <IonContent id="conteudo" no-padding no-margin margin-left class="grid-bottom" overflow-scroll="false" className="bckImg">
                 <div className="ecraGeral" style={{height:"20%"}}>
                 <IonGrid class="ion-align-items-center dataTopo">
                     <IonCol size="12">

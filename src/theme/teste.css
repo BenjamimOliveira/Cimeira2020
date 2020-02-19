@@ -1,4 +1,4 @@
-    .backImg {
+    /* .backImg {
         --background: #fff url("background.png") no-repeat center center / cover;
         background-size: cover;
         --background-size: cover;
@@ -9,9 +9,7 @@
         -o-transition: none !important;
         -ms-transition: none !important;
         transition: none !important;
-    }
-    
-
+    } */
     
     .backgroundBranco {
         --background: #fff;

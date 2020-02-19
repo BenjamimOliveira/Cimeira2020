@@ -1,7 +1,7 @@
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButtons, IonButton, IonIcon, IonSearchbar, IonText, useIonViewDidEnter } from '@ionic/react';
 import React, { useState } from 'react';
 import axios from 'axios';
-import ItemProgramaHorario from "../components/itemProgramaHorario"
+import ItemAgenda from "../components/itemAgenda"
 import '../theme/agenda_timeline.css';
 
 const Programa: React.FC = () => {
@@ -41,7 +41,7 @@ const Programa: React.FC = () => {
               <IonIcon slot="icon-only" className="arrowBack"></IonIcon>
             </IonButton>
           </IonButtons>
-          <IonTitle>Programa</IonTitle>
+          <IonTitle>Agenda</IonTitle>
           <IonButtons slot="end">
             <IonButton expand="block" onClick={() => {possuiResultados ? setMostraBarraPesquisa(true) : setMostraBarraPesquisa(false)}}>
               <IonIcon slot="icon-only" name="search" className="txtBranco"/>
@@ -59,20 +59,9 @@ const Programa: React.FC = () => {
       <IonContent fullscreen className="backgroundBranco">
         <IonText className="txtCentroCultural">CENTRO CULTURAL</IonText>
         {/*-- List of Text Items --*/}
-        <div className="timeline timeline-split">
+        <div className="timeline timeline-split"  style={{marginTop: "10px"}}>
           { possuiResultados === true && itemsMostrar.map(function(item) {
-              return <div className="timeline-item" key={item['titulo']}>
-                    <div className="timeline-info">
-                        <span>March 12, 2016</span>
-                    </div>
-                    <div className="timeline-marker"></div>
-                    <div className="timeline-content">
-                        <h3 className="timeline-title">Event Title</h3>
-                        <p>Nullam vel sem. Nullam vel sem. Integer ante arcu, accumsan a, consectetuer eget, posuere ut, mauris. Donec orci lectus, aliquam ut, faucibus non, euismod id, nulla. Donec vitae sapien ut libero venenatis faucibus. ullam dictum felis
-                            eu pede mollis pretium. Pellentesque ut neque.</p>
-                    </div>
-
-              </div>
+              return <ItemAgenda hora={(item.hora as string).slice(0, -3)} titulo={item.titulo} desc={item.descricao} tipo={item.tipo} key={item['titulo']}></ItemAgenda>
           })
           }
         </div>
