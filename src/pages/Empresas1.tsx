@@ -1,4 +1,4 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButtons, useIonViewWillEnter, IonText, IonButton, IonIcon } from '@ionic/react';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButtons, IonText, IonButton, IonIcon, useIonViewDidEnter } from '@ionic/react';
 import React, { useState } from 'react';
 import ItemEmpresas from '../components/itemEmpresas';
 import axios from 'axios';
@@ -10,7 +10,7 @@ const Empresas1: React.FC = () => {
   var [menu2, setmenu2] = useState({descr:"", link: ""});
   var [, setPossuiResultados ] = useState(false);
 
-  useIonViewWillEnter(() => {
+  useIonViewDidEnter(() => {
     // -- obter lista de categorias
     axios({
       method: "get",

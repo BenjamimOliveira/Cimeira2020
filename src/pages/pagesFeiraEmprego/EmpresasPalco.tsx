@@ -1,4 +1,4 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButtons, useIonViewWillEnter, IonText, IonButton, IonIcon, IonSearchbar } from '@ionic/react';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButtons, IonText, IonButton, IonIcon, IonSearchbar, useIonViewDidEnter } from '@ionic/react';
 import React, { useState } from 'react';
 import Axios from 'axios';
 import ItemListagemEmpresasPalco from "../../components/itemListagemEmpresasPalco";
@@ -16,7 +16,7 @@ const Empresas: React.FC = () => {
     }));
   }
 
-  useIonViewWillEnter(() => {
+  useIonViewDidEnter(() => {
     // -- obter lista de categorias
     Axios({
       method: "get",

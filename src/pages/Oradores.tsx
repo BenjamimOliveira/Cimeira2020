@@ -1,4 +1,4 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButtons, IonButton, IonIcon, IonSearchbar, useIonViewWillEnter, IonText } from '@ionic/react';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButtons, IonButton, IonIcon, IonSearchbar, IonText, useIonViewDidEnter } from '@ionic/react';
 import React, { useState } from 'react';
 import axios from "axios";
 import ItemListagemOradores from "../components/itemListagemOradores";
@@ -11,7 +11,7 @@ const Oradores: React.FC = () => {
   const [ oradoresAMostrar, setOradoresAMostrar ] = useState([]);
 
   // -- obter listagem de oradores
-  useIonViewWillEnter(() => {
+  useIonViewDidEnter(() => {
     axios({
       method: "get",
       url: "http://app.cimeira.ipvc.pt/api/oradores"

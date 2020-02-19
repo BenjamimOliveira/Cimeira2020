@@ -1,4 +1,4 @@
-import { IonContent, IonPage, IonRow, IonCol, IonGrid, IonItem, IonImg, IonText, IonFooter, useIonViewWillEnter, IonButton, IonLabel } from '@ionic/react';
+import { IonContent, IonPage, IonRow, IonCol, IonGrid, IonItem, IonImg, IonText, IonFooter, IonButton, IonLabel, useIonViewDidEnter } from '@ionic/react';
 import React, { useState } from 'react';
 import { RouteComponentProps } from 'react-router';
 import axios from 'axios';
@@ -22,14 +22,14 @@ const Home: React.FC<RouteComponentProps> = (props) => {
     var [menu4, setmenu4] = useState({id:null, path: "", title:"", type:""});
     // -- Menu secundario (Footer)    
     var [menu5, setmenu5] = useState({id:null, path: "", title:"", type:""});
-    var [menu6, setmenu6] = useState({id:null, path: "", title:"", type:""});
+    var [, setmenu6] = useState({id:null, path: "", title:"", type:""});
     var [menu7, setmenu7] = useState({id:null, path: "", title:"", type:""});
     // -- Botao meio
     var [butCentro, setButCentro] = useState("");
 
     var [possuiResultados_programa, setPossuiResultados_programa] = useState(false);
 
-    var [tituloPrograma, setTituloPrograma] = useState("");
+    var [] = useState("");
 
     //menu1 = {"id":"12","path":"http:\/\/app.cimeira.ipvc.pt\/files\/icon_programa.png","title":"PROGRAMA","type":"p"};
   
@@ -52,7 +52,7 @@ const Home: React.FC<RouteComponentProps> = (props) => {
         })
     }
 
-    useIonViewWillEnter(() => {
+    useIonViewDidEnter(() => {
         callAxios();
 
         axios({

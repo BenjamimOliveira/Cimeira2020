@@ -1,4 +1,4 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButtons, IonButton, IonIcon, IonText, useIonViewWillEnter } from '@ionic/react';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButtons, IonButton, IonIcon, IonText, useIonViewDidEnter } from '@ionic/react';
 import React, { useState } from 'react';
 import axios from 'axios';
 import { RouteComponentProps } from 'react-router';
@@ -50,7 +50,7 @@ const Palestra: React.FC<PropsInfoPalestra> = ({match}) => {
     marginTop: "50px"
   }
 
-  useIonViewWillEnter(() => {
+  useIonViewDidEnter(() => {
     axios({
       method: "get",
       url: "http://app.cimeira.ipvc.pt/api/orador/" + match.params.id + "/palestra"

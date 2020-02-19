@@ -1,4 +1,4 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButtons, useIonViewWillEnter, IonButton, IonIcon, IonText, IonLabel, IonImg } from '@ionic/react';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButtons, IonButton, IonIcon, IonText, IonLabel, IonImg, useIonViewDidEnter } from '@ionic/react';
 import React, { useState } from 'react';
 import axios from 'axios';
 import ItemFeiraEmprego from '../components/itemFeiraEmprego';
@@ -28,7 +28,7 @@ const FeiraEmprego: React.FC = () => {
 */
 
 
-  useIonViewWillEnter(() => {
+  useIonViewDidEnter(() => {
     // -- obter lista de categorias
     axios({
       method: "get",
@@ -59,7 +59,7 @@ const FeiraEmprego: React.FC = () => {
       minHeight: "40px"
   };
 /*
-  useIonViewWillEnter(() => {
+  useIonViewDidEnter(() => {
     callAxios();
   });
 */

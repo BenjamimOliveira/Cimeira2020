@@ -1,4 +1,4 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButtons, IonButton, IonIcon, IonText, useIonViewWillEnter } from '@ionic/react';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButtons, IonButton, IonIcon, IonText, useIonViewDidEnter } from '@ionic/react';
 import React, { useState } from 'react';
 import axios from 'axios';
 import { RouteComponentProps } from 'react-router';
@@ -11,7 +11,7 @@ const Workshops: React.FC<UserDetailPageProps> = ({match}) => {
 
     const [possuiResultados, setPossuiResultados ] = useState(false);
     const [workshop, setWorkshop] = useState({id: "", titulo: "", hora: "", moderador: "", duracao: "", local: "", descricao: ""});
-    const [toast, setToast] = useState({state: false, message: "Erro na inscrição"});
+    const [, setToast] = useState({state: false, message: "Erro na inscrição"});
  
     const styl_infoHorario = {
         display: "flex",  
@@ -50,7 +50,7 @@ const Workshops: React.FC<UserDetailPageProps> = ({match}) => {
         marginTop: "50px"
       }
 
-    useIonViewWillEnter(() => {
+    useIonViewDidEnter(() => {
         // -- obter lista de categorias
         axios({
           method: "get",
@@ -64,7 +64,7 @@ const Workshops: React.FC<UserDetailPageProps> = ({match}) => {
         })
       });
 
-      function inscricaoWorkshop(e: any) {
+      function inscricaoWorkshop() {
        
 
         axios({
@@ -129,7 +129,7 @@ const Workshops: React.FC<UserDetailPageProps> = ({match}) => {
             </div>
 
             <div className="ion-margin btnAmarelo">
-                <IonButton type="button" style={styl_btnAdicionar}  onClick={(e) => {inscricaoWorkshop(e)}} size="large" expand="block">PARTICIPAR</IonButton>
+                <IonButton type="button" style={styl_btnAdicionar}  onClick={(e) => {inscricaoWorkshop()}} size="large" expand="block">PARTICIPAR</IonButton>
             </div>
           </div>
         }

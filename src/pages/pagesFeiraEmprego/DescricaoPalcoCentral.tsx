@@ -1,4 +1,4 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButtons, IonButton, IonIcon, IonText, useIonViewWillEnter, IonToast, IonAvatar, IonImg } from '@ionic/react';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButtons, IonButton, IonIcon, IonText, IonToast, IonAvatar, IonImg, useIonViewDidEnter } from '@ionic/react';
 import React, { useState } from 'react';
 import axios from 'axios';
 import { RouteComponentProps } from 'react-router';
@@ -15,7 +15,7 @@ const Atividade: React.FC<UserDetailPageProps> = ({match}) => {
 
   const [ toast, setToast ] = useState({state: false, message: ""});
 
-  useIonViewWillEnter(() => {
+  useIonViewDidEnter(() => {
     // -- obter info empresa
     axios({
       method: "get",

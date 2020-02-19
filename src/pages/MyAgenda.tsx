@@ -1,4 +1,4 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButtons, IonBackButton, IonButton, IonIcon, IonImg, useIonViewWillEnter } from '@ionic/react';
+import { IonContent, IonPage, IonImg } from '@ionic/react';
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import ItemMyAgenda from '../components/itemMyAgenda';
@@ -41,7 +41,7 @@ const MyAgenda: React.FC = () => {
     marginTop:"100px"
   }
 
-  useIonViewWillEnter(() => {
+  useIonViewDidEnter(() => {
     // -- obter lista de categorias
     axios({
       method: "get",
