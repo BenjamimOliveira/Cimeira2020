@@ -4,7 +4,14 @@
         --background-size: cover;
         --webkit-transform-style: preserve-3d;
         --webkit-backface-visibility: hidden;
+        -webkit-transition: none !important;
+        -moz-transition: none !important;
+        -o-transition: none !important;
+        -ms-transition: none !important;
+        transition: none !important;
     }
+    
+
     
     .backgroundBranco {
         --background: #fff;
