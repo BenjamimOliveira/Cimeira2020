@@ -2,6 +2,8 @@
         --background: #fff url("background.png") no-repeat center center / cover;
         background-size: cover;
         --background-size: cover;
+        --webkit-transform-style: preserve-3d;
+        --webkit-backface-visibility: hidden;
     }
     
     .backgroundBranco {
