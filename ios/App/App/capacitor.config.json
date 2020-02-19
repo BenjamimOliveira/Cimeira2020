@@ -1,8 +1,1 @@
-{
-  "appId": "io.ionic.starter",
-  "appName": "projCimeira",
-  "bundledWebRuntime": false,
-  "npmClient": "npm",
-  "webDir": "build",
-  "cordova": {}
-}
+{}

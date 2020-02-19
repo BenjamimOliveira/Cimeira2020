@@ -147,7 +147,7 @@ const Home: React.FC<RouteComponentProps> = (props) => {
                 </IonGrid>
                 { possuiResultados_programa && 
                 <div style={{ position: "absolute", top: "30%", left: "35%", height: "25%", width: "30%", color: "#E2000F", }}>
-                <IonButton strong href={butCentro}  class="buttonCentro" color="tertiary" shape="round"><IonLabel color="primary">PROGRAMA<br/>CIMEIRA</IonLabel></IonButton>
+                <IonButton strong href={butCentro} class="buttonCentro" color="tertiary" shape="round"><IonLabel color="primary">PROGRAMA<br/>CIMEIRA</IonLabel></IonButton>
                 </div>
                 }
                 </div>
