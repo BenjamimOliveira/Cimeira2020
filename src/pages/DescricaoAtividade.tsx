@@ -1,4 +1,4 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButtons, IonButton, IonIcon, IonText, useIonViewWillEnter, IonToast } from '@ionic/react';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButtons, IonButton, IonIcon, IonText, IonToast, useIonViewDidEnter } from '@ionic/react';
 import React, { useState } from 'react';
 import axios from 'axios';
 import { RouteComponentProps } from 'react-router';
@@ -81,7 +81,7 @@ const Atividade: React.FC<UserDetailPageProps> = ({match}) => {
     }
   }
 
-  useIonViewWillEnter(() => {
+  useIonViewDidEnter(() => {
     axios({
       method: "get",
       url: "http://app.cimeira.ipvc.pt/api/atividade_detalhes/" + match.params.id
@@ -122,7 +122,6 @@ const Atividade: React.FC<UserDetailPageProps> = ({match}) => {
           <div className="areaInformacao" style={{padding: "8px 16px", marginTop: "10px"}}>
             <div>
               <IonText style={{fontSize: "26px", color: "#4a4a4a", fontWeight: "bold", marginBottom: 0, paddingBottom: 0, lineHeight: "28px"}}><p>{atividade.atividade}</p></IonText>
-              <IonText style={{fontSize: "12px", color: "#757575", marginTop: "-100px", paddingTop: 0}}><p>Moderador: {atividade.moderador}</p></IonText>
               <div style={styl_infoHorario}>
                 <div style={styl_infoHorario_dentro}>
                   <p style={{marginRight: "5px"}}>Início: </p>

@@ -1,8 +1,7 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButtons, IonButton, IonText, useIonViewWillEnter, IonAvatar, IonImg, IonIcon } from '@ionic/react';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButtons, IonButton, IonText, IonAvatar, IonImg, IonIcon, useIonViewDidEnter } from '@ionic/react';
 import React, { useState } from 'react';
 import axios from 'axios';
 import { RouteComponentProps } from 'react-router';
-import { CallNumber } from "@ionic-native/call-number";
 
 interface PageProps extends RouteComponentProps<{
   id: string;
@@ -14,7 +13,7 @@ const DescricaoEmpresa: React.FC<PageProps> = ({match}) => {
   const [ empresa, setEmpresa ] = useState({id: 0, local: "", nome: "", logo: "", localizacao_empresa: "", area_empresa: "", representante_empresa: "", contacto_representante: "", palco_central: ""});
   const [ txtTitulo, setTxtTitulo ] = useState("A carregar informação...");
 
-  useIonViewWillEnter(() => {
+  useIonViewDidEnter(() => {
     // -- obter info empresa
     axios({
       method: "get",
