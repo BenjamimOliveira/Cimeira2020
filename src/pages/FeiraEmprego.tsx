@@ -2,6 +2,7 @@ import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButtons, IonBu
 import React, { useState } from 'react';
 import axios from 'axios';
 import ItemFeiraEmprego from '../components/itemFeiraEmprego';
+import { Link } from 'react-router-dom';
 
 
 const FeiraEmprego: React.FC = () => {
@@ -81,7 +82,7 @@ const FeiraEmprego: React.FC = () => {
       <IonContent class="ion-content-workshop"> 
         <IonLabel><IonText class="linha-topo">TENDA MULTIUSOS</IonText></IonLabel>
        
-        <ItemFeiraEmprego texto={menu1.nome} idCategoria={menu1.id} urlImagem={menu1.foto} pathTo="/recrutamento"/>          
+        <Link to={"/recrutamento"} style={{textDecoration: "none"}}><ItemFeiraEmprego texto={menu1.nome} idCategoria={menu1.id} urlImagem={menu1.foto}/></Link>        
         <div> 
             <div tabIndex={0}>
                 <div style={{ display: "flex", padding: "10px", alignItems: "center", justifyContent: "space-between" }}>
@@ -98,8 +99,8 @@ const FeiraEmprego: React.FC = () => {
                 
             </div>
         </div>
-        <ItemFeiraEmprego texto={menu3.nome} idCategoria={menu3.id} urlImagem={menu3.foto} pathTo="/pitchs"/> 
-        <ItemFeiraEmprego texto={menu4.nome} idCategoria={menu4.id} urlImagem={menu4.foto} pathTo="/vianalinkmoments"/> 
+        <Link to={"/pitchs"} style={{textDecoration: "none"}}><ItemFeiraEmprego texto={menu3.nome} idCategoria={menu3.id} urlImagem={menu3.foto}/> </Link>
+        <Link to={"/vianalinkmoments"} style={{textDecoration: "none"}}><ItemFeiraEmprego texto={menu4.nome} idCategoria={menu4.id} urlImagem={menu4.foto}/> </Link>
         
         { console.log(menu1.nome + menu2.nome + menu3.nome) }
       </IonContent>

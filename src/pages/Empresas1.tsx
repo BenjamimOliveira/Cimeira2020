@@ -2,6 +2,7 @@ import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButtons, IonTe
 import React, { useState } from 'react';
 import ItemEmpresas from '../components/itemEmpresas';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 const Empresas1: React.FC = () => {
   // http://app.cimeira.ipvc.pt/api/empresas
@@ -41,8 +42,8 @@ const Empresas1: React.FC = () => {
       <IonContent className="backgroundBranco">
         <IonText className="local_atividade">TENDA MULTIUSOS</IonText>
         
-        <ItemEmpresas texto={menu1.descr} urlImagem={menu1.link} pathTo="/empresas_palco"/>
-        <ItemEmpresas texto={menu2.descr} urlImagem={menu2.link} pathTo="/stands"/>
+        <Link to={"/empresas_palco"} style={{textDecoration: "none"}}><ItemEmpresas texto={menu1.descr} urlImagem={menu1.link}/></Link>
+        <Link to={"/stands"} style={{textDecoration: "none"}}><ItemEmpresas texto={menu2.descr} urlImagem={menu2.link}/></Link>
         
         
       </IonContent>
