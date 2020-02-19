@@ -55,7 +55,7 @@ const Programa: React.FC = () => {
       }
       </IonHeader>
 
-      <IonContent fullscreen className="backgroundBranco">
+      <IonContent fullscreen className="">
         <IonText className="txtCentroCultural">CENTRO CULTURAL</IonText>
         {/*-- List of Text Items --*/}
         { possuiResultados === true && categoriasMostrar.map(function(categoria) {

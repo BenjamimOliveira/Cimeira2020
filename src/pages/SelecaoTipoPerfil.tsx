@@ -52,7 +52,7 @@ const SelecaoTipoPerfil: React.FC = () => {
 
     return (
         <IonPage><IonToast isOpen={true} message="Selecione os perfis que pretende! Pode selecionar, no máximo, 3 tipos diferentes" duration={5000}></IonToast>
-            <IonContent fullscreen className="pagLogin">
+            <IonContent fullscreen className="pagLogin bckImg">
                 <IonToast isOpen={toast.state} onDidDismiss={(e) => {setToast({ state: false, message: toast.message });}} message={toast.message} duration={5000}></IonToast>
                 <IonGrid>
                     <IonRow className="ion-justify-content-center ion-align-items-center">
