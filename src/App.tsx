@@ -10,6 +10,25 @@ import RegistoRGPD from './pages/Registo_RGPD';
 import ValidarRegisto from "./pages/ValidarRegisto";
 import Programa from "./pages/Programa";
 import DescricaoAtividade from "./pages/DescricaoAtividade";
+import Workshops from './pages/Workshops';
+import Oradores from './pages/Oradores';
+import Palestra from './pages/Palestra';
+import FeiraEmprego from './pages/FeiraEmprego';
+import MyAgenda from './pages/MyAgenda';
+import PhotoFeed from './pages/PhotoFeed';
+import Localizacao from './pages/Localizacao';
+import DescricaoWorkshop from "./pages/DescriçãoWorkshop";
+import Recrutamento from "./pages/pagesFeiraEmprego/Recrutamento";
+import Empresas1 from './pages/Empresas1';
+import Stands from './pages/pagesFeiraEmprego/Stands';
+import FeiraVirtual from './pages/pagesFeiraEmprego/FeiraVirtual';
+import Pitch from './pages/pagesFeiraEmprego/Pitchs';
+import VianaLinkMoments from './pages/pagesFeiraEmprego/VianaLinkMoments';
+import EmpresasPalco from './pages/pagesFeiraEmprego/EmpresasPalco';
+import DescricaoEmpresa from './pages/pagesFeiraEmprego/DescricaoEmpresa';
+import DescricaoEmpresaPalco from './pages/pagesFeiraEmprego/DescricaoPalcoCentral';
+import PitchsInscricao from './pages/pagesFeiraEmprego/PitchsInscricao';
+import Agenda from './pages/Agenda';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -30,26 +49,9 @@ import '@ionic/react/css/display.css';
 /* Theme variables */
 import './theme/variables.scss';
 
-import Workshops from './pages/Workshops';
-import Oradores from './pages/Oradores';
-import Palestra from './pages/Palestra';
-import FeiraEmprego from './pages/FeiraEmprego';
-import MyAgenda from './pages/MyAgenda';
-import PhotoFeed from './pages/PhotoFeed';
-import Localizacao from './pages/Localizacao';
-import DescricaoWorkshop from "./pages/DescriçãoWorkshop";
 import './theme/teste.css';
-import Recrutamento from "./pages/pagesFeiraEmprego/Recrutamento";
-import Empresas1 from './pages/Empresas1';
-import Stands from './pages/pagesFeiraEmprego/Stands';
-import FeiraVirtual from './pages/pagesFeiraEmprego/FeiraVirtual';
-import Pitch from './pages/pagesFeiraEmprego/Pitchs';
-import VianaLinkMoments from './pages/pagesFeiraEmprego/VianaLinkMoments';
-import EmpresasPalco from './pages/pagesFeiraEmprego/EmpresasPalco';
-import DescricaoEmpresa from './pages/pagesFeiraEmprego/DescricaoEmpresa';
-import DescricaoEmpresaPalco from './pages/pagesFeiraEmprego/DescricaoPalcoCentral';
-import PitchsInscricao from './pages/pagesFeiraEmprego/PitchsInscricao';
-import Agenda from './pages/Agenda';
+
+
 const App: React.FC = () => (
   
   <IonApp>
