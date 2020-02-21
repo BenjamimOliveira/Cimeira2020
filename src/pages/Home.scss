@@ -7,6 +7,15 @@
     --webkit-backface-visibility: hidden;
 }
 
+.bckImg_force {
+    --background: url("../theme/background.png") 0 0/100% 100% no-repeat;
+    padding-left: 0px;
+    background-size: cover;
+    --background-size: cover;
+    --webkit-transform-style: preserve-3d;
+    --webkit-backface-visibility: hidden;
+}
+
 ion-item {
     background-color: transparent;
 }

@@ -1,13 +1,15 @@
 import { IonContent, IonPage, IonRow, IonCol, IonGrid, IonItem, IonImg, IonText, IonFooter, IonButton, IonLabel, useIonViewDidEnter } from '@ionic/react';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { RouteComponentProps } from 'react-router';
 import axios from 'axios';
 import "./Home.scss";
+
 //{"id":"1","path":"http:\/\/app.cimeira.ipvc.pt\/files\/icon_programa.png","title":"PROGRAMA","type":"p"}
 // http://app.cimeira.ipvc.pt/api/main/1
 
 const URL = 'http://app.cimeira.ipvc.pt/api/main/';
 const URLButMeio = "http://app.cimeira.ipvc.pt/api/programa/pdf";
+
 
 const Home: React.FC<RouteComponentProps> = (props) => {
     
@@ -34,7 +36,8 @@ const Home: React.FC<RouteComponentProps> = (props) => {
     //menu1 = {"id":"12","path":"http:\/\/app.cimeira.ipvc.pt\/files\/icon_programa.png","title":"PROGRAMA","type":"p"};
   
 
-    
+    const [networkState, setNetworkState] = useState("offline");
+
   
 
     function callAxios(){
