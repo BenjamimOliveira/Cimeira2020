@@ -104,7 +104,7 @@ const Atividade: React.FC<UserDetailPageProps> = ({match}) => {
             <div>
               <div style={{display: "flex",justifyContent: "center"}}>
                 <IonAvatar style={styl_avatar}>
-                  <IonImg src={empresa.logo} />
+                  <IonImg src={empresa.logo}/>
                 </IonAvatar>
               </div>
               <div style={styl_infoHorario}>

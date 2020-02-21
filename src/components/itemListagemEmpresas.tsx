@@ -27,9 +27,9 @@ const ItemListagemEmpresas: React.FC<ITeste> = (props) => {
             <div style={background} tabIndex={0}>
                 <div style={{ display: "flex", padding: "0 10px", alignItems: "center", justifyContent: "space-between" }}>
                     <div>
-                        <IonAvatar style={styl_avatar}>
-                            <IonImg src={props.urlImagem} />
-                        </IonAvatar>
+                        {/* <IonAvatar style={styl_avatar}> */}
+                            <IonImg src={props.urlImagem} style={styl_avatar}/>
+                        {/* </IonAvatar> */}
                     </div>
                     <div style={{ marginLeft: "10px", width: "100%", display: "flex", alignItems: "center", justifyContent: "space-between", borderBottom: "1px solid #dfdfdf" }}>
                         <Link to={"/descricao_empresa/" + props.idEmpresa} style={{width: "100%", display: "flex", alignItems: "center", justifyContent: "space-between", textDecoration: "none" }}>
