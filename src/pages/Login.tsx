@@ -60,11 +60,17 @@ const Login: React.FC = () => {
             if(resultado.data.cod === 6){
                 setToast({state: true, message: "Login realizado com sucesso!"});
                 localStorage.setItem("UtilizadorLogin", resultado.data.message.nome);
-                localStorage.setItem("UtilizadorID", resultado.data.message.id_user);
+                localStorage.setItem("UtilizadorEmail", resultado.data.message.email);
+                localStorage.setItem("UtilizadorLocalidade", resultado.data.message.localidade);
+                
+                localStorage.setItem("UtilizadorPerfil1", resultado.data.message.perfil_1);
+                localStorage.setItem("UtilizadorPerfil2", resultado.data.message.perfil_2);
+                localStorage.setItem("UtilizadorPerfil3", resultado.data.message.perfil_3);
+                localStorage.setItem("UtilizadorID", resultado.data.message.id);
 
                 // -- VERIFICAR PERFIS
 
-                history.replace("/home");
+                history.replace("/home");   
             } else if(resultado.data.cod === 4){
                 setToast({state: true, message: "Ainda é necessário validar esta conta! Obtenha a chave de validação no seu email."});
                 localStorage.setItem("email_validar_conta", email);

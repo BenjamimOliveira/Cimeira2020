@@ -1,8 +1,9 @@
-import { IonContent, IonPage, IonImg, useIonViewDidEnter } from '@ionic/react';
+import { IonContent, IonPage, IonImg, useIonViewDidEnter, IonButton } from '@ionic/react';
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import ItemMyAgenda from '../components/itemMyAgenda';
 import axios from 'axios';
+import { RouteComponentProps } from 'react-router';
 
 const MyAgenda: React.FC = () => {
 
@@ -60,6 +61,12 @@ const MyAgenda: React.FC = () => {
     });
   
   })
+  let history = useHistory();
+  function logout(){
+    localStorage.setItem("UtilizadorLogin", '');
+    localStorage.setItem("UtilizadorID", '');
+    history.replace('/login');
+  }
 
   return (
     <IonPage>
@@ -81,16 +88,21 @@ const MyAgenda: React.FC = () => {
             { possuiResultados && 
             <div style={menu}>
               <div style={menu1}>
-                <ItemMyAgenda texto={menu_1.descr} urlImagem={menu_1.link} pathTo="/home"/>                
-                <ItemMyAgenda texto={menu_2.descr} urlImagem={menu_2.link} pathTo="/home"/>
-                <ItemMyAgenda texto={menu3.descr} urlImagem={menu3.link} pathTo="/home"/>
-                <ItemMyAgenda texto={menu4.descr} urlImagem={menu4.link} pathTo="/home"/>
+                <ItemMyAgenda texto={menu_1.descr} urlImagem={menu_1.link} pathTo="/perfil"/>                
+                <ItemMyAgenda texto={menu_2.descr} urlImagem={menu_2.link} pathTo="/agenda"/>
+                <ItemMyAgenda texto={menu4.descr} urlImagem={menu4.link} pathTo="/com_Organizador"/>
                 <ItemMyAgenda texto={menu5.descr} urlImagem={menu5.link} pathTo="/home"/>
               </div>
 
-              <div style={menu2}>
-                <ItemMyAgenda texto={menu6.descr} urlImagem={menu6.link} pathTo="/home"/>
-                <ItemMyAgenda texto={menu7.descr} urlImagem={menu7.link} pathTo="/home"/>
+              <div style={menu2}> 
+                <div style={{height:"32px", marginBottom:"8px"}} onClick={() => {logout()}}>
+                  <div>
+                    <div style={{display: "table-row"}} id="test">                    
+                      <div style={{display: "table-cell", verticalAlign:"middle", width:"46px" }}><IonImg style={{width:"28px"}} src={menu7.link}/></div>  
+                      <div style={{display: "table-cell", verticalAlign:"middle", fontSize: "16px", color:"#fff", marginLeft:"20px"}}>{menu7.descr}</div>                  
+                    </div>
+                  </div>
+                </div>
              </div>
             </div>
               }

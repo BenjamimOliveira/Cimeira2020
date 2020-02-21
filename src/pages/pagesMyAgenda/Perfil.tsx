@@ -1,5 +1,6 @@
-import { IonHeader, IonPage, IonTitle, IonToolbar, IonButtons, IonButton, IonIcon, IonContent } from '@ionic/react';
+import { IonHeader, IonPage, IonTitle, IonToolbar, IonButtons, IonButton, IonIcon, IonContent, IonImg } from '@ionic/react';
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Perfil: React.FC = () => {
   var nome = localStorage.getItem("UtilizadorLogin"); 
@@ -7,10 +8,27 @@ const Perfil: React.FC = () => {
   var localidade = localStorage.getItem("UtilizadorLocalidade");
   var perfil1 = localStorage.getItem("UtilizadorPerfil1");
   var perfil2 = localStorage.getItem("UtilizadorPerfil2");
-  var perfil3 = localStorage.getItem("UtilizadorPerfil3");
-  
+  var perfil3 = localStorage.getItem("UtilizadorPerfil3");  
   var id = localStorage.getItem("UtilizadorID");
-  console.log(email+" => local");
+
+  const header = {
+    backgroundColor:"#9B9B9B", 
+    height:"230px"
+  }
+
+  const style_nome = {
+    marginTop:"12px",
+    color: "white",
+    textAlign: "center" as "center",
+    fontSize: "24px"
+  }
+
+  const foto_perfil = {
+    width: "110px",
+    margin: "auto",
+    paddingTop:"45px"
+    
+  }
 /**
  * localStorage.setItem("UtilizadorLogin", resultado.data.message.nome);
   localStorage.setItem("UtilizadorEmail", resultado.data.message.email);
@@ -23,8 +41,8 @@ const Perfil: React.FC = () => {
  */
   return (
     <IonPage>
-      <IonHeader>   
-        <IonToolbar className="navbar">
+      <IonHeader no-border>   
+        <IonToolbar color="dark" >
           <IonButtons slot="start" >
             <IonButton onClick={() => {window.history.back()}}>
               <IonIcon slot="icon-only" className="arrowBack"></IonIcon>
@@ -34,12 +52,25 @@ const Perfil: React.FC = () => {
         </IonToolbar>      
       </IonHeader>
       <IonContent>        
-        <div>{nome}</div>
-        <div>{email}</div>
-        <div>{localidade}</div>
-        <div>{id}</div>
-        <div>{perfil2}</div>        
-        <div>{perfil3}</div>
+        <div style={header}>
+          <div style={{width:"100%"}}>
+              <div style={foto_perfil}>
+                <div>
+                  <IonImg src="assets/resources/picture_IPVC.png"/>
+                </div>                
+              </div>
+              <div style={style_nome}>{nome}</div>
+            </div> 
+        </div>
+        
+        {/* EMAIL */}
+        <div style={{height:"40px"}}>
+          <div style={{float:"left", backgroundColor:"#9b9b9b", height:"40px"}}>jjjjjjjj</div>
+          <div>
+            <div>texto1</div>
+            <div>texto2</div>
+          </div>
+        </div>
       </IonContent>
     </IonPage>
   );

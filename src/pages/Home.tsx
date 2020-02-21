@@ -1,6 +1,6 @@
-import { IonContent, IonPage, IonRow, IonCol, IonGrid, IonItem, IonImg, IonText, IonFooter, IonButton, IonLabel, useIonViewDidEnter } from '@ionic/react';
+import { IonContent, IonPage, IonRow, IonCol, IonGrid, IonItem, IonImg, IonText, IonFooter, IonButton, IonLabel, useIonViewDidEnter, useIonViewWillEnter } from '@ionic/react';
 import React, { useState } from 'react';
-import { RouteComponentProps } from 'react-router';
+import { RouteComponentProps, useHistory } from 'react-router';
 import axios from 'axios';
 import "./Home.scss";
 //{"id":"1","path":"http:\/\/app.cimeira.ipvc.pt\/files\/icon_programa.png","title":"PROGRAMA","type":"p"}
@@ -10,7 +10,7 @@ const URL = 'http://app.cimeira.ipvc.pt/api/main/';
 const URLButMeio = "http://app.cimeira.ipvc.pt/api/programa/pdf";
 
 const Home: React.FC<RouteComponentProps> = (props) => {
-    
+    let history = useHistory();
     var nomeUser = localStorage.getItem("UtilizadorLogin");
     if(nomeUser == null){
         nomeUser="À CIMEIRA";
@@ -52,7 +52,17 @@ const Home: React.FC<RouteComponentProps> = (props) => {
         })
     }
 
+    useIonViewWillEnter(() => {
+        if(localStorage.getItem("UtilizadorID") && localStorage.getItem("UtilizadorLogin")){
+            
+        }else{
+            history.replace("/login");
+        }
+    })
+
     useIonViewDidEnter(() => {
+        
+
         callAxios();
 
         axios({
@@ -66,6 +76,7 @@ const Home: React.FC<RouteComponentProps> = (props) => {
           });
 
           //document.getElementById("conteudo")!.style.backgroundImage = "url('http://app.cimeira.ipvc.pt/files/background.png')";
+
     });
 
     return (

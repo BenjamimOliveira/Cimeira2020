@@ -12,8 +12,7 @@
         android:usesCleartextTraffic="true">
         <uses-library
             android:name="org.apache.http.legacy"
-            android:required="false" />
-        >
+            android:required="false" />>
 
         <activity
             android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale"
