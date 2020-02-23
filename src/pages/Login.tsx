@@ -1,4 +1,4 @@
-import { IonContent, IonPage, IonButton, IonGrid, IonRow, IonCol, IonInput, IonItem, IonToast, IonRouterLink, useIonViewDidEnter } from '@ionic/react';
+import { IonContent, IonPage, IonButton, IonGrid, IonRow, IonCol, IonInput, IonItem, IonToast, IonRouterLink, useIonViewDidEnter, IonAlert } from '@ionic/react';
 import React, { useState } from 'react';
 import crypto from 'crypto';
 import axios from "axios";
@@ -11,6 +11,9 @@ const Login: React.FC = () => {
     const [ id, setID] = useState("");
     const [toast, setToast] = useState({state: false, message: "Erro no login"});
     let history = useHistory();
+
+    
+    const [mostrarAlertaSemLigacao, setErroSemLigacao] = useState(false);
 
     useIonViewDidEnter(() => {
         if(localStorage.getItem("email_validar_conta") != null){
@@ -79,14 +82,25 @@ const Login: React.FC = () => {
                 setToast({state: true, message: "A combinação email/palavra-passe não existe!"});
             }
         }).catch(erro => {
-            console.log("ERRO", erro);
+            console.log("ERRO", JSON.stringify(erro), erro.message);
+            if(erro.message == "Network Error"){
+                setErroSemLigacao(true);
+            }
             setToast({state: true, message: "Ocorreu um erro a realizar o login!"});
         }); 
     }
 
     return (
         <IonPage>
-            <IonContent fullscreen className="pagLogin bckImg">
+            <IonAlert
+                isOpen={mostrarAlertaSemLigacao}
+                onDidDismiss={() => setErroSemLigacao(false)}
+                header={''}
+                subHeader={'Atenção'}
+                message={'É necessária uma ligação à internet para utilizar esta aplicação!'}
+                buttons={['OK']}
+                />
+            <IonContent fullscreen className="pagLogin bckImg_force">
                 <IonToast isOpen={toast.state} onDidDismiss={() => setToast({state: false, message: toast.message})} message={toast.message} duration={3000}></IonToast>
                 <IonGrid>
                     <IonRow className="ion-justify-content-center ion-align-items-center">

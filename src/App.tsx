@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Redirect, Route } from 'react-router-dom';
-import { IonApp, IonRouterOutlet } from '@ionic/react';
+import { IonApp, IonRouterOutlet, IonAlert } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
+
+
 import Home from './pages/Home';
 import Login from './pages/Login';
 import SelecaoTipoPerfil from './pages/SelecaoTipoPerfil';
@@ -54,51 +56,75 @@ import ComOrganizador from './pages/pagesMyAgenda/ComOrganizador';
 import Contactos from './pages/pagesMyAgenda/Contactos';
 import Perfil from './pages/pagesMyAgenda/Perfil';
 
-const App: React.FC = () => (
+import axios from 'axios';
+
+
+const App: React.FC = () => {
   
-  <IonApp>
-    <IonReactRouter>
-      <IonRouterOutlet>
-        <Route path="/home" component={Home} exact={true} />
-        <Route path="/workshop" component={Workshops}/>        
-        <Route path="/programa" component={Programa}/>     
-        <Route path="/oradores" component={Oradores}/> 
-        <Route path="/palestra/:id" component={Palestra} />             
-        <Route path="/myagenda" component={MyAgenda}/>                       
-        <Route path="/photofeed" component={PhotoFeed}/>           
-        <Route path="/feiraemprego" component={FeiraEmprego}/>               
-        <Route path="/localizacao" component={Localizacao}/>
-        <Route path="/atividade/:id" component={DescricaoAtividade} />        
-        <Route path="/descrWorkshop/:id" component={DescricaoWorkshop} />
-        <Route path="/validarregisto" component={ValidarRegisto} exact={true} />
-        <Route path="/registo" component={Registo} exact={true} />
-        <Route path="/registo_aceitar_rgpd" component={RegistoRGPD} exact={true} />
-        <Route path="/stands" component={Stands}/>
-        <Route path="/descricao_empresa/:id" component={DescricaoEmpresa}/>
-        <Route path="/descricao_empresa_palco/:id" component={DescricaoEmpresaPalco}/>
-        <Route path="/empresas1" component={Empresas1}/>
+ 
+  const [mostrarAlertaSemLigacao, setErroSemLigacao] = useState(false);
 
-        <Route path="/recrutamento" component={Recrutamento} exact={true} />
-        <Route path="/empresas_palco" component={EmpresasPalco} exact={true} />        
-        <Route path="/feiraVirtual" component={FeiraVirtual} exact={true} />
-        <Route path="/pitchs" component={Pitch} exact={true} />
-        <Route path="/vianalinkmoments" component={VianaLinkMoments} />
-        <Route path="/pitchInscricao" component={PitchsInscricao}/>
 
-        <Route path="/com_Organizador" component={ComOrganizador}/>
-        <Route path="/contactos" component={Contactos}/>
-        <Route path="/perfil" component={Perfil}/>
+  useEffect(() => {
+    axios({
+      method: "get",
+      url: "http://app.cimeira.ipvc.pt/",
+    }).catch(erro => {
+        if(erro.message == "Network Error"){
+            setErroSemLigacao(true);
+        }
+    }); 
+  })
 
-        <Route path="/login" component={Login} exact={true} />
-        <Route path="/selecionar_perfis_conta" component={SelecaoTipoPerfil} exact={true} />
-        <Route exact path="/" render={() => <Redirect to="/login" />} />
+  return (
+    <IonApp>
+      <IonAlert
+        isOpen={mostrarAlertaSemLigacao}
+        onDidDismiss={() => setErroSemLigacao(false)}
+        header={''}
+        subHeader={'Atenção'}
+        message={'É necessária uma ligação à internet para utilizar esta aplicação!'}
+        buttons={['OK']}
+        />
+      <IonReactRouter>
+        <IonRouterOutlet>
+          <Route path="/home" component={Home} exact={true} />
+          <Route path="/workshop" component={Workshops}/>        
+          <Route path="/programa" component={Programa}/>     
+          <Route path="/oradores" component={Oradores}/> 
+          <Route path="/palestra/:id" component={Palestra} />             
+          <Route path="/myagenda" component={MyAgenda}/>                       
+          <Route path="/photofeed" component={PhotoFeed}/>           
+          <Route path="/feiraemprego" component={FeiraEmprego}/>               
+          <Route path="/localizacao" component={Localizacao}/>
+          <Route path="/atividade/:id" component={DescricaoAtividade} />        
+          <Route path="/descrWorkshop/:id" component={DescricaoWorkshop} />
+          <Route path="/validarregisto" component={ValidarRegisto} exact={true} />
+          <Route path="/registo" component={Registo} exact={true} />
+          <Route path="/registo_aceitar_rgpd" component={RegistoRGPD} exact={true} />
+          <Route path="/stands" component={Stands}/>
+          <Route path="/descricao_empresa/:id" component={DescricaoEmpresa}/>
+          <Route path="/descricao_empresa_palco/:id" component={DescricaoEmpresaPalco}/>
+          <Route path="/empresas1" component={Empresas1}/>
 
-        
-        <Route path="/agenda" component={Agenda} exact={true} />
-      </IonRouterOutlet>
-    </IonReactRouter>
-  </IonApp>
-);
+          <Route path="/recrutamento" component={Recrutamento} exact={true} />
+          <Route path="/empresas_palco" component={EmpresasPalco} exact={true} />        
+          <Route path="/feiraVirtual" component={FeiraVirtual} exact={true} />
+          <Route path="/pitchs" component={Pitch} exact={true} />
+          <Route path="/vianalinkmoments" component={VianaLinkMoments} />
+          <Route path="/pitchInscricao" component={PitchsInscricao}/>
+
+          <Route path="/login" component={Login} exact={true} />
+          <Route path="/selecionar_perfis_conta" component={SelecaoTipoPerfil} exact={true} />
+          <Route exact path="/" render={() => <Redirect to="/login" />} />
+
+          
+          <Route path="/agenda" component={Agenda} exact={true} />
+        </IonRouterOutlet>
+      </IonReactRouter>
+    </IonApp>
+  );
+};
 
 
 {/* <Route exact path="/" render={() => (

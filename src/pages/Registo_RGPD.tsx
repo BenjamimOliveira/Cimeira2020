@@ -93,13 +93,18 @@ const Registo: React.FC = () => {
                         <IonCol size-md="6" size-lg="5" size-xs="12" className="marginBottom60">
                             <form style={{textAlign: "center" as "center"}}>
                                 <div className="formRGPD">
-                                    <div className="ion-margin ion-text-center titulo txtBranco">
-                                        <p>TEXTO RGPD</p>
+                                    <div className="ion-margin ion-text-center titulo txtBranco" style={{marginTop: "10%", fontWeight: "bold"}}>
+                                        <p style={{textAlign: "justify", textJustify: "inter-word"}}>Os dados pessoais (nomeadamente nome, email e localidade) solicitados neste registo, serão apenas utilizados pelo Instituto Politécnico de Viana do Castelo para gerir a sua participação e proporcionar-lhe a melhor experiência no evento CIMEIRA IPVC 2020. No final do evento CIMEIRA IPVC 2020 estes dados serão utilizados para gerar os certificados de participação. Após o evento CIMEIRA IPVC 2020, os dados serão mantidos unicamente para fins de tratamento estatístico pelo Gabinete de Comunicação e Imagem do Instituto Politécnico de Viana do Castelo</p>
                                     </div>
 
-                                    <IonItem key="Aceitar RGPD" className="semBackgroundforce">
-                                        <IonCheckbox className="checkAmarelo" value="Aceitar RGPD" checked={check_aceite} style={{marginRight: "5px"}} onIonChange={(e) => setCheck_aceite(!check_aceite)}/>
-                                        <IonLabel>Aceitar RGPD</IonLabel>
+                                    <IonItem key="Aceitar RGPD" className="semBackgroundforce" text-warp>
+                                        <IonCheckbox className="checkAmarelo" value="Aceitar RGPD" checked={check_aceite} style={{marginRight: "5px", minWidth: "18px"}} onIonChange={(e) => setCheck_aceite(!check_aceite)}/>
+                                        {check_aceite && 
+                                            <p>Sim, aceito os termos de utilização dos dados pessoais para os efeitos requeridos</p>
+                                        }
+                                        {!check_aceite && 
+                                            <p>Não, não aceito os termos de utilização dos dados pessoais para os efeitos requeridos</p>
+                                        }
                                     </IonItem>
                                 </div>
 

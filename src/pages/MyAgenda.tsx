@@ -1,4 +1,4 @@
-import { IonContent, IonPage, IonImg, useIonViewDidEnter, IonButton } from '@ionic/react';
+import { IonContent, IonPage, IonImg, useIonViewDidEnter, IonButton, useIonViewWillEnter } from '@ionic/react';
 import React, { useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import ItemMyAgenda from '../components/itemMyAgenda';
@@ -42,6 +42,14 @@ const MyAgenda: React.FC = () => {
     marginTop:"100px"
   }
 
+  useIonViewWillEnter(() => {
+    if(localStorage.getItem("UtilizadorID") && localStorage.getItem("UtilizadorLogin")){
+            
+    }else{
+        history.push("/login");
+    }
+  });
+
   useIonViewDidEnter(() => {
     // -- obter lista de categorias
     axios({
@@ -59,14 +67,18 @@ const MyAgenda: React.FC = () => {
     }).catch(erro => {
         console.log("ERRO My Agenda", erro);
     });
-  
+    document.addEventListener("backbutton",function(e) {
+      console.log("disable back button")
+    }, false);
   })
   let history = useHistory();
   function logout(){
     localStorage.setItem("UtilizadorLogin", '');
     localStorage.setItem("UtilizadorID", '');
-    history.replace('/login');
+    history.replace("/login");
   }
+
+  
 
   return (
     <IonPage>

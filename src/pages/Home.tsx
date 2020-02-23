@@ -3,11 +3,13 @@ import React, { useState } from 'react';
 import { RouteComponentProps, useHistory } from 'react-router';
 import axios from 'axios';
 import "./Home.scss";
+
 //{"id":"1","path":"http:\/\/app.cimeira.ipvc.pt\/files\/icon_programa.png","title":"PROGRAMA","type":"p"}
 // http://app.cimeira.ipvc.pt/api/main/1
 
 const URL = 'http://app.cimeira.ipvc.pt/api/main/';
 const URLButMeio = "http://app.cimeira.ipvc.pt/api/programa/pdf";
+
 
 const Home: React.FC<RouteComponentProps> = (props) => {
     let history = useHistory();
@@ -34,7 +36,8 @@ const Home: React.FC<RouteComponentProps> = (props) => {
     //menu1 = {"id":"12","path":"http:\/\/app.cimeira.ipvc.pt\/files\/icon_programa.png","title":"PROGRAMA","type":"p"};
   
 
-    
+    const [networkState, setNetworkState] = useState("offline");
+
   
 
     function callAxios(){
@@ -54,9 +57,9 @@ const Home: React.FC<RouteComponentProps> = (props) => {
 
     useIonViewWillEnter(() => {
         if(localStorage.getItem("UtilizadorID") && localStorage.getItem("UtilizadorLogin")){
-            
+            console.log("existe login");
         }else{
-            history.replace("/login");
+            console.log("não existe login");
         }
     })
 
