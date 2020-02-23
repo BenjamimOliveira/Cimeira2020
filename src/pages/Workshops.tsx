@@ -63,10 +63,12 @@ const Workshops: React.FC = () => {
       </IonHeader>
 
       <IonContent class="ion-content-workshop"> 
-      <IonLabel><IonText class="linha-topo">CENTRO CULTURAL</IonText></IonLabel>
+      <IonLabel><IonText class="linha-topo">A</IonText></IonLabel>
       
       { possuiResultados === true && workshopsMostrar.map(function(work) {
-            return <WorkshopList id={work['id']} hora={truncarHora(work['hora'])} desc={work['titulo']} key={work["id"]}/>
+            return <WorkshopList id={work['id']} hora={truncarHora(work['hora'])} desc={work['titulo']} key={work["id"]} local={work['local']}/>
+            
+            
             
         })
         }
