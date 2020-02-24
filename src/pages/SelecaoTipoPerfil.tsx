@@ -1,4 +1,4 @@
-import { IonContent, IonPage, IonButton, IonGrid, IonRow, IonCol, IonItem, IonToast, IonCheckbox, IonLabel, IonList, useIonViewDidEnter } from '@ionic/react';
+import { IonContent, IonPage, IonButton, IonGrid, IonRow, IonCol, IonItem, IonToast, IonCheckbox, IonLabel, IonList, useIonViewDidEnter, useIonViewWillEnter } from '@ionic/react';
 import React, { useState } from 'react';
 import { useHistory } from "react-router-dom";
 
@@ -16,15 +16,29 @@ const SelecaoTipoPerfil: React.FC = () => {
         { id: 7, txt: "Voluntário (a)", selecionado: false }
     ]
 
+    let history = useHistory();
     const [toast, setToast] = useState({ state: false, message: "" });
+
+    useIonViewWillEnter(() => {
+        if(!localStorage.getItem("dados_registo") || localStorage.getItem("dados_registo") == "undefined"){
+            history.replace("/login");
+        }
+    });
 
     function submeterFormulario() {
         let contagem = 0;
+        let selecionados:any = [];
         perfis.forEach((perfil: any) => {
             if(perfil.selecionado){
                 contagem++;
+                selecionados.push(perfil.id);
             }
         });
+
+        console.log(selecionados);
+        
+
+        let dados_registo = JSON.parse(localStorage.getItem("dados_registo") as string);
 
         if(contagem > 3) {
             setToast({ state: true, message: "Apenas pode selecionar 3 tipos de perfil diferentes!" });
@@ -36,7 +50,20 @@ const SelecaoTipoPerfil: React.FC = () => {
             return;
         }
 
-        console.log("Válido")
+        if(selecionados[0] != "undefined"){
+            dados_registo.perfil_1 = selecionados[0];
+        }
+
+        if(selecionados[1] != "undefined"){
+            dados_registo.perfil_2 = selecionados[1];
+        }
+
+        if(selecionados[2] != "undefined"){
+            dados_registo.perfil_3 = selecionados[2];
+        }
+
+        localStorage.setItem("dados_registo", JSON.stringify(dados_registo));
+        history.push("/registo_aceitar_rgpd");
     }
 
     function alteraCheckPrincipal(perfil: any){

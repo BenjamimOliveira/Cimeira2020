@@ -30,7 +30,33 @@ const Atividade: React.FC<UserDetailPageProps> = ({match}) => {
   });
 
   function inscreverPalco() {
+    if(!localStorage.getItem("UtilizadorID")){
+      console.log("Utilizador ID não existe!")
+      setToast({state: true, message: "Ocorreu um erro ao realizar a inscrição!"});
+      return;
+    }
+    if(possuiResultados){
+      axios({
+        method: "post",
+        url: "http://app.cimeira.ipvc.pt/api/empresas/palco/" + empresa.id,
+        data: {
+          id_utilizador: localStorage.getItem("UtilizadorID")
+        }
+      }).then(resultado => {
+        console.log(resultado);
+           
+          if(resultado.data.status){
+            setToast({state: true, message: "Foi inscrito com sucesso!"});
+          } else {
+            setToast({state: true, message: "Já se encontra inscrito!"});
+          }
+      }).catch(erro => {
+          console.log("ERRO", erro);
+          setToast({state: true, message: "Ocorreu um erro ao realizar a inscrição!"});
+      });
+    } else {
 
+    }
   }
 
   const styl_infoHorario = {

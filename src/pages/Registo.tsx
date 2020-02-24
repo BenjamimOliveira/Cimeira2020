@@ -70,7 +70,7 @@ const Registo: React.FC = () => {
                 }
                 localStorage.setItem("dados_registo", JSON.stringify(dados_registo));
 
-                history.push("/registo_aceitar_rgpd");
+                history.push("/selecionar_perfis_conta");
             }
         }).catch(erro => {
             console.log("ERRO", erro);

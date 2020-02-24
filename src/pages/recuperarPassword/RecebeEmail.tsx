@@ -3,16 +3,14 @@ import React, { useState } from 'react';
 import axios from "axios";
 import { useHistory } from "react-router-dom";
 
-const ValidarRegisto: React.FC = () => {
+const RecebeEmail: React.FC = () => {
     const [toast, setToast] = useState({state: false, message: "Erro no login"});
-    const [ chave, setChave ] = useState();
+    const [ email, setEmail ] = useState();
     let history = useHistory();
 
     function submeterFormulario(e: any) {
-        let email = localStorage.getItem("email_validar_conta");
-
         if(!email){
-            setToast({state: true, message: "Erro ao validar a conta: Dados em falta!"});
+            setToast({state: true, message: "Erro: Deve introduzir o endereço de email!"});
             return;
         }
 
@@ -20,18 +18,11 @@ const ValidarRegisto: React.FC = () => {
         // eslint-disable-next-line
         let re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         if(!re.test(email)) {
-            setToast({state: true, message: "Erro a validar conta: O Endereço de Email não é válido!"});
+            setToast({state: true, message: "Erro: O Endereço de Email não é válido!"});
             return;
         }
 
-        // -- validar password (tamanho minimo)
-        if(!chave){
-            setToast({state: true, message: "Erro a validar a conta: É necessário introduzir a chave de validação!"});
-            return;
-        }
-
-
-        axios({
+        /*axios({
             method: "post",
             url: "http://app.cimeira.ipvc.pt/api/validar",
             data: {
@@ -43,6 +34,8 @@ const ValidarRegisto: React.FC = () => {
                 // chave validada
                 setToast({state: true, message: "A sua chave foi validada com sucesso! Realize agora o login"});
                 
+                localStorage.setItem("email_recuperar_conta", email);
+                
                 history.push("/login");
             } else {
                 setToast({state: true, message: "Chave de validação incorreta!"});
@@ -51,7 +44,7 @@ const ValidarRegisto: React.FC = () => {
         }).catch(erro => {
             console.log("ERRO", erro);
             setToast({state: true, message: "Ocorreu um erro a validar a conta. Por favor, tente mais tarde"});
-        });
+        });*/
 
     } 
 
@@ -65,7 +58,7 @@ const ValidarRegisto: React.FC = () => {
                         </IonButton>
                     </IonButtons>
 
-                    <IonTitle className="txtBranco">Criar Conta</IonTitle>
+                    <IonTitle className="txtBranco">Recuperar Palavra-Passe</IonTitle>
                 </IonToolbar>
             </IonHeader>
             <IonContent fullscreen className="pagLogin bckImg">
@@ -77,20 +70,17 @@ const ValidarRegisto: React.FC = () => {
                                 <div className="loginForm">
                                     
                                     <div className="ion-margin ion-text-center titulo txtBranco">
-                                        <p><b>Foi enviada uma chave de validação para o seu endereço de email. Por favor, introduza-a:</b></p>
+                                        <p><b>Introduza o endereço de email da sua conta. Será enviado um código de recuperação para o endereço de email.</b></p>
                                     </div>
                                     <IonItem className="ion-margin">
-                                        <IonInput autocomplete="off" required type="text" value={chave} onInput={(e) => setChave((e.target as HTMLInputElement).value)} placeholder="Chave de Validação" inputmode="text"></IonInput>
+                                        <IonInput autocomplete="off" required type="text" value={email} onInput={(e) => setEmail((e.target as HTMLInputElement).value)} placeholder="Endereço de email" inputmode="email"></IonInput>
                                     </IonItem>
                                 </div>
 
                                 <div className="ion-margin btnLogin">
-                                    <IonButton type="button" onClick={(e) => {submeterFormulario(e)}} size="large" expand="block">VALIDAR</IonButton>
+                                    <IonButton type="button" onClick={(e) => {submeterFormulario(e)}} size="large" expand="block">RECUPERAR</IonButton>
                                 </div>
                             </form>
-                            <div className="ion-margin ion-text-center titulo txtBranco">
-                                <p>Criando uma conta concorda com os Termos de Utilização.</p>
-                            </div>
                         </IonCol>
                     </IonRow>
                 </IonGrid>
@@ -99,4 +89,4 @@ const ValidarRegisto: React.FC = () => {
     );
 };
 
-export default ValidarRegisto;
+export default RecebeEmail;

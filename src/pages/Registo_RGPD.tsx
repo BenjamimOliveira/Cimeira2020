@@ -11,7 +11,9 @@ const Registo: React.FC = () => {
     let history = useHistory();
 
     function submeterFormulario() {
-        // -- verirficar checkbox        
+        // -- verirficar checkbox   
+        
+             
         if(check_aceite){
 
             // -- verificar dados
@@ -35,7 +37,7 @@ const Registo: React.FC = () => {
                 data: {
                     email: dados_registo.email
                 }
-            }).then(resultado => {
+            }).then(resultado => {                
                 if (resultado.data.status === true) {
                     setToast({ state: true, message: "Já existe uma conta com esse email registado. Faça login ou recupere a palavra-passe" });
                     history.push("/login");
@@ -48,12 +50,16 @@ const Registo: React.FC = () => {
                             email: dados_registo.email,
                             password: dados_registo.password,
                             nome: dados_registo.nome,
-                            localidade: dados_registo.localidade
+                            localidade: dados_registo.localidade,
+                            perfil_1: dados_registo.perfil_1,
+                            perfil_2: dados_registo.perfil_2,
+                            perfil_3: dados_registo.perfil_3
                         }
                     }).then(resultado => {
                         if(resultado.data.status === true){
                             setToast({state: true, message: "É agora necessário validar a sua conta!"});
                             localStorage.setItem("email_validar_conta", dados_registo.email);
+                            localStorage.removeItem("dados_registo");
                             history.push("/validarregisto");
                         }
                     }).catch(erro => {

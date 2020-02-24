@@ -19,6 +19,18 @@
         --background: #A61526;
     }
     
+    .md .download {
+        background-color: white;
+        -webkit-mask-image: url("icons/md-download.svg");
+        mask-image: url("icons/md-download.svg");
+    }
+    
+    .ios .download {
+        background-color: white;
+        -webkit-mask-image: url("icons/ios-download.svg");
+        mask-image: url("icons/ios-download.svg");
+    }
+    
     .md .shareIcon {
         background-color: white;
         -webkit-mask-image: url("android-share.svg");

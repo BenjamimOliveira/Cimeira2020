@@ -32,6 +32,11 @@ import DescricaoEmpresaPalco from './pages/pagesFeiraEmprego/DescricaoPalcoCentr
 import PitchsInscricao from './pages/pagesFeiraEmprego/PitchsInscricao';
 import Agenda from './pages/Agenda';
 
+
+import RecuperarPasswordEmail from './pages/recuperarPassword/RecebeEmail';
+import RecuperarPasswordValidar from './pages/recuperarPassword/ValidarRecuperacao';
+import Certificados from './pages/Certificados';
+
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
 
@@ -116,6 +121,11 @@ const App: React.FC = () => {
 
           
           <Route path="/agenda" component={Agenda} exact={true} />
+
+          
+          <Route path="/recuperar_pass_email" component={RecuperarPasswordEmail} exact={true} />
+          <Route path="/recuperar_pass_validar" component={RecuperarPasswordValidar} exact={true} />
+          <Route path="/certificados" component={Certificados} exact={true} />
         </IonRouterOutlet>
       </IonReactRouter>
     </IonApp>

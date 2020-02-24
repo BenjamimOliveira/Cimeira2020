@@ -8,7 +8,6 @@ import { useHistory } from "react-router-dom";
 const Login: React.FC = () => {
     const [ email, setEmail ] = useState("");
     const [ password, setPassword ] = useState("");
-    const [ id, setID] = useState("");
     const [toast, setToast] = useState({state: false, message: "Erro no login"});
     let history = useHistory();
 
@@ -21,9 +20,12 @@ const Login: React.FC = () => {
             localStorage.removeItem("email_validar_conta")
         }
 
-        if(localStorage.getItem("UtilizadorID") && localStorage.getItem("UtilizadorLogin")){
+        if(localStorage.getItem("UtilizadorID") && localStorage.getItem("UtilizadorLogin") && localStorage.getItem("UtilizadorID") != "undefined" && localStorage.getItem("UtilizadorLogin") != "undefined"){
             // login feito -- redirecionar para home
             history.replace("/home");
+        } else {
+            localStorage.removeItem("UtilizadorID")
+            localStorage.removeItem("UtilizadorLogin")
         }
     });
 
@@ -63,7 +65,7 @@ const Login: React.FC = () => {
             if(resultado.data.cod === 6){
                 setToast({state: true, message: "Login realizado com sucesso!"});
                 localStorage.setItem("UtilizadorLogin", resultado.data.message.nome);
-                localStorage.setItem("UtilizadorID", resultado.data.message.id_user);
+                localStorage.setItem("UtilizadorID", resultado.data.message.id);
 
                 // -- VERIFICAR PERFIS
 

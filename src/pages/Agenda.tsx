@@ -4,11 +4,11 @@ import axios from 'axios';
 import ItemAgenda from "../components/itemAgenda"
 import '../theme/agenda_timeline.css';
 
-const Programa: React.FC = () => {
+const Agenda: React.FC = () => {
 
   const [ possuiResultados, setPossuiResultados ] = useState(false);
-  const [ items, setItems ] = useState([{tipo: "Atividade", hora: "10:00:00", titulo: "Engenharias", descricao: "Descriçaõ teste"}, {tipo: "Atividade", hora: "10:00:00", titulo: "Engenharias", descricao: "Descriçaõ teste"}, {tipo: "Atividade", hora: "10:00:00", titulo: "Engenharias", descricao: "Descriçaõ teste"}]);
-  const [ itemsMostrar, setItemsMostrar ] = useState([{tipo: "Atividade", hora: "10:00:00", titulo: "Engenharias", descricao: "Descriçaõ teste"}, {tipo: "Atividade", hora: "10:00:00", titulo: "Engenharias", descricao: "Descriçaõ teste"}, {tipo: "Atividade", hora: "10:00:00", titulo: "Engenharias", descricao: "Descriçaõ teste"}]);
+  const [ items, setItems ] = useState([]);
+  const [ itemsMostrar, setItemsMostrar ] = useState([]);
   const [ mostraBarraPesquisa, setMostraBarraPesquisa ] = useState(false);
 
   function procura(valor: string) {
@@ -18,17 +18,21 @@ const Programa: React.FC = () => {
   }
 
   useIonViewDidEnter(() => {
-    // -- obter lista de categorias
-    /*axios({
-      method: "get",
-      url: "http://app.cimeira.ipvc.pt/api/programa"
-    }).then(resultado => {        */
+    // -- obter lista de inscrições
+    axios({
+      method: "post",
+      url: "http://app.cimeira.ipvc.pt/api/agenda",
+      data: {
+        id_utilizador: localStorage.getItem("UtilizadorID")
+      }
+    }).then((resultado) => {
+        setItems(resultado.data[0]);
+        setItemsMostrar(resultado.data[0]);
+        
         setPossuiResultados(true);
-        //setItems(resultado.data);
-        //setItemsMostrar(resultado.data);
-    /*}).catch(erro => {
+    }).catch(erro => {
         console.log("ERRO", erro);
-    })*/
+    })
   })
 
   return (
@@ -61,7 +65,9 @@ const Programa: React.FC = () => {
         {/*-- List of Text Items --*/}
         <div className="timeline timeline-split"  style={{marginTop: "10px"}}>
           { possuiResultados === true && itemsMostrar.map(function(item) {
-              return <ItemAgenda hora={(item.hora as string).slice(0, -3)} titulo={item.titulo} desc={item.descricao} tipo={item.tipo} key={item['titulo']}></ItemAgenda>
+              if(!item['hora'])
+                (item['hora'] as any) = "00:00:00";
+              return <ItemAgenda hora={(item['hora'] as string).slice(0, -3)} titulo={item['titulo']} desc={item['descricao']} tipo={item['tipo']} key={item['titulo']}></ItemAgenda>
           })
           }
         </div>
@@ -71,4 +77,4 @@ const Programa: React.FC = () => {
   );
 };
 
-export default Programa;
+export default Agenda;
