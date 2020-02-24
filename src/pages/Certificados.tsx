@@ -1,4 +1,4 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButtons, IonButton, IonIcon, IonText, useIonViewDidEnter } from '@ionic/react';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButtons, IonButton, IonIcon, IonText, useIonViewDidEnter, IonAlert } from '@ionic/react';
 import React, { useState } from 'react';
 import axios from 'axios';
 import ItemCertificados from "../components/itemCertificados"
@@ -8,6 +8,7 @@ const Certificados: React.FC = () => {
   const [ msg, setMsg ] = useState("A obter dados...");
   const [ possuiResultados, setPossuiResultados ] = useState(false);
   const [ certificados, setCertificados ] = useState([]);
+  const [ mostraAlert, setMostraAlert ] = useState(true);
   let somatorio = 0;
   let txt = "";
 
@@ -38,6 +39,25 @@ const Certificados: React.FC = () => {
 
   return (
     <IonPage>
+      <IonAlert
+          isOpen={mostraAlert}
+          onDidDismiss={() => setMostraAlert(false)}
+          header={'Questionário'}
+          message={'Antes de descarregar os certificados, gostaríamos de receber a sua opinião relativa à cimeira. Por favor responda a um pequeno questionário'}
+          buttons={[
+            {
+              text: 'Responder',
+              handler: blah => {
+                window.open("https://forms.gle/WcybGCRbjidpmuGi8");
+              }
+            },
+            {
+              text: 'Cancelar',
+              role: 'cancel',
+              cssClass: 'secondary'
+            }
+          ]}></IonAlert>
+
       <IonHeader>
         <IonToolbar className="toolbarSemTransparencia">
           <IonButtons slot="start" >

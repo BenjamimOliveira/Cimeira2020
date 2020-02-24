@@ -3,6 +3,8 @@ import React, { useState, useEffect } from 'react';
 import { RouteComponentProps } from 'react-router';
 import axios from 'axios';
 import "./Home.scss";
+import { isPlatform } from '@ionic/react';
+import { getPlatforms } from '@ionic/react';
 
 //{"id":"1","path":"http:\/\/app.cimeira.ipvc.pt\/files\/icon_programa.png","title":"PROGRAMA","type":"p"}
 // http://app.cimeira.ipvc.pt/api/main/1
@@ -31,7 +33,6 @@ const Home: React.FC<RouteComponentProps> = (props) => {
 
     var [possuiResultados_programa, setPossuiResultados_programa] = useState(false);
 
-    var [] = useState("");
 
     //menu1 = {"id":"12","path":"http:\/\/app.cimeira.ipvc.pt\/files\/icon_programa.png","title":"PROGRAMA","type":"p"};
   
@@ -70,6 +71,20 @@ const Home: React.FC<RouteComponentProps> = (props) => {
 
           //document.getElementById("conteudo")!.style.backgroundImage = "url('http://app.cimeira.ipvc.pt/files/background.png')";
     });
+
+    function abreMapa() {
+        console.log(isPlatform("android") || isPlatform("phablet"));
+        console.log(getPlatforms());
+        
+        
+        if(isPlatform("android") || isPlatform("phablet")){
+            window.location.href = "geo:41.6902138,-8.8310525?q=Centro Cultural de Viana do Castelo";
+        } else if(isPlatform("ios") || isPlatform("ipad") || isPlatform("iphone")){
+            window.location.href = "maps://maps.apple.com/?q=Centro Cultural de Viana do Castelo";
+        } else if(isPlatform("desktop")){
+            window.location.href = "https://www.google.com/maps?q=centro+cultural+viana+do+castelo";
+        }
+    }
 
     return (
         <IonPage>
@@ -182,7 +197,7 @@ const Home: React.FC<RouteComponentProps> = (props) => {
                                 </IonItem>
                             </IonCol>*/}
                             <IonCol size="6" class="col">
-                                <IonItem lines="none" onClick={() => props.history.push('/localizacao')} color="#f" class="ion-text-center footerItems">
+                                <IonItem lines="none" onClick={() => abreMapa()} color="#f" class="ion-text-center footerItems">
                                     <IonGrid>
                                         <IonCol>
                                             <IonImg src={menu7.path} class="subcategoriasLogo" />
