@@ -121,7 +121,9 @@ const Login: React.FC = () => {
                                 </div>
                             </form>
                             <div className="ion-margin ion-text-center titulo txtBranco">
-                                <p><b>Esqueceu-se da Password?</b></p>
+                                <IonRouterLink routerLink="/recuperar_pass_email" routerDirection="root" className="txtBranco">
+                                    <p><b>Esqueceu-se da Password?</b></p>
+                                </IonRouterLink>
                             </div>
 
                             <div className="marginTop200px ion-text-center titulo">

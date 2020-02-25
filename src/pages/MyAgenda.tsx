@@ -1,10 +1,12 @@
 import { IonContent, IonPage, IonImg, useIonViewDidEnter } from '@ionic/react';
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import ItemMyAgenda from '../components/itemMyAgenda';
 import axios from 'axios';
 
 const MyAgenda: React.FC = () => {
+
+  let history = useHistory();
 
   var [menu_1, setmenu1] = useState({descr:"", link: ""});
   var [menu_2, setmenu2] = useState({descr:"", link: ""});
@@ -61,13 +63,19 @@ const MyAgenda: React.FC = () => {
   
   })
 
+  function sair() {
+    history.replace("/login");
+    localStorage.removeItem("UtilizadorID");
+    localStorage.removeItem("UtilizadorLogin");
+  }
+
   return (
     <IonPage>
       
       <IonContent fullscreen className="backgroundVermelho">
             <div style={x_close}>
               <div>
-                <IonImg onClick={() => {window.history.back()}} src="assets/resources/close.png"/>
+                <IonImg onClick={() => {history.replace("/home")}} src="assets/resources/close.png"/>
               </div>
             </div>
               
@@ -90,7 +98,9 @@ const MyAgenda: React.FC = () => {
 
               <div style={menu2}>
                 <ItemMyAgenda texto={menu6.descr} urlImagem={menu6.link} pathTo="/home"/>
-                <ItemMyAgenda texto={menu7.descr} urlImagem={menu7.link} pathTo="/home"/>
+                <div onClick={() => {sair()}}>
+                  <ItemMyAgenda texto={menu7.descr} urlImagem={menu7.link}/>
+                </div>
              </div>
             </div>
               }

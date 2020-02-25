@@ -22,29 +22,36 @@ const RecebeEmail: React.FC = () => {
             return;
         }
 
-        /*axios({
+        (document.getElementById("btnSubmeter") as HTMLInputElement)!.disabled = true;
+
+        axios({
             method: "post",
-            url: "http://app.cimeira.ipvc.pt/api/validar",
+            url: "http://app.cimeira.ipvc.pt/api/restore",
             data: {
-                email: email,
-                cod_validacao: chave
+                email: email
             }
         }).then(resultado => {
             if(resultado.data.status === true){
                 // chave validada
-                setToast({state: true, message: "A sua chave foi validada com sucesso! Realize agora o login"});
-                
+                setToast({state: true, message: "Foi submetido um código para o seu endereço de email!"});
                 localStorage.setItem("email_recuperar_conta", email);
-                
-                history.push("/login");
+                history.replace("/recuperar_pass_validar");
             } else {
-                setToast({state: true, message: "Chave de validação incorreta!"});
+                if(resultado.data.cod == 1)
+                    setToast({state: true, message: "O endereço de email introduzido não pertence a nenhuma conta!"});
+                else  
+                    setToast({state: true, message: "Ocorreu um erro a enviar o código de recuperação para o seu endereço de email!"});
+
+                
+                (document.getElementById("btnSubmeter") as HTMLInputElement)!.disabled = false;
             }
             
         }).catch(erro => {
             console.log("ERRO", erro);
-            setToast({state: true, message: "Ocorreu um erro a validar a conta. Por favor, tente mais tarde"});
-        });*/
+            setToast({state: true, message: "Ocorreu um erro a enviar o código de recuperação para o seu endereço de email!"});
+            
+            (document.getElementById("btnSubmeter") as HTMLInputElement)!.disabled = false;
+        });
 
     } 
 
@@ -78,7 +85,7 @@ const RecebeEmail: React.FC = () => {
                                 </div>
 
                                 <div className="ion-margin btnLogin">
-                                    <IonButton type="button" onClick={(e) => {submeterFormulario(e)}} size="large" expand="block">RECUPERAR</IonButton>
+                                    <IonButton id="btnSubmeter" type="button" onClick={(e) => {submeterFormulario(e)}} size="large" expand="block">RECUPERAR</IonButton>
                                 </div>
                             </form>
                         </IonCol>

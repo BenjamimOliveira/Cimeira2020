@@ -2,6 +2,7 @@ import { IonContent, IonPage, IonButton, IonGrid, IonRow, IonCol, IonInput, IonI
 import React, { useState } from 'react';
 import axios from "axios";
 import { useHistory } from "react-router-dom";
+import crypto from 'crypto';
 
 const ValidarRecuperacao: React.FC = () => {
     const [toast, setToast] = useState({state: false, message: "Erro no login"});
@@ -19,20 +20,12 @@ const ValidarRecuperacao: React.FC = () => {
     })
 
     function submeterFormulario(e: any) {
-        let email = localStorage.getItem("email_recuperar_conta");
 
-        if(!email || !password || !passwordConfirm){
+        if(!password || !passwordConfirm){
             setToast({state: true, message: "Erro ao recuperar palavra-passe: Dados em falta!"});
             return;
         }
 
-        // -- validar email
-        // eslint-disable-next-line
-        let re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-        if(!re.test(email)) {
-            setToast({state: true, message: "Erro a recuperar palavra-passe: O Endereço de Email não é válido!"});
-            return;
-        }
 
         if(!chave){
             setToast({state: true, message: "Erro a recuperar palavra-passe: É necessário introduzir a chave de recuperação!"});
@@ -50,28 +43,35 @@ const ValidarRecuperacao: React.FC = () => {
             return;
         }
 
+        const hash = crypto.createHash('sha256');
+        let strSalt = "CIMEIRAIPVC2020"; // devia de ser colocado na base de dados
+        hash.update(strSalt + password);
 
-        /*axios({
+        axios({
             method: "post",
-            url: "http://app.cimeira.ipvc.pt/api/validar",
+            url: "http://app.cimeira.ipvc.pt/api/reset",
             data: {
-                email: email,
-                cod_validacao: chave
+                cod_recuperacao: chave,
+                password: hash.digest("hex")
             }
         }).then(resultado => {
             if(resultado.data.status === true){
                 // chave validada
-                setToast({state: true, message: "A sua chave foi validada com sucesso! Realize agora o login"});
+                setToast({state: true, message: "A palavra-passe foi alterada! Realize agora o login"});
                 
-                history.push("/login");
+                history.replace("/login");
             } else {
-                setToast({state: true, message: "Chave de validação incorreta!"});
+                if(resultado.data.cod == 1)
+                    setToast({state: true, message: "Chave de recuperação incorreta!"});
+                else
+                    setToast({state: true, message: "Ocorreu um erro a alterar a sua palavra-passe!"});
+
             }
             
         }).catch(erro => {
             console.log("ERRO", erro);
-            setToast({state: true, message: "Ocorreu um erro a validar a conta. Por favor, tente mais tarde"});
-        });*/
+            setToast({state: true, message: "Ocorreu um erro a alterar a sua palavra-passe. Por favor, tente mais tarde"});
+        });
 
     } 
 
@@ -99,7 +99,7 @@ const ValidarRecuperacao: React.FC = () => {
                                         <p><b>Foi enviada uma chave de recuperação para o seu endereço de email. Por favor, introduza-a:</b></p>
                                     </div>
                                     <IonItem className="ion-margin">
-                                        <IonInput autocomplete="off" required type="text" value={chave} onInput={(e) => setChave((e.target as HTMLInputElement).value)} placeholder="Chave de Recuperação" inputmode="text"></IonInput>
+                                        <IonInput autocomplete="off" required type="text" name="chave" value={chave} onInput={(e) => setChave((e.target as HTMLInputElement).value)} placeholder="Chave de Recuperação" inputmode="text"></IonInput>
                                     </IonItem>
 
                                     <br></br>

@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 interface ITeste {
     texto: string;
     urlImagem: string;
-    pathTo: string;
+    pathTo?: string;
 }
 
 
@@ -39,12 +39,20 @@ const ItemMyAgenda: React.FC<ITeste> = (props) => {
       }
     return (
         <div style={{height:"32px", marginBottom:"8px"}}>
-            <Link to={props.pathTo}>
+            {props.pathTo != "" && props.pathTo != undefined && 
+              <Link to={props.pathTo}>
                 <div style={elementoMenu} id="test">                    
                     <div style={imagemElemento}><IonImg style={{width:"28px"}} src={props.urlImagem}/></div>  
                     <div style={textoElemento}>{props.texto}</div>                  
                 </div>
-            </Link>
+              </Link>
+            }
+            {props.pathTo == "" || props.pathTo == undefined && 
+                <div style={elementoMenu} id="test">                    
+                    <div style={imagemElemento}><IonImg style={{width:"28px"}} src={props.urlImagem}/></div>  
+                    <div style={textoElemento}>{props.texto}</div>                  
+                </div>
+            }
         </div>
     );
 

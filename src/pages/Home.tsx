@@ -177,7 +177,7 @@ const Home: React.FC<RouteComponentProps> = (props) => {
                     { possuiResultados_programa && 
                         <IonRow no-lines no-margin no-padding>
                             <IonCol no-lines no-margin no-padding size="6" class="col">
-                                <IonItem lines="none" no-margin no-padding onClick={() => props.history.push('/myagenda')} color="#f" class="ion-text-center footerItems">
+                                <IonItem lines="none" no-margin no-padding onClick={() => props.history.replace('/myagenda')} color="#f" class="ion-text-center footerItems">
                                     <IonGrid> 
                                         <IonCol>
                                             <IonImg src={menu5.path} class="subcategoriasLogo" />
