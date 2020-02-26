@@ -1,20 +1,20 @@
 -- Merging decision tree log ---
 provider#android.support.v4.content.FileProvider
-INJECTED from D:\Desktop\Proj_Cimeira\projCimeira\android\app\src\main\AndroidManifest.xml:38:9-46:20
+INJECTED from D:\Desktop\Proj_Cimeira\projCimeira\android\app\src\main\AndroidManifest.xml:39:9-47:20
 	android:grantUriPermissions
-		ADDED from D:\Desktop\Proj_Cimeira\projCimeira\android\app\src\main\AndroidManifest.xml:42:13-47
+		ADDED from D:\Desktop\Proj_Cimeira\projCimeira\android\app\src\main\AndroidManifest.xml:43:13-47
 	android:authorities
 		INJECTED from D:\Desktop\Proj_Cimeira\projCimeira\android\app\src\main\AndroidManifest.xml
-		ADDED from D:\Desktop\Proj_Cimeira\projCimeira\android\app\src\main\AndroidManifest.xml:40:13-64
+		ADDED from D:\Desktop\Proj_Cimeira\projCimeira\android\app\src\main\AndroidManifest.xml:41:13-64
 	android:exported
-		ADDED from D:\Desktop\Proj_Cimeira\projCimeira\android\app\src\main\AndroidManifest.xml:41:13-37
+		ADDED from D:\Desktop\Proj_Cimeira\projCimeira\android\app\src\main\AndroidManifest.xml:42:13-37
 	android:name
-		ADDED from D:\Desktop\Proj_Cimeira\projCimeira\android\app\src\main\AndroidManifest.xml:39:13-67
+		ADDED from D:\Desktop\Proj_Cimeira\projCimeira\android\app\src\main\AndroidManifest.xml:40:13-67
 manifest
-ADDED from D:\Desktop\Proj_Cimeira\projCimeira\android\app\src\main\AndroidManifest.xml:2:1-67:12
-INJECTED from D:\Desktop\Proj_Cimeira\projCimeira\android\app\src\main\AndroidManifest.xml:2:1-67:12
-INJECTED from D:\Desktop\Proj_Cimeira\projCimeira\android\app\src\main\AndroidManifest.xml:2:1-67:12
-INJECTED from D:\Desktop\Proj_Cimeira\projCimeira\android\app\src\main\AndroidManifest.xml:2:1-67:12
+ADDED from D:\Desktop\Proj_Cimeira\projCimeira\android\app\src\main\AndroidManifest.xml:2:1-68:12
+INJECTED from D:\Desktop\Proj_Cimeira\projCimeira\android\app\src\main\AndroidManifest.xml:2:1-68:12
+INJECTED from D:\Desktop\Proj_Cimeira\projCimeira\android\app\src\main\AndroidManifest.xml:2:1-68:12
+INJECTED from D:\Desktop\Proj_Cimeira\projCimeira\android\app\src\main\AndroidManifest.xml:2:1-68:12
 MERGED from [:capacitor-android] D:\Desktop\Proj_Cimeira\projCimeira\node_modules\@capacitor\android\capacitor\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-36:12
 MERGED from [com.android.support:design:28.0.0] C:\Users\bmoli\.gradle\caches\transforms-1\files-1.1\design-28.0.0.aar\698c3adedd8da14a0b7ced97d4687cbb\AndroidManifest.xml:17:1-24:12
 MERGED from [com.android.support:appcompat-v7:28.0.0] C:\Users\bmoli\.gradle\caches\transforms-1\files-1.1\appcompat-v7-28.0.0.aar\107d06a8149060797872d9935f068c20\AndroidManifest.xml:17:1-22:12
@@ -60,25 +60,25 @@ MERGED from [android.arch.lifecycle:livedata:1.1.1] C:\Users\bmoli\.gradle\cache
 MERGED from [android.arch.lifecycle:livedata-core:1.1.1] C:\Users\bmoli\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.1.aar\5891d51bd1a369a06cd66bfbd0840d3a\AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.core:runtime:1.1.1] C:\Users\bmoli\.gradle\caches\transforms-1\files-1.1\runtime-1.1.1.aar\ad84d70cc85afeacddcc590047d3dd75\AndroidManifest.xml:17:1-22:12
 MERGED from [org.apache.cordova:framework:7.0.0] C:\Users\bmoli\.gradle\caches\transforms-1\files-1.1\framework-7.0.0.aar\afb43cb7c85e83992dfa952079400a88\AndroidManifest.xml:20:1-27:12
-INJECTED from D:\Desktop\Proj_Cimeira\projCimeira\android\app\src\main\AndroidManifest.xml:2:1-67:12
-INJECTED from D:\Desktop\Proj_Cimeira\projCimeira\android\app\src\main\AndroidManifest.xml:2:1-67:12
-INJECTED from D:\Desktop\Proj_Cimeira\projCimeira\android\app\src\main\AndroidManifest.xml:2:1-67:12
+INJECTED from D:\Desktop\Proj_Cimeira\projCimeira\android\app\src\main\AndroidManifest.xml:2:1-68:12
+INJECTED from D:\Desktop\Proj_Cimeira\projCimeira\android\app\src\main\AndroidManifest.xml:2:1-68:12
+INJECTED from D:\Desktop\Proj_Cimeira\projCimeira\android\app\src\main\AndroidManifest.xml:2:1-68:12
 	package
 		ADDED from D:\Desktop\Proj_Cimeira\projCimeira\android\app\src\main\AndroidManifest.xml:3:5-31
 		INJECTED from D:\Desktop\Proj_Cimeira\projCimeira\android\app\src\main\AndroidManifest.xml
 		INJECTED from D:\Desktop\Proj_Cimeira\projCimeira\android\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from D:\Desktop\Proj_Cimeira\projCimeira\android\app\src\main\AndroidManifest.xml
-		ADDED from D:\Desktop\Proj_Cimeira\projCimeira\android\app\src\main\AndroidManifest.xml:2:1-67:12
+		ADDED from D:\Desktop\Proj_Cimeira\projCimeira\android\app\src\main\AndroidManifest.xml:2:1-68:12
 		INJECTED from D:\Desktop\Proj_Cimeira\projCimeira\android\app\src\main\AndroidManifest.xml
 	android:versionCode
 		INJECTED from D:\Desktop\Proj_Cimeira\projCimeira\android\app\src\main\AndroidManifest.xml
-		ADDED from D:\Desktop\Proj_Cimeira\projCimeira\android\app\src\main\AndroidManifest.xml:2:1-67:12
+		ADDED from D:\Desktop\Proj_Cimeira\projCimeira\android\app\src\main\AndroidManifest.xml:2:1-68:12
 		INJECTED from D:\Desktop\Proj_Cimeira\projCimeira\android\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from D:\Desktop\Proj_Cimeira\projCimeira\android\app\src\main\AndroidManifest.xml:2:11-69
 application
-ADDED from D:\Desktop\Proj_Cimeira\projCimeira\android\app\src\main\AndroidManifest.xml:5:5-47:19
+ADDED from D:\Desktop\Proj_Cimeira\projCimeira\android\app\src\main\AndroidManifest.xml:5:5-48:19
 MERGED from [:capacitor-android] D:\Desktop\Proj_Cimeira\projCimeira\node_modules\@capacitor\android\capacitor\build\intermediates\library_manifest\debug\AndroidManifest.xml:15:5-34:19
 MERGED from [:capacitor-android] D:\Desktop\Proj_Cimeira\projCimeira\node_modules\@capacitor\android\capacitor\build\intermediates\library_manifest\debug\AndroidManifest.xml:15:5-34:19
 MERGED from [com.android.support:design:28.0.0] C:\Users\bmoli\.gradle\caches\transforms-1\files-1.1\design-28.0.0.aar\698c3adedd8da14a0b7ced97d4687cbb\AndroidManifest.xml:22:5-20
@@ -134,91 +134,91 @@ ADDED from D:\Desktop\Proj_Cimeira\projCimeira\android\app\src\main\AndroidManif
 	android:name
 		ADDED from D:\Desktop\Proj_Cimeira\projCimeira\android\app\src\main\AndroidManifest.xml:14:13-50
 activity#io.ionic.starter.MainActivity
-ADDED from D:\Desktop\Proj_Cimeira\projCimeira\android\app\src\main\AndroidManifest.xml:17:9-36:20
+ADDED from D:\Desktop\Proj_Cimeira\projCimeira\android\app\src\main\AndroidManifest.xml:18:9-37:20
 	android:label
-		ADDED from D:\Desktop\Proj_Cimeira\projCimeira\android\app\src\main\AndroidManifest.xml:20:13-56
+		ADDED from D:\Desktop\Proj_Cimeira\projCimeira\android\app\src\main\AndroidManifest.xml:21:13-56
 	android:launchMode
-		ADDED from D:\Desktop\Proj_Cimeira\projCimeira\android\app\src\main\AndroidManifest.xml:22:13-44
+		ADDED from D:\Desktop\Proj_Cimeira\projCimeira\android\app\src\main\AndroidManifest.xml:23:13-44
 	android:configChanges
-		ADDED from D:\Desktop\Proj_Cimeira\projCimeira\android\app\src\main\AndroidManifest.xml:18:13-90
+		ADDED from D:\Desktop\Proj_Cimeira\projCimeira\android\app\src\main\AndroidManifest.xml:19:13-90
 	android:theme
-		ADDED from D:\Desktop\Proj_Cimeira\projCimeira\android\app\src\main\AndroidManifest.xml:21:13-62
+		ADDED from D:\Desktop\Proj_Cimeira\projCimeira\android\app\src\main\AndroidManifest.xml:22:13-62
 	android:name
-		ADDED from D:\Desktop\Proj_Cimeira\projCimeira\android\app\src\main\AndroidManifest.xml:19:13-57
+		ADDED from D:\Desktop\Proj_Cimeira\projCimeira\android\app\src\main\AndroidManifest.xml:20:13-57
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from D:\Desktop\Proj_Cimeira\projCimeira\android\app\src\main\AndroidManifest.xml:24:13-27:29
+ADDED from D:\Desktop\Proj_Cimeira\projCimeira\android\app\src\main\AndroidManifest.xml:25:13-28:29
 action#android.intent.action.MAIN
-ADDED from D:\Desktop\Proj_Cimeira\projCimeira\android\app\src\main\AndroidManifest.xml:25:17-69
+ADDED from D:\Desktop\Proj_Cimeira\projCimeira\android\app\src\main\AndroidManifest.xml:26:17-69
 	android:name
-		ADDED from D:\Desktop\Proj_Cimeira\projCimeira\android\app\src\main\AndroidManifest.xml:25:25-66
+		ADDED from D:\Desktop\Proj_Cimeira\projCimeira\android\app\src\main\AndroidManifest.xml:26:25-66
 category#android.intent.category.LAUNCHER
-ADDED from D:\Desktop\Proj_Cimeira\projCimeira\android\app\src\main\AndroidManifest.xml:26:17-77
+ADDED from D:\Desktop\Proj_Cimeira\projCimeira\android\app\src\main\AndroidManifest.xml:27:17-77
 	android:name
-		ADDED from D:\Desktop\Proj_Cimeira\projCimeira\android\app\src\main\AndroidManifest.xml:26:27-74
+		ADDED from D:\Desktop\Proj_Cimeira\projCimeira\android\app\src\main\AndroidManifest.xml:27:27-74
 intent-filter#action:name:android.intent.action.VIEW+category:name:android.intent.category.BROWSABLE+category:name:android.intent.category.DEFAULT+data:scheme:@string/custom_url_scheme
-ADDED from D:\Desktop\Proj_Cimeira\projCimeira\android\app\src\main\AndroidManifest.xml:29:13-34:29
+ADDED from D:\Desktop\Proj_Cimeira\projCimeira\android\app\src\main\AndroidManifest.xml:30:13-35:29
 action#android.intent.action.VIEW
-ADDED from D:\Desktop\Proj_Cimeira\projCimeira\android\app\src\main\AndroidManifest.xml:30:17-69
+ADDED from D:\Desktop\Proj_Cimeira\projCimeira\android\app\src\main\AndroidManifest.xml:31:17-69
 	android:name
-		ADDED from D:\Desktop\Proj_Cimeira\projCimeira\android\app\src\main\AndroidManifest.xml:30:25-66
+		ADDED from D:\Desktop\Proj_Cimeira\projCimeira\android\app\src\main\AndroidManifest.xml:31:25-66
 category#android.intent.category.DEFAULT
-ADDED from D:\Desktop\Proj_Cimeira\projCimeira\android\app\src\main\AndroidManifest.xml:31:17-76
+ADDED from D:\Desktop\Proj_Cimeira\projCimeira\android\app\src\main\AndroidManifest.xml:32:17-76
 	android:name
-		ADDED from D:\Desktop\Proj_Cimeira\projCimeira\android\app\src\main\AndroidManifest.xml:31:27-73
+		ADDED from D:\Desktop\Proj_Cimeira\projCimeira\android\app\src\main\AndroidManifest.xml:32:27-73
 category#android.intent.category.BROWSABLE
-ADDED from D:\Desktop\Proj_Cimeira\projCimeira\android\app\src\main\AndroidManifest.xml:32:17-78
+ADDED from D:\Desktop\Proj_Cimeira\projCimeira\android\app\src\main\AndroidManifest.xml:33:17-78
 	android:name
-		ADDED from D:\Desktop\Proj_Cimeira\projCimeira\android\app\src\main\AndroidManifest.xml:32:27-75
+		ADDED from D:\Desktop\Proj_Cimeira\projCimeira\android\app\src\main\AndroidManifest.xml:33:27-75
 data
-ADDED from D:\Desktop\Proj_Cimeira\projCimeira\android\app\src\main\AndroidManifest.xml:33:17-68
+ADDED from D:\Desktop\Proj_Cimeira\projCimeira\android\app\src\main\AndroidManifest.xml:34:17-68
 	android:scheme
-		ADDED from D:\Desktop\Proj_Cimeira\projCimeira\android\app\src\main\AndroidManifest.xml:33:23-65
+		ADDED from D:\Desktop\Proj_Cimeira\projCimeira\android\app\src\main\AndroidManifest.xml:34:23-65
 uses-permission#android.permission.INTERNET
-ADDED from D:\Desktop\Proj_Cimeira\projCimeira\android\app\src\main\AndroidManifest.xml:51:5-67
+ADDED from D:\Desktop\Proj_Cimeira\projCimeira\android\app\src\main\AndroidManifest.xml:52:5-67
 MERGED from [com.google.firebase:firebase-iid:18.0.0] C:\Users\bmoli\.gradle\caches\transforms-1\files-1.1\firebase-iid-18.0.0.aar\c86a5aa3b5fa6b0a215aeae612b4d77a\AndroidManifest.xml:23:5-67
 MERGED from [com.google.firebase:firebase-iid:18.0.0] C:\Users\bmoli\.gradle\caches\transforms-1\files-1.1\firebase-iid-18.0.0.aar\c86a5aa3b5fa6b0a215aeae612b4d77a\AndroidManifest.xml:23:5-67
 	android:name
-		ADDED from D:\Desktop\Proj_Cimeira\projCimeira\android\app\src\main\AndroidManifest.xml:51:22-64
+		ADDED from D:\Desktop\Proj_Cimeira\projCimeira\android\app\src\main\AndroidManifest.xml:52:22-64
 uses-permission#android.permission.READ_EXTERNAL_STORAGE
-ADDED from D:\Desktop\Proj_Cimeira\projCimeira\android\app\src\main\AndroidManifest.xml:53:5-79
+ADDED from D:\Desktop\Proj_Cimeira\projCimeira\android\app\src\main\AndroidManifest.xml:54:5-79
 	android:name
-		ADDED from D:\Desktop\Proj_Cimeira\projCimeira\android\app\src\main\AndroidManifest.xml:53:22-77
+		ADDED from D:\Desktop\Proj_Cimeira\projCimeira\android\app\src\main\AndroidManifest.xml:54:22-77
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-ADDED from D:\Desktop\Proj_Cimeira\projCimeira\android\app\src\main\AndroidManifest.xml:54:5-81
+ADDED from D:\Desktop\Proj_Cimeira\projCimeira\android\app\src\main\AndroidManifest.xml:55:5-81
 	android:name
-		ADDED from D:\Desktop\Proj_Cimeira\projCimeira\android\app\src\main\AndroidManifest.xml:54:22-78
+		ADDED from D:\Desktop\Proj_Cimeira\projCimeira\android\app\src\main\AndroidManifest.xml:55:22-78
 uses-permission#android.permission.ACCESS_COARSE_LOCATION
-ADDED from D:\Desktop\Proj_Cimeira\projCimeira\android\app\src\main\AndroidManifest.xml:56:5-81
+ADDED from D:\Desktop\Proj_Cimeira\projCimeira\android\app\src\main\AndroidManifest.xml:57:5-81
 	android:name
-		ADDED from D:\Desktop\Proj_Cimeira\projCimeira\android\app\src\main\AndroidManifest.xml:56:22-78
+		ADDED from D:\Desktop\Proj_Cimeira\projCimeira\android\app\src\main\AndroidManifest.xml:57:22-78
 uses-permission#android.permission.ACCESS_FINE_LOCATION
-ADDED from D:\Desktop\Proj_Cimeira\projCimeira\android\app\src\main\AndroidManifest.xml:57:5-79
+ADDED from D:\Desktop\Proj_Cimeira\projCimeira\android\app\src\main\AndroidManifest.xml:58:5-79
 	android:name
-		ADDED from D:\Desktop\Proj_Cimeira\projCimeira\android\app\src\main\AndroidManifest.xml:57:22-76
+		ADDED from D:\Desktop\Proj_Cimeira\projCimeira\android\app\src\main\AndroidManifest.xml:58:22-76
 uses-feature#android.hardware.location.gps
-ADDED from D:\Desktop\Proj_Cimeira\projCimeira\android\app\src\main\AndroidManifest.xml:58:5-66
+ADDED from D:\Desktop\Proj_Cimeira\projCimeira\android\app\src\main\AndroidManifest.xml:59:5-66
 	android:name
-		ADDED from D:\Desktop\Proj_Cimeira\projCimeira\android\app\src\main\AndroidManifest.xml:58:19-63
+		ADDED from D:\Desktop\Proj_Cimeira\projCimeira\android\app\src\main\AndroidManifest.xml:59:19-63
 uses-permission#android.permission.ACCESS_NETWORK_STATE
-ADDED from D:\Desktop\Proj_Cimeira\projCimeira\android\app\src\main\AndroidManifest.xml:60:5-79
+ADDED from D:\Desktop\Proj_Cimeira\projCimeira\android\app\src\main\AndroidManifest.xml:61:5-79
 MERGED from [:capacitor-cordova-android-plugins] D:\Desktop\Proj_Cimeira\projCimeira\android\capacitor-cordova-android-plugins\build\intermediates\library_manifest\debug\AndroidManifest.xml:12:5-79
 MERGED from [:capacitor-cordova-android-plugins] D:\Desktop\Proj_Cimeira\projCimeira\android\capacitor-cordova-android-plugins\build\intermediates\library_manifest\debug\AndroidManifest.xml:12:5-79
 MERGED from [com.google.firebase:firebase-iid:18.0.0] C:\Users\bmoli\.gradle\caches\transforms-1\files-1.1\firebase-iid-18.0.0.aar\c86a5aa3b5fa6b0a215aeae612b4d77a\AndroidManifest.xml:22:5-79
 MERGED from [com.google.firebase:firebase-iid:18.0.0] C:\Users\bmoli\.gradle\caches\transforms-1\files-1.1\firebase-iid-18.0.0.aar\c86a5aa3b5fa6b0a215aeae612b4d77a\AndroidManifest.xml:22:5-79
 	android:name
-		ADDED from D:\Desktop\Proj_Cimeira\projCimeira\android\app\src\main\AndroidManifest.xml:60:22-76
+		ADDED from D:\Desktop\Proj_Cimeira\projCimeira\android\app\src\main\AndroidManifest.xml:61:22-76
 uses-permission#android.permission.CAMERA
-ADDED from D:\Desktop\Proj_Cimeira\projCimeira\android\app\src\main\AndroidManifest.xml:63:5-65
+ADDED from D:\Desktop\Proj_Cimeira\projCimeira\android\app\src\main\AndroidManifest.xml:64:5-65
 	android:name
-		ADDED from D:\Desktop\Proj_Cimeira\projCimeira\android\app\src\main\AndroidManifest.xml:63:22-62
+		ADDED from D:\Desktop\Proj_Cimeira\projCimeira\android\app\src\main\AndroidManifest.xml:64:22-62
 uses-permission#android.permission.RECORD_AUDIO
-ADDED from D:\Desktop\Proj_Cimeira\projCimeira\android\app\src\main\AndroidManifest.xml:65:5-71
+ADDED from D:\Desktop\Proj_Cimeira\projCimeira\android\app\src\main\AndroidManifest.xml:66:5-71
 	android:name
-		ADDED from D:\Desktop\Proj_Cimeira\projCimeira\android\app\src\main\AndroidManifest.xml:65:22-68
+		ADDED from D:\Desktop\Proj_Cimeira\projCimeira\android\app\src\main\AndroidManifest.xml:66:22-68
 uses-permission#android.permission.MODIFY_AUDIO_SETTINGS
-ADDED from D:\Desktop\Proj_Cimeira\projCimeira\android\app\src\main\AndroidManifest.xml:66:5-79
+ADDED from D:\Desktop\Proj_Cimeira\projCimeira\android\app\src\main\AndroidManifest.xml:67:5-79
 	android:name
-		ADDED from D:\Desktop\Proj_Cimeira\projCimeira\android\app\src\main\AndroidManifest.xml:66:22-77
+		ADDED from D:\Desktop\Proj_Cimeira\projCimeira\android\app\src\main\AndroidManifest.xml:67:22-77
 uses-sdk
 INJECTED from D:\Desktop\Proj_Cimeira\projCimeira\android\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from D:\Desktop\Proj_Cimeira\projCimeira\android\app\src\main\AndroidManifest.xml
@@ -326,11 +326,11 @@ INJECTED from D:\Desktop\Proj_Cimeira\projCimeira\android\app\src\main\AndroidMa
 		ADDED from D:\Desktop\Proj_Cimeira\projCimeira\android\app\src\main\AndroidManifest.xml
 		INJECTED from D:\Desktop\Proj_Cimeira\projCimeira\android\app\src\main\AndroidManifest.xml
 meta-data#android.support.FILE_PROVIDER_PATHS
-ADDED from D:\Desktop\Proj_Cimeira\projCimeira\android\app\src\main\AndroidManifest.xml:43:13-45:64
+ADDED from D:\Desktop\Proj_Cimeira\projCimeira\android\app\src\main\AndroidManifest.xml:44:13-46:64
 	android:resource
-		ADDED from D:\Desktop\Proj_Cimeira\projCimeira\android\app\src\main\AndroidManifest.xml:45:17-51
+		ADDED from D:\Desktop\Proj_Cimeira\projCimeira\android\app\src\main\AndroidManifest.xml:46:17-51
 	android:name
-		ADDED from D:\Desktop\Proj_Cimeira\projCimeira\android\app\src\main\AndroidManifest.xml:44:17-67
+		ADDED from D:\Desktop\Proj_Cimeira\projCimeira\android\app\src\main\AndroidManifest.xml:45:17-67
 uses-feature#android.hardware.camera
 ADDED from [:capacitor-android] D:\Desktop\Proj_Cimeira\projCimeira\node_modules\@capacitor\android\capacitor\build\intermediates\library_manifest\debug\AndroidManifest.xml:11:5-13:36
 	android:required
