@@ -14,7 +14,7 @@ const URLButMeio = "http://app.cimeira.ipvc.pt/api/programa/pdf";
 
 
 const Home: React.FC<RouteComponentProps> = (props) => {
-    
+    let history = useHistory();
     var nomeUser = localStorage.getItem("UtilizadorLogin");
     if(nomeUser == null){
         nomeUser="À CIMEIRA";
@@ -56,7 +56,17 @@ const Home: React.FC<RouteComponentProps> = (props) => {
         })
     }
 
+    useIonViewWillEnter(() => {
+        if(localStorage.getItem("UtilizadorID") && localStorage.getItem("UtilizadorLogin")){
+            console.log("existe login");
+        }else{
+            console.log("não existe login");
+        }
+    })
+
     useIonViewDidEnter(() => {
+        
+
         callAxios();
 
         axios({
@@ -70,6 +80,7 @@ const Home: React.FC<RouteComponentProps> = (props) => {
           });
 
           //document.getElementById("conteudo")!.style.backgroundImage = "url('http://app.cimeira.ipvc.pt/files/background.png')";
+
     });
 
     function abreMapa() {

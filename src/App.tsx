@@ -57,6 +57,9 @@ import '@ionic/react/css/display.css';
 import './theme/variables.scss';
 
 import './theme/teste.css';
+import ComOrganizador from './pages/pagesMyAgenda/ComOrganizador'; 
+import Contactos from './pages/pagesMyAgenda/Contactos';
+import Perfil from './pages/pagesMyAgenda/Perfil';
 
 import axios from 'axios';
 
@@ -114,6 +117,8 @@ const App: React.FC = () => {
           <Route path="/pitchs" component={Pitch} exact={true} />
           <Route path="/vianalinkmoments" component={VianaLinkMoments} />
           <Route path="/pitchInscricao" component={PitchsInscricao}/>
+          <Route path="/com_Organizador" component={ComOrganizador}/>
+          <Route path="/perfil" component={Perfil}/>
 
           <Route path="/login" component={Login} exact={true} />
           <Route path="/selecionar_perfis_conta" component={SelecaoTipoPerfil} exact={true} />

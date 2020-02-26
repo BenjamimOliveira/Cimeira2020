@@ -1,8 +1,9 @@
-import { IonContent, IonPage, IonImg, useIonViewDidEnter } from '@ionic/react';
+import { IonContent, IonPage, IonImg, useIonViewDidEnter, IonButton, useIonViewWillEnter } from '@ionic/react';
 import React, { useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import ItemMyAgenda from '../components/itemMyAgenda';
 import axios from 'axios';
+import { RouteComponentProps } from 'react-router';
 
 const MyAgenda: React.FC = () => {
 
@@ -43,6 +44,14 @@ const MyAgenda: React.FC = () => {
     marginTop:"100px"
   }
 
+  useIonViewWillEnter(() => {
+    if(localStorage.getItem("UtilizadorID") && localStorage.getItem("UtilizadorLogin")){
+            
+    }else{
+        history.push("/login");
+    }
+  });
+
   useIonViewDidEnter(() => {
     // -- obter lista de categorias
     axios({
@@ -60,8 +69,16 @@ const MyAgenda: React.FC = () => {
     }).catch(erro => {
         console.log("ERRO My Agenda", erro);
     });
-  
+    document.addEventListener("backbutton",function(e) {
+      console.log("disable back button")
+    }, false);
   })
+  let history = useHistory();
+  function logout(){
+    localStorage.setItem("UtilizadorLogin", '');
+    localStorage.setItem("UtilizadorID", '');
+    history.replace("/login");
+  }
 
   function sair() {
     history.replace("/login");
@@ -89,10 +106,9 @@ const MyAgenda: React.FC = () => {
             { possuiResultados && 
             <div style={menu}>
               <div style={menu1}>
-                <ItemMyAgenda texto={menu_1.descr} urlImagem={menu_1.link} pathTo="/home"/>                
-                <ItemMyAgenda texto={menu_2.descr} urlImagem={menu_2.link} pathTo="/home"/>
-                <ItemMyAgenda texto={menu3.descr} urlImagem={menu3.link} pathTo="/home"/>
-                <ItemMyAgenda texto={menu4.descr} urlImagem={menu4.link} pathTo="/home"/>
+                <ItemMyAgenda texto={menu_1.descr} urlImagem={menu_1.link} pathTo="/perfil"/>                
+                <ItemMyAgenda texto={menu_2.descr} urlImagem={menu_2.link} pathTo="/agenda"/>
+                <ItemMyAgenda texto={menu4.descr} urlImagem={menu4.link} pathTo="/com_Organizador"/>
                 <ItemMyAgenda texto={menu5.descr} urlImagem={menu5.link} pathTo="/home"/>
               </div>
 

@@ -99,9 +99,7 @@ const Workshops: React.FC<UserDetailPageProps> = ({match}) => {
       </IonHeader>
 
       <IonContent fullscreen className="backgroundBranco">
-        { possuiResultados &&
-          <IonText className="txtCentroCultural">{workshop.local.toUpperCase()}</IonText>
-        }
+        
         { !possuiResultados &&
           <div style={{height: "95%", display: "flex", padding: "10px", alignItems: "center", justifyContent: "center", color: "#9b9b9b"}}>
             <IonText>A carregar informações da atividade</IonText>
