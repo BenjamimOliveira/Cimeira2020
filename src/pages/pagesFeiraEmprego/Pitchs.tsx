@@ -131,7 +131,7 @@ const Pitch: React.FC = () => {
   function checkPerfil(){
     var i=0;
     pitches.map(function(pitches_){
-      if(idUser == pitches_['id_user']){
+      if(idUser == pitches_['id_utilizador']){
         i++;
       }
     });
