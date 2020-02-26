@@ -27,7 +27,7 @@ const Pitch: React.FC = () => {
 
   const descr = "Trata-se de um momento de aproximação dos estudantes/diplomados ao mercado de trabalho, "
               + "tendo como principal objetivo promover, através de um sistema de Pitchs, uma apresentação rápida do " 
-              + "candidato ás empresas. Estes momentos irão decorrer ao longo do evento, potenciando o contato entre empresas e candidatos."
+              + "candidato às empresas. Estes momentos irão decorrer ao longo do evento, potenciando o contato entre empresas e candidatos."
 
   const geral = {
     marginLeft: "18px",

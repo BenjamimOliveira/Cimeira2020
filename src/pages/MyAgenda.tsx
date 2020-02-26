@@ -108,7 +108,7 @@ const MyAgenda: React.FC = () => {
                 <ItemMyAgenda texto={menu_1.descr} urlImagem={menu_1.link} pathTo="/perfil"/>                
                 <ItemMyAgenda texto={menu_2.descr} urlImagem={menu_2.link} pathTo="/agenda"/>
                 <ItemMyAgenda texto={menu4.descr} urlImagem={menu4.link} pathTo="/com_Organizador"/>
-                <ItemMyAgenda texto={menu5.descr} urlImagem={menu5.link} pathTo="/home"/>
+                <ItemMyAgenda texto={menu5.descr} urlImagem={menu5.link} pathTo="/certificados"/>
               </div>
 
               <div style={menu2}>

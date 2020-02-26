@@ -12,8 +12,8 @@ const ComOrganizador: React.FC = () => {
     const frase2 = "Contamos consigo!";
 
   const subTitulo1 = "Horário";
-    const info1 = "Cimeira: das 10:00h ás 17:00h";
-    const info2 = "Feira de Emprego: das 10:00h ás 20:30h";
+    const info1 = "Cimeira: das 10:00h às 17:00h";
+    const info2 = "Feira de Emprego: das 10:00h às 20:30h";
 
   const subTitulo2 = "Organização";
     const info3 = "Instituto Politécnico de Viana do Castelo";
