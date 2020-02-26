@@ -130,7 +130,7 @@ const Atividade: React.FC<UserDetailPageProps> = ({match}) => {
                 
                 <div style={styl_infoHorario_dentro}>
                   <p style={{marginRight: "5px"}}>Duração: </p>
-                  <div style={stly_hora}>{(atividade.duracao as string).slice(0, -3)}</div>
+                  <div style={stly_hora}>{(atividade.duracao as string)}</div>
                 </div>
               </div>
             </div>

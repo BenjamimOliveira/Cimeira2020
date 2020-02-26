@@ -66,7 +66,7 @@ const PitchsInscricao: React.FC = () => {
         method: "post",
         url: "http://app.cimeira.ipvc.pt/api/pitch",
         data: {
-            id_user: idUser,
+            id_utilizador: idUser,
             id_horario: horario,
             titulo: titulo
         }
