@@ -10,6 +10,7 @@ const Agenda: React.FC = () => {
   const [ items, setItems ] = useState([]);
   const [ itemsMostrar, setItemsMostrar ] = useState([]);
   const [ mostraBarraPesquisa, setMostraBarraPesquisa ] = useState(false);
+  const [ mostraErro, setMostraErro ] = useState(false);
 
   function procura(valor: string) {
     setItemsMostrar(items.filter(function(items){
@@ -32,6 +33,7 @@ const Agenda: React.FC = () => {
         setPossuiResultados(true);
     }).catch(erro => {
         console.log("ERRO", erro);
+        setMostraErro(true);
     })
   })
 
@@ -71,6 +73,30 @@ const Agenda: React.FC = () => {
           })
           }
         </div>
+
+        { possuiResultados === true && itemsMostrar.length == 0 && items.length != 0 &&
+          <div style={{height: "95%", display: "flex", padding: "10px", alignItems: "center", justifyContent: "center", color: "#9b9b9b"}}>
+            <IonText>Não está inscrito a nenhuma atividade com essa designação</IonText>
+          </div>
+        }
+
+        { possuiResultados === true && items.length == 0 &&
+          <div style={{height: "95%", display: "flex", padding: "10px", alignItems: "center", justifyContent: "center", color: "#9b9b9b"}}>
+            <IonText>Ainda não escolheu participar em nenhuma atividade</IonText>
+          </div>
+        }
+
+        { !possuiResultados && !mostraErro &&
+          <div style={{height: "95%", display: "flex", padding: "10px", alignItems: "center", justifyContent: "center", color: "#9b9b9b"}}>
+            <IonText>A carregar dados...</IonText>
+          </div>
+        }
+
+        { mostraErro &&
+          <div style={{height: "95%", display: "flex", padding: "10px", alignItems: "center", justifyContent: "center", color: "#9b9b9b"}}>
+            <IonText>Ocorreu um erro a carregar dados</IonText>
+          </div>
+        }
         
       </IonContent>
     </IonPage>

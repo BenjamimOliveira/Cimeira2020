@@ -82,7 +82,8 @@ const DescricaoEmpresa: React.FC<PageProps> = ({match}) => {
     color: "#474747",
     margin: 0,
     marginBottom: "3px",
-    fontSize: "20px"
+    fontSize: "20px",
+    overflowWrap: "anywhere" as "anywhere"
   }
 
   const icon = {

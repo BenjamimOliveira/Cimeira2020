@@ -1,8 +1,15 @@
 {
-  "appId": "io.ionic.starter",
-  "appName": "projCimeira",
-  "bundledWebRuntime": false,
-  "npmClient": "npm",
-  "webDir": "build",
-  "cordova": {}
+    "appId": "io.ionic.starter",
+    "appName": "projCimeira",
+    "bundledWebRuntime": false,
+    "npmClient": "npm",
+    "webDir": "build",
+    "cordova": {},
+    "plugins": {
+        "SplashScreen": {
+            "launchShowDuration": 500,
+            "launchAutoHide": true,
+            "backgroundColor": "#ff0000"
+        }
+    }
 }
