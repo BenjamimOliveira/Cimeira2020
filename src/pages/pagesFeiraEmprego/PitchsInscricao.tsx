@@ -59,9 +59,7 @@ const PitchsInscricao: React.FC = () => {
     //
     if (titulo === undefined || titulo === "") {
       setToast({ state: true, message: "Todos os pitchs necessitam de um titulo!" });
-    } else if (horario=="2"){
-      setToast({ state: true, message: "Escolha um horário!"});
-    }else{
+    } else{
       Axios({
         method: "post",
         url: "http://app.cimeira.ipvc.pt/api/pitch",
@@ -172,8 +170,8 @@ const PitchsInscricao: React.FC = () => {
               <IonLabel>Horários</IonLabel>
             </IonListHeader>
             <IonRow>
-              <IonCol size="6">
-                <IonItem>
+              <IonCol size="6" no-lines>
+                <IonItem no-lines>
                   <div style={stly_hora}>11:30</div>
                   <IonRadio slot="start" color="warning" value="um" onIonSelect={() => { check1bool()}}></IonRadio>
                 </IonItem>

@@ -112,7 +112,7 @@ const MyAgenda: React.FC = () => {
               </div>
 
               <div style={menu2}>
-                <ItemMyAgenda texto={menu6.descr} urlImagem={menu6.link} pathTo="/home"/>
+                
                 <div onClick={() => {sair()}}>
                   <ItemMyAgenda texto={menu7.descr} urlImagem={menu7.link}/>
                 </div>
