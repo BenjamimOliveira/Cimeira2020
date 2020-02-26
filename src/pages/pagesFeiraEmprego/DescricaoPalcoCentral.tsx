@@ -129,9 +129,7 @@ const Atividade: React.FC<UserDetailPageProps> = ({match}) => {
           <div className="areaInformacao" style={{padding: "8px 16px", marginTop: "10px"}}>
             <div>
               <div style={{display: "flex",justifyContent: "center"}}>
-                <IonAvatar style={styl_avatar}>
-                  <IonImg src={empresa.logo}/>
-                </IonAvatar>
+                <IonImg src={empresa.logo} style={styl_avatar}/>
               </div>
               <div style={styl_infoHorario}>
                 <div style={styl_infoHorario_dentro}>

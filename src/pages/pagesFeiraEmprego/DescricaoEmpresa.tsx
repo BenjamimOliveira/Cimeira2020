@@ -123,9 +123,7 @@ const DescricaoEmpresa: React.FC<PageProps> = ({match}) => {
         { possuiResultados === true &&
         <div>
           <div className="areaInformacao" style={stl_area_info}>
-            <IonAvatar style={styl_avatar}>
-              <IonImg src={empresa.logo} />
-            </IonAvatar>
+            <IonImg src={empresa.logo} style={styl_avatar}/>
             <div style={linha_info}>
               <p style={txt_nome}>{empresa.nome}</p>
               <div style={subLinha}>
