@@ -73,7 +73,6 @@ const MyAgenda: React.FC = () => {
       console.log("disable back button")
     }, false);
   })
-  let history = useHistory();
   function logout(){
     localStorage.setItem("UtilizadorLogin", '');
     localStorage.setItem("UtilizadorID", '');

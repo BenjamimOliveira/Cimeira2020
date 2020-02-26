@@ -1,6 +1,6 @@
-import { IonContent, IonPage, IonRow, IonCol, IonGrid, IonItem, IonImg, IonText, IonFooter, IonButton, IonLabel, useIonViewDidEnter } from '@ionic/react';
+import { IonContent, IonPage, IonRow, IonCol, IonGrid, IonItem, IonImg, IonText, IonFooter, IonButton, IonLabel, useIonViewDidEnter, useIonViewWillEnter } from '@ionic/react';
 import React, { useState, useEffect } from 'react';
-import { RouteComponentProps } from 'react-router';
+import { RouteComponentProps, useHistory } from 'react-router';
 import axios from 'axios';
 import "./Home.scss";
 import { isPlatform } from '@ionic/react';
