@@ -1,13 +1,13 @@
 {
     "appId": "io.ionic.starter",
-    "appName": "projCimeira",
+    "appName": "Cimeira IPVC 2020",
     "bundledWebRuntime": false,
     "npmClient": "npm",
     "webDir": "build",
     "cordova": {},
     "plugins": {
         "SplashScreen": {
-            "launchShowDuration": 500,
+            "launchShowDuration": 0,
             "launchAutoHide": true,
             "backgroundColor": "#ff0000"
         }
