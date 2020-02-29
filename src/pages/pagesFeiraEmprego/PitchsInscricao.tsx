@@ -14,6 +14,7 @@ const PitchsInscricao: React.FC = () => {
   const [ possuiResultados, setPossuiResultados ] = useState(false);
   const [showBut, setShowBut] = useState(false);
   var idUser = localStorage.getItem("UtilizadorID");
+  var nomeUser = localStorage.getItem("UtilizadorLogin");
   let history = useHistory();
 
   const geral = {
@@ -37,7 +38,8 @@ const PitchsInscricao: React.FC = () => {
     display: "flex",
     alignItems: "center",
     justifyContent: "space-between",
-    color: "#4a4a4a"
+    color: "#4a4a4a",
+    marginBottom: "48px"
   }
 
   const styl_infoHorario_dentro = {
@@ -56,17 +58,14 @@ const PitchsInscricao: React.FC = () => {
 
   function inscricaoPitch(e: any) {
 
-    //
-    if (titulo === undefined || titulo === "") {
-      setToast({ state: true, message: "Todos os pitchs necessitam de um titulo!" });
-    } else{
+    
       Axios({
         method: "post",
         url: "http://app.cimeira.ipvc.pt/api/pitch",
         data: {
             id_utilizador: idUser,
             id_horario: horario,
-            titulo: titulo
+            titulo: nomeUser
         }
     }).then(resultado => {
       console.log(resultado);
@@ -75,7 +74,7 @@ const PitchsInscricao: React.FC = () => {
 
     }); 
     history.goBack();
-    }
+    
 
     console.log("horario=> " + horario);
     
@@ -161,9 +160,7 @@ const PitchsInscricao: React.FC = () => {
             </div>
           </div>
 
-          <IonItem className="ion-margin" style={{ marginBottom: "36px" }}>
-            <IonInput required placeholder="TITULO DA IDEIA" value={titulo} onInput={(e) => setTitulo((e.target as HTMLInputElement).value)}></IonInput>
-          </IonItem>
+          
 
           <IonRadioGroup>
             <IonListHeader>
