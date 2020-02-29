@@ -1,20 +1,19 @@
-import { IonContent, IonPage, IonButton, IonGrid, IonRow, IonCol, IonInput, IonItem, IonToast, IonHeader, IonToolbar, IonButtons, IonIcon, IonTitle, IonCheckbox, IonLabel } from '@ionic/react';
+import { IonContent, IonPage, IonButton, IonGrid, IonRow, IonCol, IonInput, IonItem, IonToast, IonHeader, IonToolbar, IonButtons, IonIcon, IonTitle, IonCheckbox, IonLabel, IonRadioGroup, IonRadio } from '@ionic/react';
 import React, { useState } from 'react';
 import axios from "axios";
 import { useHistory } from "react-router-dom";
 
 const Registo: React.FC = () => {
 
-    const [check_aceite, setCheck_aceite] = useState(false);
+    const [check_aceite2, setCheck_aceite2] = useState("nao");
 
     const [toast, setToast] = useState({ state: false, message: "Erro no login" });
     let history = useHistory();
 
     function submeterFormulario() {
-        // -- verirficar checkbox   
-        
+        // -- verirficar checkbox     
              
-        if(check_aceite){
+        if(check_aceite2 == "aceite"){
 
             // -- verificar dados
             if(!localStorage.getItem("dados_registo")){
@@ -102,16 +101,20 @@ const Registo: React.FC = () => {
                                     <div className="ion-margin ion-text-center titulo txtBranco" style={{marginTop: "10%", fontWeight: "bold"}}>
                                         <p style={{textAlign: "justify", textJustify: "inter-word"}}>Os dados pessoais (nomeadamente nome, email e localidade) solicitados neste registo, serão apenas utilizados pelo Instituto Politécnico de Viana do Castelo para gerir a sua participação e proporcionar-lhe a melhor experiência no evento CIMEIRA IPVC 2020. No final do evento CIMEIRA IPVC 2020 estes dados serão utilizados para gerar os certificados de participação. Após o evento CIMEIRA IPVC 2020, os dados serão mantidos unicamente para fins de tratamento estatístico pelo Gabinete de Comunicação e Imagem do Instituto Politécnico de Viana do Castelo</p>
                                     </div>
+                                    <IonRadioGroup value={check_aceite2} onIonChange={(e) => {setCheck_aceite2(e.detail.value)}}>
+                                        <IonItem className="semBackgroundforce" text-warp>
+                                                <IonRadio className="checkAmarelo" value="aceite" style={{marginRight: "5px", minWidth: "20px"}}/>
+                                                
+                                                Sim, aceito os termos de utilização dos dados pessoais para os efeitos requeridos
+                                        </IonItem>
 
-                                    <IonItem key="Aceitar RGPD" className="semBackgroundforce" text-warp>
-                                        <IonCheckbox className="checkAmarelo" value="Aceitar RGPD" checked={check_aceite} style={{marginRight: "5px", minWidth: "18px"}} onIonChange={(e) => setCheck_aceite(!check_aceite)}/>
-                                        {check_aceite && 
-                                            <p>Sim, aceito os termos de utilização dos dados pessoais para os efeitos requeridos</p>
-                                        }
-                                        {!check_aceite && 
-                                            <p>Não, não aceito os termos de utilização dos dados pessoais para os efeitos requeridos</p>
-                                        }
-                                    </IonItem>
+                                        <IonItem className="semBackgroundforce" text-warp>
+                                                <IonRadio className="checkAmarelo" value="nao" style={{marginRight: "5px", minWidth: "20px"}}/>
+                                                
+                                                Não, não aceito os termos de utilização dos dados pessoais para os efeitos requeridos
+                                        </IonItem>
+                                    </IonRadioGroup>
+
                                 </div>
 
                                 <div className="ion-margin btnLogin">

@@ -72,6 +72,7 @@ const Login: React.FC = () => {
                 localStorage.setItem("UtilizadorPerfil2", resultado.data.message.perfil_2);
                 localStorage.setItem("UtilizadorPerfil3", resultado.data.message.perfil_3);
                 localStorage.setItem("UtilizadorID", resultado.data.message.id);
+                localStorage.setItem("UtilizadorRespondeuInquerito", resultado.data.message.respondeu_inquerito);
 
                 // -- VERIFICAR PERFIS
 
