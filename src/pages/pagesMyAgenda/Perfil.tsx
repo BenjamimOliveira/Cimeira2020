@@ -123,7 +123,7 @@ const Perfil: React.FC = () => {
         <div style={{ margin: "24px" }}>
           {/* EMAIL */}
           <div style={{ height: "50px", marginBottom: "24px" }}>
-            <div style={{ float: "left", height: "50px", marginRight: "24px" }}><IonImg style={{ display: "block", marginTop: "14px", height: "18px" }} src="assets/resources/email_perfil.png" /></div>
+            <div style={{ float: "left", height: "50px", marginRight: "24px" }}><IonImg style={{ display: "block", marginTop: "14px", width: "22px" }} src="assets/resources/email_perfil.png" /></div>
             <div style={{ height: "40px" }}>
               <div style={{ fontSize: "18px", marginBottom: "8px", color: "#474747" }}>{email}</div>
               <div style={{ fontSize: "16px", color: "#757575" }}>E-mail</div>
@@ -132,7 +132,7 @@ const Perfil: React.FC = () => {
 
           {/** LOCALIDADE */}
           <div style={{ height: "50px", marginBottom: "24px" }}>
-            <div style={{ float: "left", height: "50px", marginRight: "24px" }}><IonImg style={{ display: "block", marginTop: "14px", height: "18px", marginLeft: "5px", marginRight: "4px" }} src="assets/resources/localizacao_perfil.png" /></div>
+            <div style={{ float: "left", height: "50px", marginRight: "24px" }}><IonImg style={{ display: "block", marginTop: "14px", width: "18px", marginRight:"2px", marginLeft:"2zpx" }} src="assets/resources/localizacao_perfil.png" /></div>
             <div style={{ height: "40px" }}>
               <div style={{ fontSize: "18px", marginBottom: "8px", color: "#474747" }}>{localidade}</div>
               <div style={{ fontSize: "16px", color: "#757575" }}>Localidade</div>
@@ -141,7 +141,7 @@ const Perfil: React.FC = () => {
 
           {/** Perfis */}
           <div style={{ height: "50px" }}>
-            <div style={{ float: "left", height: "50px", marginRight: "24px" }}><IonImg style={{ display: "block", marginTop: "14px", height: "18px", marginLeft: "2px", marginRight: "2px" }} src="assets/resources/utilizador_perfil.png" /></div>
+            <div style={{ float: "left", height: "50px", marginRight: "24px" }}><IonImg style={{ display: "block", marginTop: "14px", width: "22px"}} src="assets/resources/utilizador_perfil.png" /></div>
             <div style={{ height: "40px" }}>
               <div style={{ fontSize: "18px", marginBottom: "8px", color: "#474747" }}>{perfil()}</div>
               <div style={{ fontSize: "16px", color: "#757575" }}>Perfil Utilizador</div>

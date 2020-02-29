@@ -1,4 +1,4 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButtons, IonText, IonLabel, IonButton, IonIcon, IonSearchbar, useIonViewDidEnter } from '@ionic/react';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButtons, IonText, IonLabel, IonButton, IonIcon, IonSearchbar, useIonViewDidEnter, IonToast } from '@ionic/react';
 import React, { useState } from 'react';
 import WorkshopList from "../components/WorkshopList";
 import "./Workshop.scss";
@@ -10,6 +10,7 @@ const Workshops: React.FC = () => {
   const [ workshops, setWorkshops ] = useState([]);
   const [ workshopsMostrar, setWorkshopsMostrar ] = useState([]);  
   const [ mostraBarraPesquisa, setMostraBarraPesquisa ] = useState(false);
+  const [ toast, setToast ] = useState({state: false, message: ""});
 
   function truncarHora(hora: string){
     var horaTemp = hora;

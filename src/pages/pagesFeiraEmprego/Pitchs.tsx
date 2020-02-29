@@ -24,6 +24,7 @@ const Pitch: React.FC = () => {
   const [ horario2, setHorario2] = useState();
   const [ horarioSoma, setHorarioSoma] = useState();
   const [showBut, setShowBut] = useState(false);
+  var [possuiResultados_programa, setPossuiResultados_programa] = useState(false);
 
   const descr = "Trata-se de um momento de aproximação dos estudantes/diplomados ao mercado de trabalho, "
               + "tendo como principal objetivo promover, através de um sistema de Pitchs, uma apresentação rápida do " 
@@ -130,6 +131,7 @@ const Pitch: React.FC = () => {
 
   function checkPerfil(){
     var i=0;
+    console.log(pitches);
     pitches.map(function(pitches_){
       if(idUser == pitches_['id_utilizador']){
         i++;
@@ -138,6 +140,7 @@ const Pitch: React.FC = () => {
     if(i!=0){
       return 1;
     }else {return 0}
+    
   }
 
   useIonViewWillEnter(() => {
@@ -153,6 +156,7 @@ const Pitch: React.FC = () => {
     }).then(resultado => {        
         setPossuiResultados(true);
         setPitches(resultado.data);
+        setPossuiResultados_programa(true);
     }).catch(erro => {
         console.log("ERRO wrkshps", erro);
     });
@@ -208,13 +212,13 @@ const Pitch: React.FC = () => {
           <div style={pitchsText}>Pitchs  inscritos:</div>
           <div style={pitchs}>  
             { possuiResultados === true && pitches.map(function(pitch_) {
-              return <ItemPitch texto={pitch_['titulo']} hora={pitch_['id_horario']}></ItemPitch> 
+              return <ItemPitch texto={pitch_['titulo']} hora={pitch_['hora']}></ItemPitch> 
         })
         }     
           </div>
 
           
-          {showButton() && 
+          {showButton() && possuiResultados_programa &&
           <div className="ion-margin btnAmarelo" style={{textAlign:"center"}}>
             <IonButton type="button" style={styl_btnAdicionar}  onClick={(e) => {inscricaoPitch(e)}} size="large" expand="block">SUBMETER PITCH</IonButton>
           </div>

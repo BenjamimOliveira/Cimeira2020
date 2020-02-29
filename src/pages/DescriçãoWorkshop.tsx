@@ -1,4 +1,4 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButtons, IonButton, IonIcon, IonText, useIonViewDidEnter } from '@ionic/react';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButtons, IonButton, IonIcon, IonText, useIonViewDidEnter, IonToast } from '@ionic/react';
 import React, { useState } from 'react';
 import axios from 'axios';
 import { RouteComponentProps } from 'react-router';
@@ -11,7 +11,7 @@ const Workshops: React.FC<UserDetailPageProps> = ({match}) => {
 
     const [possuiResultados, setPossuiResultados ] = useState(false);
     const [workshop, setWorkshop] = useState({id: "", titulo: "", hora: "", moderador: "", duracao: "", local: "", descricao: ""});
-    const [, setToast] = useState({state: false, message: "Erro na inscrição"});
+    const [toast, setToast ] = useState({state: false, message: ""});
  
     const styl_infoHorario = {
         display: "flex",  
@@ -76,8 +76,10 @@ const Workshops: React.FC<UserDetailPageProps> = ({match}) => {
         }).then(resultado => {
             console.log(resultado);
             if(resultado.data.status == false){              
-                setToast({state: true, message: "Ocorreu um erro!"});
-            } 
+                setToast({state: true, message: "Já está inscrito"});
+            } else {
+              setToast({state: true, message: "Está agora inscrito ao Workshop!"});
+            }
         }).catch(erro => {
             console.log("ERRO", erro);
             setToast({state: true, message: "Ocorreu um erro a realizar a inscrição!"});
@@ -99,7 +101,8 @@ const Workshops: React.FC<UserDetailPageProps> = ({match}) => {
       </IonHeader>
 
       <IonContent fullscreen className="backgroundBranco">
-        
+      <IonToast isOpen={toast.state} onDidDismiss={() => setToast({ state: false, message: toast.message })} message={toast.message} duration={5000}></IonToast>
+      
         { !possuiResultados &&
           <div style={{height: "95%", display: "flex", padding: "10px", alignItems: "center", justifyContent: "center", color: "#9b9b9b"}}>
             <IonText>A carregar informações da atividade</IonText>
@@ -109,7 +112,7 @@ const Workshops: React.FC<UserDetailPageProps> = ({match}) => {
           <div className="areaInformacao" style={{padding: "8px 16px", marginTop: "0px"}}>
             <div>
               <IonText style={{fontSize: "26px", color: "#4a4a4a", fontWeight: "bold", marginBottom: 0, paddingBottom: 0, lineHeight: "28px"}}><p>{workshop.titulo.toUpperCase()}</p></IonText>
-              <IonText style={{fontSize: "12px", color: "#757575", marginTop: 0, paddingTop: 0}}><p>Moderador: {workshop.moderador}</p></IonText>
+              <IonText style={{fontSize: "12px", color: "#757575", marginTop: 0, paddingTop: 0}}><p>Orador: {workshop.moderador}</p></IonText>
               <div style={styl_infoHorario}>
                 <div style={styl_infoHorario_dentro}>
                   <p style={{marginRight: "5px"}}>Início: </p>
