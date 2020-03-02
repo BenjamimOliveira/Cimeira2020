@@ -27,10 +27,15 @@ const Agenda: React.FC = () => {
         id_utilizador: localStorage.getItem("UtilizadorID")
       }
     }).then((resultado) => {
-        setItems(resultado.data[0]);
-        setItemsMostrar(resultado.data[0]);
+      if(resultado.data.status){
+        setItems(resultado.data.dados);
+        setItemsMostrar(resultado.data.dados);
         
         setPossuiResultados(true);
+      } else {
+        
+        setPossuiResultados(true);
+      }
     }).catch(erro => {
         console.log("ERRO", erro);
         setMostraErro(true);
@@ -66,7 +71,7 @@ const Agenda: React.FC = () => {
         <IonText className="txtCentroCultural">CENTRO CULTURAL</IonText>
         {/*-- List of Text Items --*/}
         <div className="timeline timeline-split"  style={{marginTop: "10px"}}>
-          { possuiResultados === true && itemsMostrar.map(function(item) {
+          { possuiResultados === true && itemsMostrar.length != 0 && itemsMostrar.map(function(item) {
               if(!item['hora'])
                 (item['hora'] as any) = "00:00:00";
               return <ItemAgenda hora={(item['hora'] as string).slice(0, -3)} titulo={item['titulo']} desc={item['descricao']} tipo={item['tipo']} key={item['titulo']}></ItemAgenda>

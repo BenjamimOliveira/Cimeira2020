@@ -5,7 +5,7 @@ import { useHistory } from "react-router-dom";
 
 const Registo: React.FC = () => {
 
-    const [check_aceite2, setCheck_aceite2] = useState("nao");
+    const [check_aceite2, setCheck_aceite2] = useState("aceite");
 
     const [toast, setToast] = useState({ state: false, message: "Erro no login" });
     let history = useHistory();
@@ -19,14 +19,14 @@ const Registo: React.FC = () => {
             if(!localStorage.getItem("dados_registo")){
                 // -- sem dados
                 setToast({ state: true, message: "Informação em falta! Preencha todos os dados!" });
-                history.push("/registo");
+                history.replace("/registo");
                 return;
             }
             let dados_registo = JSON.parse(localStorage.getItem("dados_registo") as string);
 
             if (!dados_registo.email || !dados_registo.password || !dados_registo.nome || !dados_registo.localidade) {
                 setToast({ state: true, message: "Erro ao criar a conta: É necessário preencher todos os dados do formulário!" });
-                history.push("/registo");
+                history.replace("/registo");
                 return;
             }
 
@@ -39,7 +39,7 @@ const Registo: React.FC = () => {
             }).then(resultado => {                
                 if (resultado.data.status === true) {
                     setToast({ state: true, message: "Já existe uma conta com esse email registado. Faça login ou recupere a palavra-passe" });
-                    history.push("/login");
+                    history.replace("/login");
                     return;
                 } else {
                     axios({
@@ -59,7 +59,7 @@ const Registo: React.FC = () => {
                             setToast({state: true, message: "É agora necessário validar a sua conta!"});
                             localStorage.setItem("email_validar_conta", dados_registo.email);
                             localStorage.removeItem("dados_registo");
-                            history.push("/validarregisto");
+                            history.replace("/validarregisto");
                         }
                     }).catch(erro => {
                         console.log("ERRO", erro);

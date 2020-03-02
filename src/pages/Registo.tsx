@@ -57,7 +57,7 @@ const Registo: React.FC = () => {
         }).then(resultado => {
             if (resultado.data.status === true) {
                 setToast({ state: true, message: "Já existe uma conta com esse email registado. Faça login ou recupere a palavra-passe" });
-                history.push("/login");
+                history.replace("/login");
                 return;
             } else {
                 // -- passar para página aceitar rgpd
@@ -70,7 +70,7 @@ const Registo: React.FC = () => {
                 }
                 localStorage.setItem("dados_registo", JSON.stringify(dados_registo));
 
-                history.push("/selecionar_perfis_conta");
+                history.replace("/selecionar_perfis_conta");
             }
         }).catch(erro => {
             console.log("ERRO", erro);

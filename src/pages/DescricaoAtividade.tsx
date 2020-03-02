@@ -68,13 +68,13 @@ const Atividade: React.FC<UserDetailPageProps> = ({match}) => {
         }
       }).then(resultado => {       
           if(resultado.data.status){
-            setToast({state: true, message: "Foi inscrito com sucesso nesta atividade!"});
+            setToast({state: true, message: "Foi inscrito com sucesso!"});
           } else {
-            setToast({state: true, message: "Já se encontra inscrito nesta atividade!"});
+            setToast({state: true, message: "Já se encontra inscrito!"});
           }
       }).catch(erro => {
           console.log("ERRO", erro);
-          setToast({state: true, message: "Ocorreu um erro ao realizar a inscrição na atividade!"});
+          setToast({state: true, message: "Ocorreu um erro ao realizar a inscrição!"});
       });
     } else {
 

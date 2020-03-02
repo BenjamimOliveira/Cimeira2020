@@ -76,9 +76,9 @@ const Workshops: React.FC<UserDetailPageProps> = ({match}) => {
         }).then(resultado => {
             console.log(resultado);
             if(resultado.data.status == false){              
-                setToast({state: true, message: "Já está inscrito"});
+                setToast({state: true, message: "Foi inscrito com sucesso!"});
             } else {
-              setToast({state: true, message: "Está agora inscrito ao Workshop!"});
+              setToast({state: true, message: "Já se encontra inscrito!"});
             }
         }).catch(erro => {
             console.log("ERRO", erro);
