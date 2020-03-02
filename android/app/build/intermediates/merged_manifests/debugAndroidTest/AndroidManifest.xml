@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="io.ionic.starter.test" >
+    package="pt.ipvc.cimeira2020.test" >
 
     <uses-sdk
         android:minSdkVersion="21"
@@ -10,8 +10,8 @@
         android:name="android.support.test.runner.AndroidJUnitRunner"
         android:functionalTest="false"
         android:handleProfiling="false"
-        android:label="Tests for io.ionic.starter"
-        android:targetPackage="io.ionic.starter" />
+        android:label="Tests for pt.ipvc.cimeira2020"
+        android:targetPackage="pt.ipvc.cimeira2020" />
 
     <application android:debuggable="true" >
         <uses-library android:name="android.test.runner" />

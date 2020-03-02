@@ -1,20 +1,20 @@
 -- Merging decision tree log ---
 provider#android.support.v4.content.FileProvider
-INJECTED from D:\IonicReact\Cimeira2020\Cimeira2020\android\app\src\main\AndroidManifest.xml:38:9-46:20
+INJECTED from D:\IonicReact\Cimeira2020\Cimeira2020\android\app\src\main\AndroidManifest.xml:39:9-47:20
 	android:grantUriPermissions
-		ADDED from D:\IonicReact\Cimeira2020\Cimeira2020\android\app\src\main\AndroidManifest.xml:42:13-47
+		ADDED from D:\IonicReact\Cimeira2020\Cimeira2020\android\app\src\main\AndroidManifest.xml:43:13-47
 	android:authorities
 		INJECTED from D:\IonicReact\Cimeira2020\Cimeira2020\android\app\src\main\AndroidManifest.xml
-		ADDED from D:\IonicReact\Cimeira2020\Cimeira2020\android\app\src\main\AndroidManifest.xml:40:13-64
+		ADDED from D:\IonicReact\Cimeira2020\Cimeira2020\android\app\src\main\AndroidManifest.xml:41:13-64
 	android:exported
-		ADDED from D:\IonicReact\Cimeira2020\Cimeira2020\android\app\src\main\AndroidManifest.xml:41:13-37
+		ADDED from D:\IonicReact\Cimeira2020\Cimeira2020\android\app\src\main\AndroidManifest.xml:42:13-37
 	android:name
-		ADDED from D:\IonicReact\Cimeira2020\Cimeira2020\android\app\src\main\AndroidManifest.xml:39:13-67
+		ADDED from D:\IonicReact\Cimeira2020\Cimeira2020\android\app\src\main\AndroidManifest.xml:40:13-67
 manifest
-ADDED from D:\IonicReact\Cimeira2020\Cimeira2020\android\app\src\main\AndroidManifest.xml:2:1-67:12
-INJECTED from D:\IonicReact\Cimeira2020\Cimeira2020\android\app\src\main\AndroidManifest.xml:2:1-67:12
-INJECTED from D:\IonicReact\Cimeira2020\Cimeira2020\android\app\src\main\AndroidManifest.xml:2:1-67:12
-INJECTED from D:\IonicReact\Cimeira2020\Cimeira2020\android\app\src\main\AndroidManifest.xml:2:1-67:12
+ADDED from D:\IonicReact\Cimeira2020\Cimeira2020\android\app\src\main\AndroidManifest.xml:2:1-63:12
+INJECTED from D:\IonicReact\Cimeira2020\Cimeira2020\android\app\src\main\AndroidManifest.xml:2:1-63:12
+INJECTED from D:\IonicReact\Cimeira2020\Cimeira2020\android\app\src\main\AndroidManifest.xml:2:1-63:12
+INJECTED from D:\IonicReact\Cimeira2020\Cimeira2020\android\app\src\main\AndroidManifest.xml:2:1-63:12
 MERGED from [:capacitor-android] D:\IonicReact\Cimeira2020\Cimeira2020\node_modules\@capacitor\android\capacitor\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-36:12
 MERGED from [com.android.support:design:28.0.0] C:\Users\Vasco Alves\.gradle\caches\transforms-2\files-2.1\b1d8b4b40a44b6d16bbcc853f378a37d\design-28.0.0\AndroidManifest.xml:17:1-24:12
 MERGED from [com.android.support:appcompat-v7:28.0.0] C:\Users\Vasco Alves\.gradle\caches\transforms-2\files-2.1\15035ed350d43f07aebe9cead70486b2\appcompat-v7-28.0.0\AndroidManifest.xml:17:1-22:12
@@ -60,25 +60,25 @@ MERGED from [android.arch.lifecycle:livedata:1.1.1] C:\Users\Vasco Alves\.gradle
 MERGED from [android.arch.lifecycle:livedata-core:1.1.1] C:\Users\Vasco Alves\.gradle\caches\transforms-2\files-2.1\37e0a6c1113fc8383af85abbb988698f\livedata-core-1.1.1\AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.core:runtime:1.1.1] C:\Users\Vasco Alves\.gradle\caches\transforms-2\files-2.1\4ca1c6d7c7e5831f597a26eb6b89598e\runtime-1.1.1\AndroidManifest.xml:17:1-22:12
 MERGED from [org.apache.cordova:framework:7.0.0] C:\Users\Vasco Alves\.gradle\caches\transforms-2\files-2.1\3faebe4d18d3de5e569776c28e897461\framework-7.0.0\AndroidManifest.xml:20:1-27:12
-INJECTED from D:\IonicReact\Cimeira2020\Cimeira2020\android\app\src\main\AndroidManifest.xml:2:1-67:12
-INJECTED from D:\IonicReact\Cimeira2020\Cimeira2020\android\app\src\main\AndroidManifest.xml:2:1-67:12
-INJECTED from D:\IonicReact\Cimeira2020\Cimeira2020\android\app\src\main\AndroidManifest.xml:2:1-67:12
+INJECTED from D:\IonicReact\Cimeira2020\Cimeira2020\android\app\src\main\AndroidManifest.xml:2:1-63:12
+INJECTED from D:\IonicReact\Cimeira2020\Cimeira2020\android\app\src\main\AndroidManifest.xml:2:1-63:12
+INJECTED from D:\IonicReact\Cimeira2020\Cimeira2020\android\app\src\main\AndroidManifest.xml:2:1-63:12
 	package
-		ADDED from D:\IonicReact\Cimeira2020\Cimeira2020\android\app\src\main\AndroidManifest.xml:3:5-31
+		ADDED from D:\IonicReact\Cimeira2020\Cimeira2020\android\app\src\main\AndroidManifest.xml:3:5-34
 		INJECTED from D:\IonicReact\Cimeira2020\Cimeira2020\android\app\src\main\AndroidManifest.xml
 		INJECTED from D:\IonicReact\Cimeira2020\Cimeira2020\android\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from D:\IonicReact\Cimeira2020\Cimeira2020\android\app\src\main\AndroidManifest.xml
-		ADDED from D:\IonicReact\Cimeira2020\Cimeira2020\android\app\src\main\AndroidManifest.xml:2:1-67:12
+		ADDED from D:\IonicReact\Cimeira2020\Cimeira2020\android\app\src\main\AndroidManifest.xml:2:1-63:12
 		INJECTED from D:\IonicReact\Cimeira2020\Cimeira2020\android\app\src\main\AndroidManifest.xml
 	android:versionCode
 		INJECTED from D:\IonicReact\Cimeira2020\Cimeira2020\android\app\src\main\AndroidManifest.xml
-		ADDED from D:\IonicReact\Cimeira2020\Cimeira2020\android\app\src\main\AndroidManifest.xml:2:1-67:12
+		ADDED from D:\IonicReact\Cimeira2020\Cimeira2020\android\app\src\main\AndroidManifest.xml:2:1-63:12
 		INJECTED from D:\IonicReact\Cimeira2020\Cimeira2020\android\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from D:\IonicReact\Cimeira2020\Cimeira2020\android\app\src\main\AndroidManifest.xml:2:11-69
 application
-ADDED from D:\IonicReact\Cimeira2020\Cimeira2020\android\app\src\main\AndroidManifest.xml:5:5-47:19
+ADDED from D:\IonicReact\Cimeira2020\Cimeira2020\android\app\src\main\AndroidManifest.xml:5:5-48:19
 MERGED from [:capacitor-android] D:\IonicReact\Cimeira2020\Cimeira2020\node_modules\@capacitor\android\capacitor\build\intermediates\library_manifest\debug\AndroidManifest.xml:15:5-34:19
 MERGED from [:capacitor-android] D:\IonicReact\Cimeira2020\Cimeira2020\node_modules\@capacitor\android\capacitor\build\intermediates\library_manifest\debug\AndroidManifest.xml:15:5-34:19
 MERGED from [com.android.support:design:28.0.0] C:\Users\Vasco Alves\.gradle\caches\transforms-2\files-2.1\b1d8b4b40a44b6d16bbcc853f378a37d\design-28.0.0\AndroidManifest.xml:22:5-20
@@ -133,8 +133,10 @@ ADDED from D:\IonicReact\Cimeira2020\Cimeira2020\android\app\src\main\AndroidMan
 		ADDED from D:\IonicReact\Cimeira2020\Cimeira2020\android\app\src\main\AndroidManifest.xml:15:13-37
 	android:name
 		ADDED from D:\IonicReact\Cimeira2020\Cimeira2020\android\app\src\main\AndroidManifest.xml:14:13-50
-activity#io.ionic.starter.MainActivity
-ADDED from D:\IonicReact\Cimeira2020\Cimeira2020\android\app\src\main\AndroidManifest.xml:17:9-36:20
+activity#pt.ipvc.cimeira2020.MainActivity
+ADDED from D:\IonicReact\Cimeira2020\Cimeira2020\android\app\src\main\AndroidManifest.xml:17:9-37:20
+	android:screenOrientation
+		ADDED from D:\IonicReact\Cimeira2020\Cimeira2020\android\app\src\main\AndroidManifest.xml:23:13-49
 	android:label
 		ADDED from D:\IonicReact\Cimeira2020\Cimeira2020\android\app\src\main\AndroidManifest.xml:20:13-56
 	android:launchMode
@@ -144,81 +146,69 @@ ADDED from D:\IonicReact\Cimeira2020\Cimeira2020\android\app\src\main\AndroidMan
 	android:theme
 		ADDED from D:\IonicReact\Cimeira2020\Cimeira2020\android\app\src\main\AndroidManifest.xml:21:13-62
 	android:name
-		ADDED from D:\IonicReact\Cimeira2020\Cimeira2020\android\app\src\main\AndroidManifest.xml:19:13-57
+		ADDED from D:\IonicReact\Cimeira2020\Cimeira2020\android\app\src\main\AndroidManifest.xml:19:13-60
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from D:\IonicReact\Cimeira2020\Cimeira2020\android\app\src\main\AndroidManifest.xml:24:13-27:29
+ADDED from D:\IonicReact\Cimeira2020\Cimeira2020\android\app\src\main\AndroidManifest.xml:25:13-28:29
 action#android.intent.action.MAIN
-ADDED from D:\IonicReact\Cimeira2020\Cimeira2020\android\app\src\main\AndroidManifest.xml:25:17-69
+ADDED from D:\IonicReact\Cimeira2020\Cimeira2020\android\app\src\main\AndroidManifest.xml:26:17-69
 	android:name
-		ADDED from D:\IonicReact\Cimeira2020\Cimeira2020\android\app\src\main\AndroidManifest.xml:25:25-66
+		ADDED from D:\IonicReact\Cimeira2020\Cimeira2020\android\app\src\main\AndroidManifest.xml:26:25-66
 category#android.intent.category.LAUNCHER
-ADDED from D:\IonicReact\Cimeira2020\Cimeira2020\android\app\src\main\AndroidManifest.xml:26:17-77
+ADDED from D:\IonicReact\Cimeira2020\Cimeira2020\android\app\src\main\AndroidManifest.xml:27:17-77
 	android:name
-		ADDED from D:\IonicReact\Cimeira2020\Cimeira2020\android\app\src\main\AndroidManifest.xml:26:27-74
+		ADDED from D:\IonicReact\Cimeira2020\Cimeira2020\android\app\src\main\AndroidManifest.xml:27:27-74
 intent-filter#action:name:android.intent.action.VIEW+category:name:android.intent.category.BROWSABLE+category:name:android.intent.category.DEFAULT+data:scheme:@string/custom_url_scheme
-ADDED from D:\IonicReact\Cimeira2020\Cimeira2020\android\app\src\main\AndroidManifest.xml:29:13-34:29
+ADDED from D:\IonicReact\Cimeira2020\Cimeira2020\android\app\src\main\AndroidManifest.xml:30:13-35:29
 action#android.intent.action.VIEW
-ADDED from D:\IonicReact\Cimeira2020\Cimeira2020\android\app\src\main\AndroidManifest.xml:30:17-69
+ADDED from D:\IonicReact\Cimeira2020\Cimeira2020\android\app\src\main\AndroidManifest.xml:31:17-69
 	android:name
-		ADDED from D:\IonicReact\Cimeira2020\Cimeira2020\android\app\src\main\AndroidManifest.xml:30:25-66
+		ADDED from D:\IonicReact\Cimeira2020\Cimeira2020\android\app\src\main\AndroidManifest.xml:31:25-66
 category#android.intent.category.DEFAULT
-ADDED from D:\IonicReact\Cimeira2020\Cimeira2020\android\app\src\main\AndroidManifest.xml:31:17-76
+ADDED from D:\IonicReact\Cimeira2020\Cimeira2020\android\app\src\main\AndroidManifest.xml:32:17-76
 	android:name
-		ADDED from D:\IonicReact\Cimeira2020\Cimeira2020\android\app\src\main\AndroidManifest.xml:31:27-73
+		ADDED from D:\IonicReact\Cimeira2020\Cimeira2020\android\app\src\main\AndroidManifest.xml:32:27-73
 category#android.intent.category.BROWSABLE
-ADDED from D:\IonicReact\Cimeira2020\Cimeira2020\android\app\src\main\AndroidManifest.xml:32:17-78
+ADDED from D:\IonicReact\Cimeira2020\Cimeira2020\android\app\src\main\AndroidManifest.xml:33:17-78
 	android:name
-		ADDED from D:\IonicReact\Cimeira2020\Cimeira2020\android\app\src\main\AndroidManifest.xml:32:27-75
+		ADDED from D:\IonicReact\Cimeira2020\Cimeira2020\android\app\src\main\AndroidManifest.xml:33:27-75
 data
-ADDED from D:\IonicReact\Cimeira2020\Cimeira2020\android\app\src\main\AndroidManifest.xml:33:17-68
+ADDED from D:\IonicReact\Cimeira2020\Cimeira2020\android\app\src\main\AndroidManifest.xml:34:17-68
 	android:scheme
-		ADDED from D:\IonicReact\Cimeira2020\Cimeira2020\android\app\src\main\AndroidManifest.xml:33:23-65
+		ADDED from D:\IonicReact\Cimeira2020\Cimeira2020\android\app\src\main\AndroidManifest.xml:34:23-65
 uses-permission#android.permission.INTERNET
-ADDED from D:\IonicReact\Cimeira2020\Cimeira2020\android\app\src\main\AndroidManifest.xml:51:5-67
+ADDED from D:\IonicReact\Cimeira2020\Cimeira2020\android\app\src\main\AndroidManifest.xml:52:5-67
 MERGED from [com.google.firebase:firebase-iid:18.0.0] C:\Users\Vasco Alves\.gradle\caches\transforms-2\files-2.1\c9cd65b62769a4782a0cacfdc41e0d87\firebase-iid-18.0.0\AndroidManifest.xml:23:5-67
 MERGED from [com.google.firebase:firebase-iid:18.0.0] C:\Users\Vasco Alves\.gradle\caches\transforms-2\files-2.1\c9cd65b62769a4782a0cacfdc41e0d87\firebase-iid-18.0.0\AndroidManifest.xml:23:5-67
 	android:name
-		ADDED from D:\IonicReact\Cimeira2020\Cimeira2020\android\app\src\main\AndroidManifest.xml:51:22-64
+		ADDED from D:\IonicReact\Cimeira2020\Cimeira2020\android\app\src\main\AndroidManifest.xml:52:22-64
 uses-permission#android.permission.READ_EXTERNAL_STORAGE
-ADDED from D:\IonicReact\Cimeira2020\Cimeira2020\android\app\src\main\AndroidManifest.xml:53:5-79
+ADDED from D:\IonicReact\Cimeira2020\Cimeira2020\android\app\src\main\AndroidManifest.xml:54:5-79
 	android:name
-		ADDED from D:\IonicReact\Cimeira2020\Cimeira2020\android\app\src\main\AndroidManifest.xml:53:22-77
+		ADDED from D:\IonicReact\Cimeira2020\Cimeira2020\android\app\src\main\AndroidManifest.xml:54:22-77
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-ADDED from D:\IonicReact\Cimeira2020\Cimeira2020\android\app\src\main\AndroidManifest.xml:54:5-81
+ADDED from D:\IonicReact\Cimeira2020\Cimeira2020\android\app\src\main\AndroidManifest.xml:55:5-81
 	android:name
-		ADDED from D:\IonicReact\Cimeira2020\Cimeira2020\android\app\src\main\AndroidManifest.xml:54:22-78
+		ADDED from D:\IonicReact\Cimeira2020\Cimeira2020\android\app\src\main\AndroidManifest.xml:55:22-78
 uses-permission#android.permission.ACCESS_COARSE_LOCATION
-ADDED from D:\IonicReact\Cimeira2020\Cimeira2020\android\app\src\main\AndroidManifest.xml:56:5-81
+ADDED from D:\IonicReact\Cimeira2020\Cimeira2020\android\app\src\main\AndroidManifest.xml:57:5-81
 	android:name
-		ADDED from D:\IonicReact\Cimeira2020\Cimeira2020\android\app\src\main\AndroidManifest.xml:56:22-78
+		ADDED from D:\IonicReact\Cimeira2020\Cimeira2020\android\app\src\main\AndroidManifest.xml:57:22-78
 uses-permission#android.permission.ACCESS_FINE_LOCATION
-ADDED from D:\IonicReact\Cimeira2020\Cimeira2020\android\app\src\main\AndroidManifest.xml:57:5-79
+ADDED from D:\IonicReact\Cimeira2020\Cimeira2020\android\app\src\main\AndroidManifest.xml:58:5-79
 	android:name
-		ADDED from D:\IonicReact\Cimeira2020\Cimeira2020\android\app\src\main\AndroidManifest.xml:57:22-76
+		ADDED from D:\IonicReact\Cimeira2020\Cimeira2020\android\app\src\main\AndroidManifest.xml:58:22-76
 uses-feature#android.hardware.location.gps
-ADDED from D:\IonicReact\Cimeira2020\Cimeira2020\android\app\src\main\AndroidManifest.xml:58:5-66
+ADDED from D:\IonicReact\Cimeira2020\Cimeira2020\android\app\src\main\AndroidManifest.xml:59:5-66
 	android:name
-		ADDED from D:\IonicReact\Cimeira2020\Cimeira2020\android\app\src\main\AndroidManifest.xml:58:19-63
+		ADDED from D:\IonicReact\Cimeira2020\Cimeira2020\android\app\src\main\AndroidManifest.xml:59:19-63
 uses-permission#android.permission.ACCESS_NETWORK_STATE
-ADDED from D:\IonicReact\Cimeira2020\Cimeira2020\android\app\src\main\AndroidManifest.xml:60:5-79
+ADDED from D:\IonicReact\Cimeira2020\Cimeira2020\android\app\src\main\AndroidManifest.xml:61:5-79
 MERGED from [:capacitor-cordova-android-plugins] D:\IonicReact\Cimeira2020\Cimeira2020\android\capacitor-cordova-android-plugins\build\intermediates\library_manifest\debug\AndroidManifest.xml:12:5-79
 MERGED from [:capacitor-cordova-android-plugins] D:\IonicReact\Cimeira2020\Cimeira2020\android\capacitor-cordova-android-plugins\build\intermediates\library_manifest\debug\AndroidManifest.xml:12:5-79
 MERGED from [com.google.firebase:firebase-iid:18.0.0] C:\Users\Vasco Alves\.gradle\caches\transforms-2\files-2.1\c9cd65b62769a4782a0cacfdc41e0d87\firebase-iid-18.0.0\AndroidManifest.xml:22:5-79
 MERGED from [com.google.firebase:firebase-iid:18.0.0] C:\Users\Vasco Alves\.gradle\caches\transforms-2\files-2.1\c9cd65b62769a4782a0cacfdc41e0d87\firebase-iid-18.0.0\AndroidManifest.xml:22:5-79
 	android:name
-		ADDED from D:\IonicReact\Cimeira2020\Cimeira2020\android\app\src\main\AndroidManifest.xml:60:22-76
-uses-permission#android.permission.CAMERA
-ADDED from D:\IonicReact\Cimeira2020\Cimeira2020\android\app\src\main\AndroidManifest.xml:63:5-65
-	android:name
-		ADDED from D:\IonicReact\Cimeira2020\Cimeira2020\android\app\src\main\AndroidManifest.xml:63:22-62
-uses-permission#android.permission.RECORD_AUDIO
-ADDED from D:\IonicReact\Cimeira2020\Cimeira2020\android\app\src\main\AndroidManifest.xml:65:5-71
-	android:name
-		ADDED from D:\IonicReact\Cimeira2020\Cimeira2020\android\app\src\main\AndroidManifest.xml:65:22-68
-uses-permission#android.permission.MODIFY_AUDIO_SETTINGS
-ADDED from D:\IonicReact\Cimeira2020\Cimeira2020\android\app\src\main\AndroidManifest.xml:66:5-79
-	android:name
-		ADDED from D:\IonicReact\Cimeira2020\Cimeira2020\android\app\src\main\AndroidManifest.xml:66:22-77
+		ADDED from D:\IonicReact\Cimeira2020\Cimeira2020\android\app\src\main\AndroidManifest.xml:61:22-76
 uses-sdk
 INJECTED from D:\IonicReact\Cimeira2020\Cimeira2020\android\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from D:\IonicReact\Cimeira2020\Cimeira2020\android\app\src\main\AndroidManifest.xml
@@ -326,11 +316,11 @@ INJECTED from D:\IonicReact\Cimeira2020\Cimeira2020\android\app\src\main\Android
 		ADDED from D:\IonicReact\Cimeira2020\Cimeira2020\android\app\src\main\AndroidManifest.xml
 		INJECTED from D:\IonicReact\Cimeira2020\Cimeira2020\android\app\src\main\AndroidManifest.xml
 meta-data#android.support.FILE_PROVIDER_PATHS
-ADDED from D:\IonicReact\Cimeira2020\Cimeira2020\android\app\src\main\AndroidManifest.xml:43:13-45:64
+ADDED from D:\IonicReact\Cimeira2020\Cimeira2020\android\app\src\main\AndroidManifest.xml:44:13-46:64
 	android:resource
-		ADDED from D:\IonicReact\Cimeira2020\Cimeira2020\android\app\src\main\AndroidManifest.xml:45:17-51
+		ADDED from D:\IonicReact\Cimeira2020\Cimeira2020\android\app\src\main\AndroidManifest.xml:46:17-51
 	android:name
-		ADDED from D:\IonicReact\Cimeira2020\Cimeira2020\android\app\src\main\AndroidManifest.xml:44:17-67
+		ADDED from D:\IonicReact\Cimeira2020\Cimeira2020\android\app\src\main\AndroidManifest.xml:45:17-67
 uses-feature#android.hardware.camera
 ADDED from [:capacitor-android] D:\IonicReact\Cimeira2020\Cimeira2020\node_modules\@capacitor\android\capacitor\build\intermediates\library_manifest\debug\AndroidManifest.xml:11:5-13:36
 	android:required
