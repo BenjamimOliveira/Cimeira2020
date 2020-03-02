@@ -85,7 +85,7 @@ const Registo: React.FC = () => {
             <IonHeader translucent>
                 <IonToolbar className="toolbar toolbarComTransparencia">
                     <IonButtons slot="start">
-                        <IonButton expand="block" routerLink="/login" routerDirection="root">
+                        <IonButton expand="block" onClick={() => {history.replace("/login");}}>
                             <IonIcon slot="icon-only" name="close" />
                         </IonButton>
                     </IonButtons>

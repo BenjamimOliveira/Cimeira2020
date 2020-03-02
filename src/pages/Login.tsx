@@ -80,7 +80,7 @@ const Login: React.FC = () => {
             } else if(resultado.data.cod === 4){
                 setToast({state: true, message: "Ainda é necessário validar esta conta! Obtenha a chave de validação no seu email."});
                 localStorage.setItem("email_validar_conta", email);
-                history.push("/validarregisto");
+                history.replace("/validarregisto");
             } else {
                 setToast({state: true, message: "A combinação email/palavra-passe não existe!"});
             }
@@ -128,13 +128,13 @@ const Login: React.FC = () => {
                                 </div>
                             </form>
                             <div className="ion-margin ion-text-center titulo txtBranco">
-                                <IonRouterLink routerLink="/recuperar_pass_email" routerDirection="root" className="txtBranco">
+                                <IonRouterLink onClick={() => {history.replace("/recuperar_pass_email");}} className="txtBranco">
                                     <p><b>Esqueceu-se da Password?</b></p>
                                 </IonRouterLink>
                             </div>
 
                             <div className="marginTop200px ion-text-center titulo">
-                                <IonRouterLink routerLink="/registo" routerDirection="root" className="txtAmarelo">
+                                <IonRouterLink onClick={() => {history.replace("/registo");}} className="txtAmarelo">
                                     <p><b>Ainda não tem conta criada?</b></p>
                                 </IonRouterLink>
                             </div>

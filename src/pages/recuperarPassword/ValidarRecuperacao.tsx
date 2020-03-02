@@ -14,7 +14,7 @@ const ValidarRecuperacao: React.FC = () => {
     useIonViewWillEnter(() => {
         if(!localStorage.getItem("email_recuperar_conta") || localStorage.getItem("email_recuperar_conta") == "undefined"){
             setToast({state: true, message: "Erro ao iniciar a validação da recuperação de palavra-passe!"});
-            history.push("/login");
+            history.replace("/login");
             return; 
         }
     })
@@ -80,7 +80,7 @@ const ValidarRecuperacao: React.FC = () => {
             <IonHeader translucent>
                 <IonToolbar className="toolbar toolbarComTransparencia">
                     <IonButtons slot="start">
-                        <IonButton expand="block" routerLink="/login" routerDirection="root">
+                        <IonButton expand="block" onClick={() => {history.replace("/login");}}>
                             <IonIcon slot="icon-only" name="close" />
                         </IonButton>
                     </IonButtons>
