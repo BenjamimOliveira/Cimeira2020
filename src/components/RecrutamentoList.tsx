@@ -31,6 +31,7 @@ const RecrutamentoList: React.FC<Data> = (props) => {
         height: "85px",  
         maxHeight: "85px", 
         padding: "5px"
+        
     }
 
     const area_hora = {
@@ -61,8 +62,8 @@ const RecrutamentoList: React.FC<Data> = (props) => {
         <div > 
             <div  tabIndex={0} style={{ borderBottom: "1px solid #dfdfdf"}}>
                 <div style={{ display: "flex", padding: "10px", alignItems: "center", justifyContent: "space-between" }}>
-                    <div style={styl_avatar}>
-                        <IonImg src={props.foto} />
+                    <div >
+                        <IonImg src={props.foto} style={styl_avatar}/>
                     </div>
                     <div style={{ marginLeft: "10px", width: "100%", display: "flex", alignItems: "center", justifyContent: "space-between"}}>
                         <div>

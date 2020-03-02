@@ -9,7 +9,7 @@ const Empresas1: React.FC = () => {
   
   var [menu1, setmenu1] = useState({descr:"", link: ""});
   var [menu2, setmenu2] = useState({descr:"", link: ""});
-  var [, setPossuiResultados ] = useState(false);
+  var [possuiResultados, setPossuiResultados ] = useState(false);
 
   useIonViewDidEnter(() => {
     // -- obter lista de categorias
@@ -41,9 +41,14 @@ const Empresas1: React.FC = () => {
       </IonHeader>
       <IonContent className="backgroundBranco">
         <IonText className="local_atividade">TENDA MULTIUSOS</IonText>
+        { possuiResultados &&
+          <Link to={"/empresas_palco"} style={{textDecoration: "none"}}><ItemEmpresas texto={menu1.descr} urlImagem={menu1.link}/></Link>
+        }
+        { possuiResultados &&
+          <Link to={"/stands"} style={{textDecoration: "none"}}><ItemEmpresas texto={menu2.descr} urlImagem={menu2.link}/></Link>
+        }
         
-        <Link to={"/empresas_palco"} style={{textDecoration: "none"}}><ItemEmpresas texto={menu1.descr} urlImagem={menu1.link}/></Link>
-        <Link to={"/stands"} style={{textDecoration: "none"}}><ItemEmpresas texto={menu2.descr} urlImagem={menu2.link}/></Link>
+        
         
         
       </IonContent>
