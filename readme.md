@@ -1,6 +1,6 @@
 # CUIDADOS A TER COM IOS 
    **Windows/Linux/MacOS (Sistema operativo utilizado para programar em ionic)**
-   - Alterar o gitignore para permitir dar push da pasta public relativa a ios ("ios\.gitignore")
+   - Alterar o gitignore para permitir dar push da pasta public relativa a ios ("ios\\.gitignore")
     - Correr "ionic cap copy", certos componentes necessários á execução do projeto em MacOS só sao copiados utilizando este comando
 
 **Correr no Xcode**
