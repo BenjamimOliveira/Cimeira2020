@@ -8,3 +8,12 @@
         -> Alterar o nome do diretório "node_module" para "node_modules"
         -> Correr "pod install" na pasta onde o podfile estiver ("ios\App\Podfile")
             -> Na primeira instalação pode ser necessário instalar CocoaPods ou corrigir algo da instalação do Ruby    
+
+NOTAS:
+    - No caso de darem build de novo ao projeto ("ionic cap build") acrescentem:
+        <android:usesCleartextTraffic="true">
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+        ao manifest em android, sem esta libraria não é possivel fazer a comunicação com os webservices
+
