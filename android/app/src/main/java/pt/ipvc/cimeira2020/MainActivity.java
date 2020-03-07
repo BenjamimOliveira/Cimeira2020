@@ -1,4 +1,4 @@
-package io.ionic.starter;
+package pt.ipvc.cimeira2020;
 
 import android.os.Bundle;
 
