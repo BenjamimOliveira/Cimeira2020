@@ -105,7 +105,7 @@
     "description": "An Ionic project",
     "devDependencies": {
         "@capacitor/cli": "1.4.0",
-        "node-sass": "^4.13.1",
+        "node-sass": "^7.0.0",
         "react-scripts": "3.3.0",
         "sass-loader": "^8.0.0"
     },
